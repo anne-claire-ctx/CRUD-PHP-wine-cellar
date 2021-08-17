@@ -7,7 +7,7 @@ require "templates/header.php"
             <img src="assets/img/logo-blanc.png" alt="logo My cave">
             <h2>Vos vins d'exception</h2>
         </div>
-        <video id="myvideo" muted loop poster="assets/img/poster.jpg" autoplay=true src="../assets/video/wine.mp4" width="100%"></video>
+        <video id="myvideo" muted loop poster="assets/img/poster.jpg" autoplay=true src="assets/video/wine.mp4" width="100%"></video>
     </header>
     <section class="introduction">
         <div class="introduction-content">
@@ -23,6 +23,7 @@ require "templates/header.php"
         </div>
     </section>
     <section class="swiper">
+        <div class="swiper-img-left"><img src="assets/img/weeds.png" alt="Feuilles de vigne"></div>
         <div class="swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
