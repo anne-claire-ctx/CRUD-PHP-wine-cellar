@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+
+:root {
+  --black: #000;
+  --red: #650e10;
+  --white: #fff;
+}
+
+body {
+  font-family: "Advent Pro", sans-serif;
+  background: black;
+  color: white;
+}
+
+/* MENU============== */
+.burger-icon {
+  position: fixed;
+  width: 3rem;
+  height: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 8%;
+  right: 6%;
+  z-index: 2000;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+
+.burger-icon span {
+  background-color: white;
+  width: 100%;
+  height: 5px;
+  border-radius: 20px;
+}
+
+.menu {
+  background-color: #000;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(0);
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1000;
+  transition: 0.6s;
+}
+
+.menu-container {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menu .menu-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu .logo {
+  height: 30%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 30%;
+}
+
+.menu .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu .nav-item img {
+  height: 50px;
+  margin-right: 30px;
+}
+
+.menu nav {
+  height: 70%;
+}
+.menu nav ul {
+  color: white;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.menu nav ul a {
+  color: white;
+}
+
+.display-none {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.active {
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 1px solid white;
+}
+
+@media (min-width: 56rem) {
+  .menu-container {
+    width: 90%;
+    max-width: 75rem;
+  }
+
+  .menu-left {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu .logo {
+    height: 20%;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .menu nav {
+    padding-top: 4rem;
+  }
+}
+
+/* HEADER */
+
+video {
+  display: block;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 8px solid var(--black);
+}
+.header-title img {
+  position: absolute;
+  top: 6%;
+  left: 5%;
+  z-index: 222;
+}
+
+.header-title h2 {
+  position: absolute;
+  font-family: "Parisienne", cursive;
+  top: 65%;
+  right: 8%;
+  font-size: 3.2em;
+  z-index: 222;
+}
+
+/* INTRODUCTION */
+
+.introduction {
+  display: flex;
+  justify-content: space-between;
+  border-top: 8px solid rgba(4, 9, 12, 1);
+}
+
+.introduction-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 2em;
+  font-size: 1.7em;
+  text-align: center;
+}
+
+.introduction-left {
+  width: 55%;
+  margin-left: -8em;
+  z-index: 2;
+}
+.introduction-right {
+  width: 55%;
+  margin-right: -15.5em;
+  z-index: 2;
+}
+.introduction-right,
+.introduction-left {
+  display: flex;
+  align-items: center;
+  font-size: 1.4em;
+}
+
+.introduction-right img,
+.introduction-left img {
+  height: 70px;
+  z-index: 2;
+}
+
+.introduction-left img {
+  margin-right: 15px;
+}
+
+.introduction-right img {
+  margin-left: 15px;
+}
+
+.introduction-img img {
+  height: 923px;
+}
+
+/* SWIPER */
+
+.swiper {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-content {
+  display: flex;
+  margin-left: 5em;
+  justify-content: space-between;
+  margin-right: 5em;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--white) !important;
+}
+
+.swiper .bottle img {
+  margin: 8px;
+}
+
+.bottle-info {
+  margin-top: 5em;
+  margin-left: 3em;
+}
+.bottle-name {
+  font-size: 1.8em;
+  margin: 2em;
+}
+
+.bottle-location {
+  color: rgb(129, 52, 52);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.bottle-year {
+  color: white;
+  font-size: 1.4em;
+  margin-top: 1.5em;
+}
+
+.bottle-grapes {
+  color: rgb(129, 52, 52);
+  font-size: 1.5em;
+  margin-top: 1.5em;
+  font-weight: bold;
+}
+
+.bottle-description {
+  color: white;
+  font-size: 1.4em;
+  margin-top: 1.5em;
+  margin-right: 1.3em;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: rgb(0, 0, 0);
+  padding-top: 3rem;
+  font-size: 1.2em;
+}
+
+.footer-container {
+  width: 95%;
+  margin: auto;
+  color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.2em;
+}
+
+.footer-left,
+.footer-right {
+  width: 30%;
+}
+
+.footer-right {
+  text-align: end;
+}
+
+.footer-left a {
+  text-decoration: none;
+  color: gray;
+}
+
+.footer-left a:hover {
+  border-bottom: 1px solid gray;
+}

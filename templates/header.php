@@ -10,8 +10,8 @@
     <!-- Swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- CSS stylesheets link -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -26,13 +26,13 @@
                 <div class="logo"><img src="assets/img/logo-blanc.png" alt="Logo MyCave"></div>
                 <nav>
                     <ul>
-                        <li class="nav-item"><a href="home">Accueil</a><img src="assets/img/wine.png" alt="logo verre de vin"></li>
-                        <li class="nav-item"><a href="ourwines">Nos vins</a><img src="assets/img/wine-cooler.png" alt="logo cave a vin"></li>
+                        <li class="nav-item"><img src="assets/img/wine.png" alt="logo verre de vin"><a href="home">Accueil</a></li>
+                        <li class="nav-item"><img src="assets/img/wine-cooler.png" alt="logo cave a vin"><a href="ourwines">Nos vins</a></li>
                         <?php if (!empty($_SESSION['role'])) : ?>
                             <li class="nav-item"><a href="dashboard">Dashboard</a></li>
                             <li class="nav-item"><a href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                         <?php else : ?>
-                            <li class="nav-item"><a href="login">Se connecter</a><img src="assets/img/wine-bottle.png" alt="logo ouvre bouteille"></li>
+                            <li class="nav-item"><img src="assets/img/wine-bottle.png" alt="logo ouvre bouteille"><a href="login">Se connecter</a></li>
                         <?php endif ?>
                     </ul>
                 </nav>
