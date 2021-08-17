@@ -7,7 +7,12 @@ require "templates/header.php"
             <img src="assets/img/logo-blanc.png" alt="logo My cave">
             <h2>Vos vins d'exception</h2>
         </div>
-        <video id="myvideo" muted loop poster="assets/img/poster.jpg" autoplay=true src="assets/video/wine.mp4" width="100%"></video>
+        <video id="myvideo" muted autoplay=true loop width="600" poster="assets/img/poster.jpg">
+            <source src="assets/video/wine.mp4" type="video/mp4">
+            <source src="assets/video/wine.ogv" type="video/ogv">
+            <source src="assets/video/wine.webm" type="video/webm">
+            Veuillez mettre à jour votre navigateur.
+        </video>
     </header>
     <section class="introduction">
         <div class="introduction-content">
