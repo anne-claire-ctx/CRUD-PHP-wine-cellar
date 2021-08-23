@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Felipa&display=swap');
 :root {
   --black: #000;
   --red: #650e10;
@@ -16,12 +16,12 @@ body {
 /* MENU============== */
 .burger-icon {
   position: fixed;
-  width: 3rem;
-  height: 2.4rem;
+  width: 2rem;
+  height: 1.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  top: 8%;
+  top: 2%;
   right: 6%;
   z-index: 2000;
   cursor: pointer;
@@ -31,7 +31,7 @@ body {
 .burger-icon span {
   background-color: white;
   width: 100%;
-  height: 5px;
+  height: 3px;
   border-radius: 20px;
 }
 
@@ -45,7 +45,6 @@ body {
   transform: translateX(0);
   right: 0;
   display: flex;
-  align-items: center;
   justify-content: space-around;
   z-index: 1000;
   transition: 0.6s;
@@ -98,6 +97,9 @@ body {
 .menu nav ul a {
   color: white;
 }
+.menu nav ul a:hover {
+  border-bottom: 1px solid white;
+}
 
 .display-none {
   transform: translateX(-100%);
@@ -131,37 +133,67 @@ body {
   .menu nav {
     padding-top: 4rem;
   }
+
 }
 
 /* HEADER */
 
 video {
-  display: block;
+  display: none;
   margin: 0 auto;
 }
 
 header {
+  position: relative;
   border-bottom: 8px solid var(--black);
-}
-.header-title img {
-  position: absolute;
-  top: 6%;
-  left: 5%;
-  z-index: 222;
+  height: 100vh;
+  background-image: url(../img/red.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.header-title h2 {
+.header-title img {
   position: absolute;
-  font-family: "Parisienne", cursive;
-  top: 65%;
-  right: 8%;
-  font-size: 3.2em;
+  top: 2%;
+  left: 4%;
   z-index: 222;
+  width: 38%;
 }
 
 /* INTRODUCTION */
 
 .introduction {
+  height: 100vh;
+  background-image: url(../img/vertical-grapes.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.introduction-right img,
+.introduction-left img {
+  height: 3.5rem;
+  z-index: 2;
+  margin: 10px;
+}
+
+.introduction-right,
+.introduction-left {
+  width: 75%;
+  margin-left: 19px;
+  font-size: 1.5em;
+}
+
+.introduction-left {
+  margin-bottom: 14.3rem;
+}
+
+.introduction-img {
+  display: none;
+}
+
+/* .introduction {
   display: flex;
   justify-content: space-between;
   border-top: 8px solid rgba(4, 9, 12, 1);
@@ -210,13 +242,94 @@ header {
 
 .introduction-img img {
   height: 923px;
-}
+} */
 
 /* SWIPER */
 
+.swiper-img-left img {
+  display: none;
+}
+
 .swiper {
+  background-image: url(../img/weeds.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 2.5rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--white) !important;
+}
+
+.swiper-pagination {
+  height: 125px;
+}
+
+.bottle {
+  text-align: center;
+}
+
+.swiper .bottle img {
+  margin: 25px;
+  height: 330px;
+}
+
+.bottle-info {
+  text-align: center;
+}
+
+.bottle-name {
+  font-size: 1.8em;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.bottle-location {
+  color: rgb(129, 52, 52);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.bottle-location-white {
+  color: #E4CC85;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.bottle-year {
+  color: white;
+  font-size: 1.4em;
+}
+
+.bottle-grapes {
+  color: rgb(129, 52, 52);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.bottle-grapes-white {
+  color: #E4CC85;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.bottle-description {
+  display: none;
+  /* color: white;
+  font-size: 1.4em;
+  margin-top: 1.5em;
+  margin-right: 1.3em; */
+} 
+
+/* .swiper {
   display: flex;
   align-items: center;
+}
+
+.swiper-img-left img {
+  width: 923px;
+  z-index: 1;
 }
 
 .swiper-content {
@@ -267,33 +380,29 @@ header {
   font-size: 1.4em;
   margin-top: 1.5em;
   margin-right: 1.3em;
-}
+} */
 
 /* FOOTER */
 
 footer {
   background-color: rgb(0, 0, 0);
-  padding-top: 3rem;
+  padding-top: 5rem;
   font-size: 1.2em;
 }
 
 .footer-container {
-  width: 95%;
-  margin: auto;
+  /* width: 95%;
+  margin: auto; */
   color: grey;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  line-height: 1.2em;
 }
 
 .footer-left,
 .footer-right {
-  width: 30%;
-}
-
-.footer-right {
-  text-align: end;
+  margin: 15px;
+  text-align: center;
 }
 
 .footer-left a {
@@ -303,4 +412,8 @@ footer {
 
 .footer-left a:hover {
   border-bottom: 1px solid gray;
+}
+
+.footer-left p, .footer-right p {
+  margin: 7px;
 }

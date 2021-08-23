@@ -5,7 +5,6 @@ require "templates/header.php"
     <header class="header">
         <div class="header-title">
             <img src="assets/img/logo-blanc.png" alt="logo My cave">
-            <h2>Vos vins d'exception</h2>
         </div>
         <video id="myvideo" muted autoplay=true loop width="90%" poster="assets/img/poster.jpg">
             <source src="assets/video/wine.mp4" type="video/mp4">
@@ -18,11 +17,11 @@ require "templates/header.php"
         <div class="introduction-content">
             <div class="introduction-left">
                 <img src="assets/img/worldwide.png" alt="logo planete">
-                <p>Depuis 1984, MyCAVE sélectionne les meilleurs vins à travers le monde pour vous les faire découvrir</p>
+                <p>MyCAVE sélectionne, depuis 1984, les meilleurs vins à travers le monde pour vous les faire découvrir</p>
             </div>
             <div class="introduction-right">
                 <p>Consultez et construisez votre cave avec l'aide de nos experts</p>
-                <img src="assets/img/wine-cooler.png" alt="logo cave a vin">
+                <img src="assets/img/wine-barrel.png" alt="logo cave a vin">
             </div>
         </div>
         <div class="introduction-img">
@@ -56,9 +55,9 @@ require "templates/header.php"
                         </div>
                         <div class="bottle-info">
                             <p class="bottle-name">BODEGA LURTON</p>
-                            <p class="bottle-location">Mendoza, Argentina</p>
+                            <p class="bottle-location-white">Mendoza, Argentina</p>
                             <p class="bottle-year">2011</p>
-                            <p class="bottle-grapes">Pinot Gris</p>
+                            <p class="bottle-grapes-white">Pinot Gris</p>
                             <p class="bottle-description">De solides notes de cassis mêlées à une légère touche d'agrumes font de ce
                                 un vin facile à boire pour des palais variés. Un nez charmeur et typé, digne d'un terroir exceptionnel.
                                 terroir exceptionnel. Un vin blanc moderne et très savoureux.</p>
