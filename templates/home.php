@@ -17,7 +17,7 @@ require "templates/header.php"
         <div class="introduction-content">
             <div class="introduction-left">
                 <img src="assets/img/worldwide.png" alt="logo planete">
-                <p>MyCAVE sélectionne, depuis 1984, les meilleurs vins à travers le monde pour vous les faire découvrir</p>
+                <p>MyCAVE sélectionne les meilleurs vins à travers le monde pour vous les faire découvrir</p>
             </div>
             <div class="introduction-right">
                 <p>Consultez et construisez votre cave avec l'aide de nos experts</p>

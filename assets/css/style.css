@@ -161,6 +161,12 @@ header {
   width: 38%;
 }
 
+@media (min-width: 375px) {
+  .header-title img {
+    width: 35%;
+  }
+}
+
 /* INTRODUCTION */
 
 .introduction {
@@ -178,21 +184,35 @@ header {
   margin: 10px;
 }
 
+
 .introduction-right,
 .introduction-left {
-  width: 75%;
-  margin-left: 19px;
+  width: 80%;
   font-size: 1.5em;
+  display: flex;
+  align-items: center;
 }
 
 .introduction-left {
-  margin-bottom: 14.3rem;
+  margin-top: 3rem;
+}
+
+.introduction-right {
+  margin-top: 10.3rem;
+  text-align: end;
+  margin-left: 3rem;
 }
 
 .introduction-img {
   display: none;
 }
 
+@media (min-width:375px) {
+  .introduction-right {
+    margin-left: 5rem;
+    margin-top: 13.3rem;
+  }
+}
 /* .introduction {
   display: flex;
   justify-content: space-between;
@@ -256,6 +276,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 2.5rem;
+  padding-top: 5rem;
 }
 
 .swiper-pagination-bullet {
