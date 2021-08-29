@@ -1,5 +1,5 @@
 <?php
-require "templates/header.php"
+require_once __DIR__ . '/header.php';
 ?>
 <main>
     <header class="header">
@@ -85,4 +85,7 @@ require "templates/header.php"
     </section>
 </main>
 
-<?php require "templates/footer.php" ?>
+<?php
+// on appelle le footer
+require_once __DIR__ . '/footer.php';
+?>

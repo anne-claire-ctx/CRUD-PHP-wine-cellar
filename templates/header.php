@@ -27,10 +27,10 @@
                 <nav>
                     <ul>
                         <li class="nav-item"><img src="assets/img/wine.png" alt="logo verre de vin"><a href="home">Accueil</a></li>
-                        <li class="nav-item"><img src="assets/img/wine-cooler.png" alt="logo cave a vin"><a href="ourwines">Nos vins</a></li>
+                        <li class="nav-item"><img src="assets/img/wine-cooler.png" alt="logo cave a vin"><a href="dashboard">Nos vins</a></li>
                         <?php if (!empty($_SESSION['role'])) : ?>
-                            <li class="nav-item"><a href="dashboard">Dashboard</a></li>
-                            <li class="nav-item"><a href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            <li class="nav-item"><a href="mywines">Mes Vins</a></li>
+                            <li class="nav-item"><a href="logout">Se déconnecter</a></li>
                         <?php else : ?>
                             <li class="nav-item"><img src="assets/img/wine-bottle.png" alt="logo ouvre bouteille"><a href="login">Se connecter</a></li>
                         <?php endif ?>

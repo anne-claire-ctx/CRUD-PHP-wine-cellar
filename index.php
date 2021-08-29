@@ -4,17 +4,20 @@
         if($url === '' || $url === 'home'){
             require 'templates/home.php';
         }
-        elseif($url === 'ourwines'){
-            require 'src/templates/ourwines.php';
+        elseif($url === 'dashboard'){
+            require 'templates/dashboard.php';
         }
-        elseif($url === 'bottleDetail'){
-            require 'src/templates/bottleDetail.php';
+        elseif($url === 'product'){
+            require 'templates/product.php';
         }
         elseif($url === 'contact'){
             require 'src/templates/contact.php';
         }
         elseif($url === 'login'){
-            require 'src/templates/login.php';
+            require 'templates/login.php';
+        }
+        elseif($url === 'signin'){
+            require 'templates/signin.php';
         }
         elseif($url === 'loginform'){
             require 'src/form_handlers/loginForm.php';
@@ -40,8 +43,8 @@
         elseif($url === 'logout'){
             require 'src/form_handlers/logout.php';
         }
-        elseif($url === 'addBottle'){
-            require 'src/templates/addBottle.php';
+        elseif($url === 'addwine'){
+            require 'templates/addwine.php';
         }
         elseif($url === 'addBottleForm'){
             require 'src/form_handlers/addBottleForm.php';
@@ -52,12 +55,12 @@
         elseif($url === 'deleteBottleForm'){
             require 'src/form_handlers/deleteBottleForm.php';
         }
-        elseif($url === 'editBottle'){
-            require 'src/templates/editBottle.php';
+        elseif($url === 'update'){
+            require 'templates/update.php';
         }
         elseif($url === 'editBottleForm'){
             require 'src/form_handlers/editBottleForm.php';
         }
        else{
-            require 'src/templates/404.php';
+            require 'templates/my404.php';
         }
