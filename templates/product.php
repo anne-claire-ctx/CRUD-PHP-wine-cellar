@@ -53,7 +53,7 @@ $wineId = select_wine_by_id($_GET['id']);
                 // on affiche les options de modification dans le cas ou l'utilisateur est connecté
                 if (isset($_SESSION['pseudo']) && $user['role'] == 1) { ?>
                     <a href="update?id=<?= $wineId['id'] ?>" class="btn">Modifier ce vin</a>
-                    <a href="data/delete?id=<?= $wineId['id'] ?>" class="btn">Supprimer ce vin</a>
+                    <a href="deleteWine?id=<?= $wineId['id'] ?>" class="btn">Supprimer ce vin</a>
                     <a href="dashboard" class="btn">Retour à la liste des vins</a>
                 <?php
                 } else { ?>

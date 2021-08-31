@@ -21,7 +21,7 @@ require_once __DIR__ . '/header.php';
     <div class="container-fluid">
         <div class="row pt-4">
             <!-- Formulaire -->
-            <form id="form" action="/" method="post" class="col-md-6">
+            <form id="form" action="signupUserForm" method="post" class="col-md-6">
                 <h1 class="text-uppercase">Créer un compte</h1>
 
                 <?php

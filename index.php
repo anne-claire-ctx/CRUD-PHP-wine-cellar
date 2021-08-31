@@ -1,66 +1,57 @@
-<?php 
-        $url=$_GET['url'] ?? '';
+<?php
+$url = $_GET['url'] ?? '';
 
-        if($url === '' || $url === 'home'){
-            require 'templates/home.php';
-        }
-        elseif($url === 'dashboard'){
-            require 'templates/dashboard.php';
-        }
-        elseif($url === 'product'){
-            require 'templates/product.php';
-        }
-        elseif($url === 'contact'){
-            require 'src/templates/contact.php';
-        }
-        elseif($url === 'login'){
-            require 'templates/login.php';
-        }
-        elseif($url === 'signin'){
-            require 'templates/signin.php';
-        }
-        elseif($url === 'loginform'){
-            require 'src/form_handlers/loginForm.php';
-        }
-        elseif($url === 'dashboard'){
-            require 'src/templates/dashboard.php';
-        }
-        elseif($url === 'dashboardSearch'){
-            require 'src/form_handlers/dashboardSearch.php';
-        }
-        elseif($url === 'pwdChange'){
-            require 'src/form_handlers/pwdChangeForm.php';
-        }
-        elseif($url === 'addUser'){
-            require 'src/templates/addUser.php';
-        }
-        elseif($url === 'addUserForm'){
-            require 'src/form_handlers/addUserForm.php';
-        }
-        elseif($url === 'accessDenied'){
-            require 'src/templates/accessDenied.php';
-        }
-        elseif($url === 'logout'){
-            require 'src/form_handlers/logout.php';
-        }
-        elseif($url === 'addwine'){
-            require 'templates/addwine.php';
-        }
-        elseif($url === 'addBottleForm'){
-            require 'src/form_handlers/addBottleForm.php';
-        }
-        elseif($url === 'deleteBottle'){
-            require 'src/templates/deleteBottle.php';
-        }
-        elseif($url === 'deleteBottleForm'){
-            require 'src/form_handlers/deleteBottleForm.php';
-        }
-        elseif($url === 'update'){
-            require 'templates/update.php';
-        }
-        elseif($url === 'editBottleForm'){
-            require 'src/form_handlers/editBottleForm.php';
-        }
-       else{
-            require 'templates/my404.php';
-        }
+if ($url === '' || $url === 'home') {
+    require 'templates/home.php';
+
+} elseif ($url === 'dashboard') {
+    require 'templates/dashboard.php';
+
+} elseif ($url === 'product') {
+    require 'templates/product.php';
+
+} elseif ($url === 'login') {
+    require 'templates/login.php';
+
+} elseif ($url === 'signup') {
+    require 'templates/signup.php';
+
+} elseif ($url === 'loginform') {
+    require 'src/form_handlers/loginForm.php';
+
+} elseif ($url === 'dashboard') {
+    require 'src/templates/dashboard.php';
+
+} elseif ($url === 'dashboardSearch') {
+    require 'src/form_handlers/dashboardSearch.php';
+
+} elseif ($url === 'pwdChange') {
+    require 'src/form_handlers/pwdChangeForm.php';
+
+} elseif ($url === 'addUser') {
+    require 'src/templates/addUser.php';
+
+} elseif ($url === 'addUserForm') {
+    require 'src/form_handlers/addUserForm.php';
+
+} elseif ($url === 'logout') {
+    require 'form_management/logout.php';
+
+} elseif ($url === 'addwine') {
+    require 'templates/addwine.php';
+
+} elseif ($url === 'addWineForm.php') {
+    require 'form_management/addWineForm.php';
+
+} elseif ($url === 'deleteWine') {
+    require 'form_management/deleteWine.php';
+
+} elseif ($url === 'update') {
+    require 'templates/update.php';
+
+} elseif ($url === 'updateWineForm') {
+    require 'form_management/updateWineForm.php';
+
+} else {
+    require 'templates/my404.php';
+}

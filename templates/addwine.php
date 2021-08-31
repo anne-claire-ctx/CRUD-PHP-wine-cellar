@@ -41,7 +41,7 @@ require_once dirname(__DIR__) . '/datamanager/user-manager.php';
                 <?php endif ?>
 
                 <!-- Formulaire -->
-                <form action="/" method="post" enctype="multipart/form-data">
+                <form action="addWineForm" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="name">Nom du vin :</label><input type="text" class="form-control" id="name" name="name" placeholder="Indiquez le nom du vin" required>
                     </div>
