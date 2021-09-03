@@ -1,6 +1,4 @@
 <?php
-// on débute la session
-session_start();
 
 // variable pour la nav active
 $nav = "addwine";
@@ -9,17 +7,15 @@ $nav = "addwine";
 require_once __DIR__ . '/header.php';
 
 // on appelle notre fonction pour récupérer un utilisateur
-require_once dirname(__DIR__) . '/datamanager/user-manager.php';
+// require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 // $user = select_user($_SESSION['pseudo']);
 
-// on vérifie que l'utilisateur est connecté pour accéder à cette page, sinon il est redirigé vers login.php
-// if (!isset($_SESSION['pseudo'])) {
-//     header("Location: login?msg=Vous devez être connecté pour accéder à cette page");
-// } elseif (isset($_SESSION['pseudo']) && $user['role'] == 0) {
-//     header("Location: dashboard?msg=Vous devez être administrateur pour accéder à cette page");
-// } else {
-//     require_once __DIR__ . '/templates/navbaradmin.php';
-// }
+//on vérifie que l'utilisateur est connecté pour accéder à cette page, sinon il est redirigé vers login.php
+if (!isset($_SESSION['pseudo'])) {
+    header("Location: http://localhost/Nouveau-projet/login?msg=Vous devez être connecté pour accéder à cette page");
+} elseif (isset($_SESSION['pseudo']) && $_SESSION['role'] == 0) {
+    header("Location: http://localhost/Nouveau-projet/dashboard?msg=Vous devez être administrateur pour accéder à cette page");
+}
 
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 // on appelle notre fichier pour récupérer les infos dans la base de données (fonctions avec requêtes SQL)
-require_once dirname(__DIR__) . '/datamanager/wine-manager.php';
+require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 
 // on appelle notre fichier pour valider les données (fonction pour nettoyer les données reçues dans le formulaire - espaces et balise html)
 require_once __DIR__ . '/validation.php';
@@ -18,7 +18,7 @@ $set_request = FALSE;
 if (isset($fields_required)) :
     // on vérifie que les champs nécessaires sont remplis
     if (in_array('', $fields_required)) :
-        header("Location: ../addwine?msg=Merci de remplir tous les champs");
+        header("Location: http://localhost/Nouveau-projet/addwine?msg=Merci de remplir tous les champs");
     else :
         // on nettoie les données
         $name = html(strtoupper($_POST['name']));
@@ -74,7 +74,7 @@ endif;
 
 // si on a un message d'erreur, on l'affiche. Sinon, on lance la requete
 if (isset($msg_error)) {
-    header("Location: ../addwine?msg=$msg_error");
+    header("Location: http://localhost/Nouveau-projet/addwine?msg=$msg_error");
 } elseif ($set_request) {
     $datas = array(
         'name' => $name,
@@ -86,7 +86,7 @@ if (isset($msg_error)) {
         'grape' => $grape,
     );
     $result = addwine($datas);
-    header("Location: ../dashboard?msg=Le vin a bien été ajouté à la base de données");
+    header("Location: http://localhost/Nouveau-projet/dashboard?msg=Le vin a bien été ajouté à la base de données");
 } else {
-    header("Location: ../dashboard?msg=Une erreur s'est produite");
+    header("Location: http://localhost/Nouveau-projet/dashboard?msg=Une erreur s'est produite");
 }

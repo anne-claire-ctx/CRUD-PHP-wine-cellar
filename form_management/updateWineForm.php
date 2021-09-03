@@ -1,6 +1,6 @@
 <?php
 // on appelle notre fichier pour récupérer les infos dans la base de données
-require_once dirname (__DIR__) . '/datamanager/wine-manager.php';
+require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 
 // on appelle notre fichier pour valider les données
 require_once __DIR__ . 'validation.php';
@@ -21,7 +21,7 @@ $set_request = FALSE;
 if (isset($fields_required)) :
     // on vérifie que les champs nécessaires sont remplis
     if (in_array('', $fields_required)) :
-        header("location: update.php?id=$id&msg=Merci de remplir tous les champs");
+        header("location: http://localhost/Nouveau-projet/update?id=$id&msg=Merci de remplir tous les champs");
     else :
         // on nettoie les données
         $name = html(strtoupper($_POST['name']));
@@ -79,7 +79,7 @@ endif;
 
 // si on a un message d'erreur, on l'affiche. Sinon, on lance la requete
 if (isset($msg_error)) {
-    header("Location: ../update.php?id=$id&msg=$msg_error");
+    header("Location: http://localhost/Nouveau-projet/update?id=$id&msg=$msg_error");
 } elseif ($set_request) {
     $data = array(
         'id' => $id,
@@ -92,7 +92,7 @@ if (isset($msg_error)) {
         'grape' => $grape,
     );
     $result = update_wine_by_id($data);
-    header("Location: ../product.php?id=$id&msg=Le vin a bien été modifié");
+    header("Location: http://localhost/Nouveau-projet/product?id=$id&msg=Le vin a bien été modifié");
 } else {
-    header("Location: ../product.php?id=$id&msg=Une erreur s'est produite");
+    header("Location: http://localhost/Nouveau-projet/product?id=$id&msg=Une erreur s'est produite");
 }

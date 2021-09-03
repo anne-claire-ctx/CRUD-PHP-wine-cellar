@@ -1,5 +1,4 @@
 <?php
-$nav = "signin";
 // on appelle notre header et notre navbar
 require_once __DIR__ . '/header.php';
 // require_once __DIR__ . '/templates/navbar.php';
@@ -37,9 +36,6 @@ require_once __DIR__ . '/header.php';
 
                 <div class="mb-4">
                     <input type="text" name="pseudo" class="form-control" placeholder="Entrer votre pseudo :" required>
-                </div>
-                <div class="mb-4">
-                    <input type="email" name="email" class="form-control" placeholder="Entrer votre email :" required>
                 </div>
                 <div class="mb-4">
                     <input type="password" name="password" class="form-control" placeholder="Mot de passe :" required>

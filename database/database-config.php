@@ -5,9 +5,9 @@
 function connexion(&$conn)
 {
     $servername = 'localhost';
-    $dbname = 'mycave';
-    $username = 'root';
-    $dbpwd = '';
+    $dbname = 'id16434975_mycave';
+    $username = 'id16434975_accx';
+    $dbpwd = '%poHJ\31&ph!X^=1';
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $dbpwd);

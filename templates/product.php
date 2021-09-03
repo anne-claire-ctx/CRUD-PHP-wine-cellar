@@ -1,14 +1,8 @@
 <?php
-// on débute la session
-session_start();
-
-// variable pour la nav active
-$nav = "product";
 
 // On appelle notre header ainsi que nos fonctions pour aller chercher les infos dans la base
 require_once __DIR__ . '/header.php';
-require_once dirname(__DIR__) . '/datamanager/wine-manager.php';
-require_once dirname(__DIR__) . '/datamanager/user-manager.php';
+require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 
 // on appelle notre fonction pour récupérer un utilisateur
 if(isset($_SESSION['pseudo'])){
@@ -20,7 +14,7 @@ if(isset($_SESSION['pseudo'])){
 // if (!isset($_SESSION['pseudo'])) {
 //     require_once __DIR__ . '/templates/navbar.php';
 // } elseif (!isset($_GET['id'])) {
-//     header("location: dashboard?msg=Veuillez sélectionner un produit");
+//     header("location: http://localhost/Nouveau-projet/dashboard?msg=Veuillez sélectionner un produit");
 // } elseif (isset($_SESSION['pseudo']) && $user['role'] == 0) {
 //     require_once __DIR__ . '/templates/navbaruser.php';
 // } else {
@@ -51,12 +45,15 @@ $wineId = select_wine_by_id($_GET['id']);
 
                 <?php
                 // on affiche les options de modification dans le cas ou l'utilisateur est connecté
-                if (isset($_SESSION['pseudo']) && $user['role'] == 1) { ?>
+                if (!empty($_SESSION) && ($_SESSION['role'] == 1)) { ?>
+                    <a href="mywines?id=<?=$wineId['id'] ?>" class="btn"> Ajouter ce vin à ma cave</a>
                     <a href="update?id=<?= $wineId['id'] ?>" class="btn">Modifier ce vin</a>
                     <a href="deleteWine?id=<?= $wineId['id'] ?>" class="btn">Supprimer ce vin</a>
                     <a href="dashboard" class="btn">Retour à la liste des vins</a>
-                <?php
-                } else { ?>
+                <?php } elseif (!empty($_SESSION) && ($_SESSION['role'] == 0)) { ?>
+                    <a href="mywines?id=<?=$wineId['id'] ?>" class="btn"> Ajouter ce vin à ma cave</a>
+                    <a href="dashboard" class="btn">Retour à la liste des vins</a>
+                <?php } else { ?>
                     <a href="dashboard" class="btn">Retour à la liste des vins</a>
                 <?php
                 } ?>

@@ -1,6 +1,78 @@
 <?php
 require_once dirname(__DIR__) . '/database/database.php';
 
+
+// USERS
+
+// fonction pour afficher tous les utilisateurs
+function select_all_users()
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("SELECT * FROM users");
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour vérifier les utilisateurs
+function select_user(string $pseudo)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("SELECT pseudo, password, role FROM users WHERE pseudo=:pseudo");
+        $query->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour créer un nouvel utilisateur
+function createUser(string $pseudo, string $password)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("INSERT INTO users(pseudo, password, register_date)
+    VALUES(:pseudo, :password, CURDATE())");
+        $query->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+        $query->bindValue(':password', $password, PDO::PARAM_STR);
+        return $query->execute();
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour mettre à jour le mot de passe
+function update_pwd(string $pseudo, string $pwd){
+    $dbco;
+
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("UPDATE users 
+        SET password=:password WHERE pseudo=:pseudo"); 
+        $query->bindValue(':pseudo',$pseudo, PDO::PARAM_STR);
+        $query->bindValue(':password',$pwd, PDO::PARAM_STR);
+        return $query->execute();
+    } catch(PDOException $e){
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+
+// WINES
+
 // fonction pour afficher tous les vins
 function select_all_wines()
 {
@@ -95,4 +167,24 @@ function addwine(array $datas)
 } catch(PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }
+}
+
+// fonction pour ajouter un vin dans ma cave
+
+function addwine_by_user($users_id, $wines_id)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("
+        INSERT INTO mywines(users_id, wines_id) VALUES(:users_id, :wines_id);
+        ");
+        $query->bindValue(':users_id, $users_id, PDO::PARAM_INT');
+        $query->bindValue(':wines_id, $wines_id, PDO::PARAM_INT');
+
+        return $query->execute();
+    } catch(PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
 }

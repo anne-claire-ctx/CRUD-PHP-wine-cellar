@@ -1,6 +1,5 @@
 <?php
 $nav = "login";
-session_start();
 
 // on appelle notre header et notre navbar
 require_once __DIR__ . '/header.php';
@@ -23,7 +22,7 @@ require_once __DIR__ . '/header.php';
     <div class="container-fluid">
         <div class="row pt-4">
             <!-- Formulaire -->
-            <form id="form" action="/" method="post" class="col-md-6">
+            <form id="form" action="loginForm" method="post" class="col-md-6">
                 <h1 class="text-uppercase">Se connecter</h1>
 
                 <?php
@@ -45,7 +44,7 @@ require_once __DIR__ . '/header.php';
                 </div>
                 <div class="mb-4">
                     <input type="submit" value="Se connecter" class="btn me-2 login">
-                    <a href="signin" class="btn btn-secondary sign">Pas encore de compte ? Pour en créer un c'est par ici</a>
+                    <a href="signup" class="btn btn-secondary sign">Pas encore de compte ? Pour en créer un c'est par ici</a>
                 </div>
             </form>
         </div>

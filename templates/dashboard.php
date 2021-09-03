@@ -1,13 +1,10 @@
 <?php
-// on débute la session
-session_start();
 
 // variable pour la nav active
 $nav = "dashboard";
 
 // On appelle notre header ainsi que nos fonctions pour aller chercher les infos dans la base
-require_once dirname(__DIR__) . '/datamanager/wine-manager.php';
-require_once dirname(__DIR__) . '/datamanager/user-manager.php';
+require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 require_once __DIR__ . '/header.php';
 
 // on appelle notre fonction pour récupérer un utilisateur

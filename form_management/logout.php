@@ -3,4 +3,4 @@
 session_start();
 session_destroy();
 
-header("location: ../home");
+header("location: http://localhost/Nouveau-projet/home");

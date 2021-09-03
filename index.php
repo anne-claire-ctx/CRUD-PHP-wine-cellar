@@ -13,26 +13,17 @@ if ($url === '' || $url === 'home') {
 } elseif ($url === 'login') {
     require 'templates/login.php';
 
+} elseif ($url === 'loginForm') {
+    require 'form_management/loginForm.php';
+
 } elseif ($url === 'signup') {
     require 'templates/signup.php';
 
-} elseif ($url === 'loginform') {
-    require 'src/form_handlers/loginForm.php';
-
-} elseif ($url === 'dashboard') {
-    require 'src/templates/dashboard.php';
-
-} elseif ($url === 'dashboardSearch') {
-    require 'src/form_handlers/dashboardSearch.php';
+} elseif ($url === 'signupUserForm') {
+    require 'form_management/signupUserForm.php';
 
 } elseif ($url === 'pwdChange') {
-    require 'src/form_handlers/pwdChangeForm.php';
-
-} elseif ($url === 'addUser') {
-    require 'src/templates/addUser.php';
-
-} elseif ($url === 'addUserForm') {
-    require 'src/form_handlers/addUserForm.php';
+    require 'form_management/pwdChangeForm.php';
 
 } elseif ($url === 'logout') {
     require 'form_management/logout.php';
@@ -40,7 +31,7 @@ if ($url === '' || $url === 'home') {
 } elseif ($url === 'addwine') {
     require 'templates/addwine.php';
 
-} elseif ($url === 'addWineForm.php') {
+} elseif ($url === 'addWineForm') {
     require 'form_management/addWineForm.php';
 
 } elseif ($url === 'deleteWine') {
