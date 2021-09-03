@@ -3,19 +3,8 @@
 // on appelle notre header
 require_once __DIR__ . '/header.php';
 
-// on appelle notre fonction pour récupérer un utilisateur
+// on appelle notre fonction pour récupérer un vin
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
-// $user = select_user($_SESSION['pseudo']);
-
-
-// on vérifie que l'utilisateur est connecté pour accéder à cette page, sinon il est redirigé vers login.php
-// if (!isset($_SESSION['pseudo'])) {
-//     header("Location: http://localhost/Nouveau-projet/login?msg=Vous devez être connecté pour accéder à cette page");
-// } elseif (isset($_SESSION['pseudo']) && $user['role'] == 0) {
-//     header("Location: http://localhost/Nouveau-projet/dashboard?msg=Vous devez être administrateur pour accéder à cette page");
-// } else {
-//     require_once __DIR__ . '/templates/navbaradmin.php';
-// }
 
 // on récupère l'id du produit
 $id = intval($_GET['id']);
@@ -41,7 +30,7 @@ $wine = select_wine_by_id($id);
                 <?php endif ?>
 
                 <!-- formulaire -->
-                <form action="data/updateForm.php?id=<?= $id ?>" method="post" enctype="multipart/form-data"><!-- enctype pour gérer les $_FILES -->
+                <form action="updateWineForm?id=<?= $id ?>" method="post" enctype="multipart/form-data"><!-- enctype pour gérer les $_FILES -->
                     <div class="mb-3">
                         <label for="name">Modifier le nom du vin :</label><input type="text" class="form-control" id="name" name="name" value="<?php echo $wine['name']; ?>" required>
                     </div>

@@ -47,7 +47,7 @@ if (isset($fields_required)) :
                 }
                 // je vérifie que l'extension est bien une image
                 elseif (!in_array(strtolower(pathinfo($picture['name'], PATHINFO_EXTENSION)), $ext)) {
-                    $msg_error = "le fichier n'est pas une image";
+                    $msg_error = "le format de l'image n'est pas accepté";
                 }
                 // taille ok, extension ok
                 else {

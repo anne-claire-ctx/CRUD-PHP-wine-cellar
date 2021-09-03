@@ -3,10 +3,12 @@
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 
 // on appelle notre fichier pour valider les données
-require_once __DIR__ . 'validation.php';
+require_once __DIR__ . '/validation.php';
 
 // on récupère l'id du produit concerné
 $id = $_GET['id'];
+
+$wine = select_wine_by_id($id);
 
 // On re-spécifie qu'on est en UTF-8
 mb_internal_encoding("UTF-8");
@@ -31,45 +33,50 @@ if (isset($fields_required)) :
         $country = html(mb_ucfirst($_POST['country']));
         $grape = html(mb_ucfirst($_POST['grape']));
 
+        if (empty($_FILES['picture'])) :
+            $picture_name = $wine['bottle'];
+            $set_request = TRUE;
+        else :
         $picture = $_FILES['picture'];
         $ext = array('png', 'jpg', 'jpeg');
 
-        // on gère les erreurs pour le fichier image
-        if ($picture['error'] > 0 && $picture['error'] < 3) :
-            $msg_error = "la taille du fichier est trop grande";
-        elseif ($picture['error'] == 3 || $picture['error'] > 4) :
-            $msg_error = "problème pendant le chargement du fichier";
-        else :
-            if ($picture['error'] == 4) :
-                $picture_name = 'generic.png';
-                $set_request = TRUE;
+            // on gère les erreurs pour le fichier image
+            if ($picture['error'] > 0 && $picture['error'] < 3) :
+                $msg_error = "la taille du fichier est trop grande";
+            elseif ($picture['error'] == 3 || $picture['error'] > 4) :
+                $msg_error = "problème pendant le chargement du fichier";
             else :
-                // je revérifie la taille de l'image côté serveur
-                if ($picture['size'] > 4194304) {
-                    $msg_error = "la taille du fichier est trop grande"; // 4Mo => 1024*1024*4
-                }
-                // je vérifie que l'extension est bien une image
-                elseif (!in_array(strtolower(pathinfo($picture['name'], PATHINFO_EXTENSION)), $ext)) {
-                    $msg_error = "le fichier n'est pas une image";
-                }
-                // taille ok, extension ok
-                else {
-
-                    // je donne un nouveau nom à l'image pour éviter les doublons
-                    $picture_name = uniqid() . '_' . $picture['name'];
-                    $img_folder = dirname(dirname(__DIR__)) . '/mycavefinal/assets/img/';
-                    @mkdir($img_folder, 0777);
-                    $dir = $img_folder . $picture_name;
-
-                    // on déplace le fichier dans le bon endroit
-                    $move_file = @move_uploaded_file($picture['tmp_name'], $dir);
-
-                    if (!$move_file) {
-                        $msg_error = "problème pendant le chargement du fichier";
-                    } else {
-                        $set_request = TRUE;
+                if ($picture['error'] == 4) :
+                    $picture_name = 'generic.png';
+                    $set_request = TRUE;
+                else :
+                    // je revérifie la taille de l'image côté serveur
+                    if ($picture['size'] > 4194304) {
+                        $msg_error = "la taille du fichier est trop grande"; // 4Mo => 1024*1024*4
                     }
-                }
+                    // je vérifie que l'extension est bien une image
+                    elseif (!in_array(strtolower(pathinfo($picture['name'], PATHINFO_EXTENSION)), $ext)) {
+                        $msg_error = "le fichier n'est pas une image";
+                    }
+                    // taille ok, extension ok
+                    else {
+
+                        // je donne un nouveau nom à l'image pour éviter les doublons
+                        $picture_name = uniqid() . '_' . $picture['name'];
+                        $img_folder = dirname(dirname(__DIR__)) . '/mycavefinal/assets/img/';
+                        @mkdir($img_folder, 0777);
+                        $dir = $img_folder . $picture_name;
+
+                        // on déplace le fichier dans le bon endroit
+                        $move_file = @move_uploaded_file($picture['tmp_name'], $dir);
+
+                        if (!$move_file) {
+                            $msg_error = "problème pendant le chargement du fichier";
+                        } else {
+                            $set_request = TRUE;
+                        }
+                    }
+                endif;
             endif;
         endif;
     endif;

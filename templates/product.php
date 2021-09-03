@@ -4,23 +4,6 @@
 require_once __DIR__ . '/header.php';
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 
-// on appelle notre fonction pour récupérer un utilisateur
-if(isset($_SESSION['pseudo'])){
-    $user = select_user($_SESSION['pseudo']);
-}
-
-
-// Si l'utilisateur est connecté, on appelle la navbar correspondante
-// if (!isset($_SESSION['pseudo'])) {
-//     require_once __DIR__ . '/templates/navbar.php';
-// } elseif (!isset($_GET['id'])) {
-//     header("location: http://localhost/Nouveau-projet/dashboard?msg=Veuillez sélectionner un produit");
-// } elseif (isset($_SESSION['pseudo']) && $user['role'] == 0) {
-//     require_once __DIR__ . '/templates/navbaruser.php';
-// } else {
-//     require_once __DIR__ . '/templates/navbaradmin.php';
-// }
-
 // on appelle la fonction pour afficher les informations d'un vin
 $wineId = select_wine_by_id($_GET['id']);
 
