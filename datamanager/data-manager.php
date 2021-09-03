@@ -26,7 +26,7 @@ function select_user(string $pseudo)
     connexion($dbco);
 
     try {
-        $query = $dbco->prepare("SELECT pseudo, password, role FROM users WHERE pseudo=:pseudo");
+        $query = $dbco->prepare("SELECT id, pseudo, password, role FROM users WHERE pseudo=:pseudo");
         $query->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -171,20 +171,38 @@ function addwine(array $datas)
 
 // fonction pour ajouter un vin dans ma cave
 
-function addwine_by_user($users_id, $wines_id)
+function addwine_by_user($userid, $id)
 {
     $dbco = NULL;
     connexion($dbco);
 
     try {
         $query = $dbco->prepare("
-        INSERT INTO mywines(users_id, wines_id) VALUES(:users_id, :wines_id);
-        ");
-        $query->bindValue(':users_id, $users_id, PDO::PARAM_INT');
-        $query->bindValue(':wines_id, $wines_id, PDO::PARAM_INT');
-
+        INSERT INTO mywines(users_id, wines_id)
+        VALUES(:users_id, :wines_id)");
+        $query->bindValue(':users_id', $userid, PDO::PARAM_INT);
+        $query->bindValue(':wines_id', $id, PDO::PARAM_INT);
         return $query->execute();
     } catch(PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour afficher les vins par utilisateurs
+
+function select_wine_by_user($userid)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("
+        SELECT * FROM wines LEFT JOIN mywines ON mywines.wines_id = wines.id WHERE users_id=:users_id");
+        $query->bindValue(':users_id', $userid, PDO::PARAM_INT);
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    } catch(PDOException $e){
         echo "Erreur : " . $e->getMessage();
     }
 }

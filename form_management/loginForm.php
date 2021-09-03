@@ -15,6 +15,7 @@ if (isset($_POST['pseudo'], $_POST['password'])) {
             session_start();
             $_SESSION['pseudo'] = $pseudo;
             $_SESSION['role'] = $user[0]['role'];
+            $_SESSION['id'] = $user[0]['id'];
             header("location: http://localhost/Nouveau-projet/dashboard?msg=Bienvenue $pseudo !");
             } else {
             header("location: http://localhost/Nouveau-projet/login?msg=Identifiants incorrects");

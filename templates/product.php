@@ -51,7 +51,7 @@ $wineId = select_wine_by_id($_GET['id']);
                     <a href="deleteWine?id=<?= $wineId['id'] ?>" class="btn">Supprimer ce vin</a>
                     <a href="dashboard" class="btn">Retour à la liste des vins</a>
                 <?php } elseif (!empty($_SESSION) && ($_SESSION['role'] == 0)) { ?>
-                    <a href="mywines?id=<?=$wineId['id'] ?>" class="btn"> Ajouter ce vin à ma cave</a>
+                    <a href="addAWine?id=<?=$wineId['id'] ?>" class="btn"> Ajouter ce vin à ma cave</a>
                     <a href="dashboard" class="btn">Retour à la liste des vins</a>
                 <?php } else { ?>
                     <a href="dashboard" class="btn">Retour à la liste des vins</a>

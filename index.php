@@ -43,6 +43,12 @@ if ($url === '' || $url === 'home') {
 } elseif ($url === 'updateWineForm') {
     require 'form_management/updateWineForm.php';
 
+} elseif ($url === 'addAWine') {
+    require 'form_management/addAWine.php';
+
+} elseif ($url === 'mywines') {
+    require 'templates/mywines.php';
+
 } else {
     require 'templates/my404.php';
 }
