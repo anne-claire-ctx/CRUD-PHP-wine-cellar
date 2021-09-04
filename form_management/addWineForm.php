@@ -53,7 +53,7 @@ if (isset($fields_required)) :
                 else {
                     // je donne un nouveau nom à l'image pour éviter les doublons
                     $picture_name = uniqid() . '_' . $picture['name'];
-                    $img_folder = dirname(dirname(__DIR__)) . '/assets/img/';
+                    $img_folder = dirname(__DIR__) . '/assets/img/';
                     @mkdir($img_folder, 0777);
                     $dir = $img_folder . $picture_name;
 

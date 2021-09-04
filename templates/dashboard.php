@@ -8,14 +8,6 @@ require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 require_once dirname(__DIR__) . '/form_management/sortForm.php';
 require_once __DIR__ . '/header.php';
 
-// on appelle notre fonction pour récupérer un utilisateur
-// if(isset($_SESSION['pseudo'])){
-// $user = select_user($_SESSION['pseudo']);
-// }
-
-// on appelle la fonction pour afficher les vins
-// $wines = select_all_wines();
-
 ?>
 
 <!-- HTML -->

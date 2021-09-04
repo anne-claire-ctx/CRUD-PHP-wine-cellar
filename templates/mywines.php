@@ -7,6 +7,11 @@ $nav= "mywines";
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 require_once __DIR__ . '/header.php';
 
+//on vérifie que l'utilisateur est connecté pour accéder à cette page, sinon il est redirigé vers login.php
+if (!isset($_SESSION['pseudo'])) {
+    header("Location: http://localhost/Nouveau-projet/login?msg=Vous devez être connecté pour accéder à cette page");
+}
+
 $userid = $_SESSION['id'];
 $wines = select_wine_by_user($userid);
 $user = select_user($_SESSION['pseudo']);
