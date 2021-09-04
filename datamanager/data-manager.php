@@ -26,7 +26,7 @@ function select_user(string $pseudo)
     connexion($dbco);
 
     try {
-        $query = $dbco->prepare("SELECT id, pseudo, password, role FROM users WHERE pseudo=:pseudo");
+        $query = $dbco->prepare("SELECT id, pseudo, email, password, role, register_date FROM users WHERE pseudo=:pseudo");
         $query->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -37,15 +37,16 @@ function select_user(string $pseudo)
 }
 
 // fonction pour créer un nouvel utilisateur
-function createUser(string $pseudo, string $password)
+function createUser(string $pseudo, string $email, string $password)
 {
     $dbco = NULL;
     connexion($dbco);
 
     try {
-        $query = $dbco->prepare("INSERT INTO users(pseudo, password, register_date)
-    VALUES(:pseudo, :password, CURDATE())");
+        $query = $dbco->prepare("INSERT INTO users(pseudo, email, password, register_date)
+    VALUES(:pseudo, :email, :password, CURDATE())");
         $query->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+        $query->bindValue(':email', $email, PDO::PARAM_STR);
         $query->bindValue(':password', $password, PDO::PARAM_STR);
         return $query->execute();
     } catch (PDOException $e) {
@@ -69,6 +70,10 @@ function update_pwd(string $pseudo, string $pwd){
         echo "Erreur : " . $e->getMessage();
     }
 }
+
+// ************************************************************************* //
+// ************************************************************************* //
+// ************************************************************************* //
 
 
 // WINES
@@ -203,6 +208,118 @@ function select_wine_by_user($userid)
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     } catch(PDOException $e){
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour supprimer un vin des favoris
+
+function deletewine_by_user($userid, $id)
+{
+    $dbco = NULL;
+    connexion($dbco);
+    
+    try {
+        $query = $dbco->prepare("DELETE FROM mywines WHERE users_id =:users_id AND wines_id=:wines_id");
+        $query->bindValue(':users_id', $userid, PDO::PARAM_INT);
+        $query->bindValue(':wines_id', $id, PDO::PARAM_INT);
+        return $query->execute();
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour trier les vins par regions
+
+function order_by_region($sort)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        if ($sort=='region') {
+            $query = $dbco->prepare('SELECT * FROM wines ORDER BY region ASC');
+        }
+        $query->execute();
+          $result = $query->fetchAll(PDO::FETCH_ASSOC);
+          return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour trier les vins par pays
+
+function order_by_country($sort)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        if ($sort=='country') {
+            $query = $dbco->prepare('SELECT * FROM wines ORDER BY country ASC');
+        }
+        $query->execute();
+          $result = $query->fetchAll(PDO::FETCH_ASSOC);
+          return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour trier les vins par années
+
+function order_by_year($sort)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        if ($sort=='year') {
+            $query = $dbco->prepare('SELECT * FROM wines ORDER BY year ASC');
+        }
+        $query->execute();
+          $result = $query->fetchAll(PDO::FETCH_ASSOC);
+          return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour trier les vins par cépages
+
+function order_by_grape($sort)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        if ($sort=='grape') {
+            $query = $dbco->prepare('SELECT * FROM wines ORDER BY grape ASC');
+        }
+        $query->execute();
+          $result = $query->fetchAll(PDO::FETCH_ASSOC);
+          return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour trier les vins par noms
+
+function order_by_name($sort)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        if ($sort=='name') {
+            $query = $dbco->prepare('SELECT * FROM wines ORDER BY name ASC');
+        }
+        $query->execute();
+          $result = $query->fetchAll(PDO::FETCH_ASSOC);
+          return $result;
+    } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
     }
 }

@@ -33,10 +33,10 @@
                         <li class="nav-item"><img src="assets/img/grapes.png" alt="logo verre de vin"><a href="home" class="<?php if  ((!empty($nav)) && ($nav == 'home')) : ?> active<?php endif; ?>">Accueil</a></li>
                         <li class="nav-item"><img src="assets/img/winery.png" alt="logo cave a vin"><a href="dashboard" class="<?php if ((!empty($nav)) && ($nav == 'dashboard')) : ?> active<?php endif; ?>">Nos vins</a></li>
                         <?php if(!empty($_SESSION) && ($_SESSION['role'] == 0)) : ?>
-                            <li class="nav-item"><img src="assets/img/my-wines.png" alt="logo mes vins"><a href="mywines" class="<?php if ((!empty($nav)) && ($nav == 'mywines')) : ?> active<?php endif; ?>">Mes Vins</a></li>
+                            <li class="nav-item"><img src="assets/img/my-wines.png" alt="logo mes vins"><a href="mywines" class="<?php if ((!empty($nav)) && ($nav == 'mywines')) : ?> active<?php endif; ?>">Ma Cave à vin</a></li>
                             <li class="nav-item"><img src="assets/img/logout.png" alt="logo deconnexion"><a href="logout">Se déconnecter</a></li>
                         <?php elseif (!empty($_SESSION) && ($_SESSION['role'] == 1)) : ?>
-                            <li class="nav-item"><img src="assets/img/my-wines.png" alt="logo mes vins"><a href="mywines" class="<?php if ((!empty($nav)) && ($nav == 'mywines')) : ?> active<?php endif; ?>">Mes Vins</a></li>
+                            <li class="nav-item"><img src="assets/img/my-wines.png" alt="logo mes vins"><a href="mywines" class="<?php if ((!empty($nav)) && ($nav == 'mywines')) : ?> active<?php endif; ?>">Ma Cave à vin</a></li>
                             <li class="nav-item"><img src="assets/img/wine-menu.png" alt="logo menu vins"><a href="addwine" class="<?php if ((!empty($nav)) && ($nav == 'addwine')) : ?> active<?php endif; ?>">Ajouter un vin</a></li>
                             <li class="nav-item"><img src="assets/img/user-wine.png" alt="logo utilisateurs vins"><a href="usersManagement" class="<?php if ((!empty($nav)) && ($nav == 'users')) : ?> active<?php endif; ?>">Gérer les utilisateurs</a></li>
                             <li class="nav-item"><img src="assets/img/logout.png" alt="logo deconnexion"><a href="logout">Se déconnecter</a></li>

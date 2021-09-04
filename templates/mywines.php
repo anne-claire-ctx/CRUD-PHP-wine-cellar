@@ -9,12 +9,21 @@ require_once __DIR__ . '/header.php';
 
 $userid = $_SESSION['id'];
 $wines = select_wine_by_user($userid);
+$user = select_user($_SESSION['pseudo']);
 
 ?>
 
 <!-- HTML -->
 <section id="dashboard">
-    <h2>Mes vins</h2>
+    <h2>Ma Cave à vin</h2>
+
+    <div id="infocard">
+        <h3>Mes informations personnelles</h3>
+        <p>Pseudo : <?php echo $_SESSION['pseudo']; ?></p>
+        <p>Email : <?php echo $_SESSION['email']; ?></p>
+        <p>Date d'inscription : <?php echo $_SESSION['register_date']; ?></p>
+        <a href="pwdchange">Changer mon mot de passe</a>
+    </div>
 
     <?php
     // Si nous avons un message d'erreur suivant une tentative de modification ou suppression infructueuse d'un vin, on l'affiche ici :

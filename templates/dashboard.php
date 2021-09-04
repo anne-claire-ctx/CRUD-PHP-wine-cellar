@@ -5,15 +5,16 @@ $nav = "dashboard";
 
 // On appelle notre header ainsi que nos fonctions pour aller chercher les infos dans la base
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
+require_once dirname(__DIR__) . '/form_management/sortForm.php';
 require_once __DIR__ . '/header.php';
 
 // on appelle notre fonction pour récupérer un utilisateur
-if(isset($_SESSION['pseudo'])){
-$user = select_user($_SESSION['pseudo']);
-}
+// if(isset($_SESSION['pseudo'])){
+// $user = select_user($_SESSION['pseudo']);
+// }
 
 // on appelle la fonction pour afficher les vins
-$wines = select_all_wines();
+// $wines = select_all_wines();
 
 ?>
 
@@ -33,6 +34,18 @@ $wines = select_all_wines();
 
     <div class="container">
         <div class="grid">
+            <form method="get">
+                <select name="sort" id="sort">
+                    <option value="" disabled <?php if (!isset($_GET['sort'])) : ?> selected <?php endif; ?> <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'reset')) : ?> selected <?php endif; ?>>Trier par...</option>
+                    <option value="region" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'region')) : ?> selected <?php endif; ?>>Régions</option>
+                    <option value="country" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'country')) : ?> selected <?php endif; ?>>Pays</option>
+                    <option value="year" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'year')) : ?> selected <?php endif; ?>>Années</option>
+                    <option value="grape" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'grape')) : ?> selected <?php endif; ?>>Cépages</option>
+                    <option value="name" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'name')) : ?> selected <?php endif; ?>>Noms</option>
+                    <option value="reset">Réinitialiser</option>
+                </select>
+                <button type="submit">Trier</button>
+            </form>
             <?php
             // boucle afin d'afficher tous nos vins en cartes
             foreach($wines as $wine) : ?>
@@ -48,7 +61,9 @@ $wines = select_all_wines();
                         <a href="product?id=<?= $wine['id'] ?>" class="link">
                             <h5><?= $wine['name'] ?></h5>
                         </a>
-                        <p class="card-text"><?= $wine['description'] ?></p>
+                        <p class="card-text"><?= $wine['region'] ?>, <?= $wine['country'] ?></p>
+                        <p class="card-text"><?= $wine['year'] ?></p>
+                        <p class="card-text"><?= $wine['grape'] ?></p>
                         <a href="product?id=<?= $wine['id'] ?>" class="btn">Plus d'informations</a>
                     </div>
                 </div>

@@ -49,6 +49,18 @@ if ($url === '' || $url === 'home') {
 } elseif ($url === 'mywines') {
     require 'templates/mywines.php';
 
+} elseif ($url === 'deleteMyWine') {
+    require 'form_management/deleteMyWine.php';
+
+} elseif ($url === 'pwdchange') {
+    require 'templates/pwdchange.php';
+
+} elseif ($url === 'pwdChangeForm') {
+    require 'form_management/pwdChangeForm.php';
+
+} elseif ($url === 'sortForm') {
+    require 'form_management/sortForm.php';
+
 } else {
     require 'templates/my404.php';
 }

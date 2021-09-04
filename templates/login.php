@@ -1,9 +1,8 @@
 <?php
 $nav = "login";
 
-// on appelle notre header et notre navbar
+// on appelle notre header
 require_once __DIR__ . '/header.php';
-// require_once __DIR__ . '/navbar.php';
 ?>
 
 <section id="loginpage">
