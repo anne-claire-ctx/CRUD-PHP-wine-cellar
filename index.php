@@ -61,6 +61,18 @@ if ($url === '' || $url === 'home') {
 } elseif ($url === 'sortForm') {
     require 'form_management/sortForm.php';
 
+} elseif ($url === 'searchForm') {
+    require 'form_management/searchForm.php';
+
+} elseif ($url === 'users') {
+    require 'templates/users.php';
+
+} elseif ($url === 'editUser') {
+    require 'form_management/editUser.php';
+
+} elseif ($url === 'deleteUser') {
+    require 'form_management/deleteUser.php';
+
 } else {
     require 'templates/my404.php';
 }

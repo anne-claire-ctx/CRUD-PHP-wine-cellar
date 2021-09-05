@@ -38,7 +38,7 @@
                         <?php elseif (!empty($_SESSION) && ($_SESSION['role'] == 1)) : ?>
                             <li class="nav-item"><img src="assets/img/my-wines.png" alt="logo mes vins"><a href="mywines" class="<?php if ((!empty($nav)) && ($nav == 'mywines')) : ?> active<?php endif; ?>">Ma Cave à vin</a></li>
                             <li class="nav-item"><img src="assets/img/wine-menu.png" alt="logo menu vins"><a href="addwine" class="<?php if ((!empty($nav)) && ($nav == 'addwine')) : ?> active<?php endif; ?>">Ajouter un vin</a></li>
-                            <li class="nav-item"><img src="assets/img/user-wine.png" alt="logo utilisateurs vins"><a href="usersManagement" class="<?php if ((!empty($nav)) && ($nav == 'users')) : ?> active<?php endif; ?>">Gérer les utilisateurs</a></li>
+                            <li class="nav-item"><img src="assets/img/user-wine.png" alt="logo utilisateurs vins"><a href="users" class="<?php if ((!empty($nav)) && ($nav == 'users')) : ?> active<?php endif; ?>">Gérer les utilisateurs</a></li>
                             <li class="nav-item"><img src="assets/img/logout.png" alt="logo deconnexion"><a href="logout">Se déconnecter</a></li>
                         <?php else : ?>
                             <li class="nav-item"><img src="assets/img/wine-bottle.png" alt="logo ouvre bouteille"><a href="login" class="<?php if ((!empty($nav)) && ($nav == 'login')) : ?> active<?php endif; ?>">Se connecter</a></li>

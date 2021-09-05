@@ -6,6 +6,7 @@ $nav = "dashboard";
 // On appelle notre header ainsi que nos fonctions pour aller chercher les infos dans la base
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 require_once dirname(__DIR__) . '/form_management/sortForm.php';
+require_once dirname(__DIR__) . '/form_management/searchForm.php';
 require_once __DIR__ . '/header.php';
 
 ?>
@@ -22,10 +23,14 @@ require_once __DIR__ . '/header.php';
             <?= $_GET['msg'] ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    <?php endif ?>
+    <?php endif; ?>
 
     <div class="container">
         <div class="grid">
+            <form method="post"> 
+                <p><input type="text" name="search" placeholder="Rechercher"></p>
+                <input type="submit" value="Rechercher"> 
+            </form>
             <form method="get">
                 <select name="sort" id="sort">
                     <option value="" disabled <?php if (!isset($_GET['sort'])) : ?> selected <?php endif; ?> <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'reset')) : ?> selected <?php endif; ?>>Trier par...</option>
@@ -39,6 +44,12 @@ require_once __DIR__ . '/header.php';
                 <button type="submit">Trier</button>
             </form>
             <?php
+            if (isset($_POST['search']) && empty($wines)) : ?>
+                <p>Aucun vin trouvé</p><a href="dashboard" class="btn">Retour à la liste complète des vins</a>
+                <?php endif;
+            if (isset($_POST['search']) && !empty($wines)) : ?>
+            <a href="dashboard" class="btn">Retour à la liste complète des vins</a>
+            <?php endif;
             // boucle afin d'afficher tous nos vins en cartes
             foreach($wines as $wine) : ?>
                 <div class="card">

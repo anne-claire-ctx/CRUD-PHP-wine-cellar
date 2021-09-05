@@ -13,7 +13,7 @@ function select_all_users()
     try {
         $query = $dbco->prepare("SELECT * FROM users");
         $query->execute();
-        return $query->fetchAll(PDO::FETCH_OBJ);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
     }
@@ -322,4 +322,23 @@ function order_by_name($sort)
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
     }
+}
+
+// fonction pour rechercher un vin
+
+function search_wine($search)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("SELECT * FROM wines WHERE name LIKE :search OR year LIKE :search OR description LIKE :search OR region LIKE :search OR country LIKE :search OR grape LIKE :search ");
+        $query->bindValue(':search', '%'.$search.'%');
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+
 }
