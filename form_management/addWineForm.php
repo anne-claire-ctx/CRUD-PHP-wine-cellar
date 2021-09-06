@@ -27,7 +27,7 @@ if (isset($fields_required)) :
         $region = html(mb_ucfirst($_POST['region']));
         $country = html(mb_ucfirst($_POST['country']));
         $grape = html(mb_ucfirst($_POST['grape']));
-
+        
         $picture = $_FILES['picture'];
         $ext = array('png', 'jpg', 'jpeg');
 

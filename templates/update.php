@@ -13,6 +13,8 @@ if (!isset($_SESSION['pseudo'])) {
     header("Location: http://localhost/Nouveau-projet/dashboard?msg=Vous devez être administrateur pour accéder à cette page");
 }
 
+if(empty($_GET['id'])) header('location:http://localhost/Nouveau-projet/dashboard?msg=Aucune bouteille selectionnée');
+
 // on récupère l'id du produit
 $id = intval($_GET['id']);
 
@@ -38,6 +40,7 @@ $wine = select_wine_by_id($id);
 
                 <!-- formulaire -->
                 <form action="updateWineForm?id=<?= $id ?>" method="post" enctype="multipart/form-data"><!-- enctype pour gérer les $_FILES -->
+                <div>
                     <div class="mb-3">
                         <label for="name">Modifier le nom du vin :</label><input type="text" class="form-control" id="name" name="name" value="<?php echo $wine['name']; ?>" required>
                     </div>
@@ -56,9 +59,13 @@ $wine = select_wine_by_id($id);
                     <div class="mb-3">
                         <label for="country">Modifier le pays :</label><input type="text" class="form-control" id="country" name="country" value="<?php echo $wine['country']; ?>" required>
                     </div>
+                </div>
+                <div>
                     <div class="mb-3"><label for="picture">Modifier la photo de la bouteille :</label>
                         <input type="hidden" name="MAX_FILE_SIZE" value="4194304"> <!-- Gérer la taille max du fichier img : 4Mo => 1024*1024*4 -->
-                        <input type="file" class="form-control" id="picture" name="picture" value="<?php echo $wine['bottle']; ?>">
+                        <input type="file" class="form-control" id="picture" name="new-picture">
+                        <p>Formats acceptés : png, jpg, jpeg. </p>
+                        <p>Taille max : 4 Mo </p>
                     </div>
                     <div class="text-end">
                         <button type="submit" class="btn login me-1 mt-1">Modifier ce vin</button>
@@ -68,6 +75,8 @@ $wine = select_wine_by_id($id);
             <div class="col-md-6 mt-3 mb-3 ps-3 updateImg">
                 <img src="<?= './assets/img/' . $wine['bottle'] ?>" alt="photo de la bouteille">
             </div>
+            <input type="hidden" name="picture" value="<?= $wine['bottle'] ?>"> 
+            <input type="hidden" name="id" value="<?= $wine['id'] ?>">
             <div class="row">
                 <div class="col-md-12 text-end">
                     <a href="product?id=<?= $id ?>" class="btn login me-2 ms-2 mt-2">Retour à la fiche du vin</a>

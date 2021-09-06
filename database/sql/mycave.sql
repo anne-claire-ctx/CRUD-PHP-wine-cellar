@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : Dim 05 sep. 2021 à 17:28
+-- Généré le : lun. 06 sep. 2021 à 09:09
 -- Version du serveur :  5.7.31
--- Version de PHP : 7.3.21
+-- Version de PHP : 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,9 +41,7 @@ CREATE TABLE IF NOT EXISTS `mywines` (
 --
 
 INSERT INTO `mywines` (`users_id`, `wines_id`) VALUES
-(7, 1),
-(8, 1),
-(8, 26);
+(7, 1);
 
 -- --------------------------------------------------------
 
@@ -62,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `pseudo_UNIQUE` (`pseudo`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users`
@@ -70,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `pseudo`, `email`, `password`, `role`, `register_date`) VALUES
 (7, 'Admin', 'ac.coutoux@gmail.com', '$2y$10$HPmm7kLd4iip806.mE80J./ipqegAIJMs1pT../fIBiatXwbiPK7K', 1, '2021-09-04'),
-(8, 'Accx', 'acoutoux@apperture.fr', '$2y$10$BFw8jU7mlAzk89TzhQwfjOxrdyJDH4506bM8cLNdSWkSBija1Enre', 0, '2021-09-04');
+(9, 'accx', 'acoutoux@apperture.fr', '$2y$10$LwhRL9.PI3FiyKVr9Odl4uNFdmBDK7QGzZffxn3nLsgvooVWbmEfa', 0, '2021-09-06');
 
 -- --------------------------------------------------------
 
@@ -89,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `wines` (
   `country` varchar(70) NOT NULL,
   `grape` varchar(70) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `wines`
@@ -108,7 +106,8 @@ INSERT INTO `wines` (`id`, `name`, `year`, `bottle`, `description`, `region`, `c
 (10, 'DOMAINE SERENE', 2007, 'domaine-serene.png', 'Bien que subtil dans ses complexités, ce vin est sûr de plaire à un large éventail d\'amateurs. Les notes de grenade vous raviront tandis que la finale de noix complète le tableau d\'une expérience de dégustation raffinée.', 'Oregon', 'USA', 'Pinot noir'),
 (11, 'BODEGA LURTON', 2011, 'lurton.png', 'De solides notes de cassis mêlées à une légère note d\'agrumes font de ce vin un produit facile à boire pour des palais variés.', 'Mendoza', 'Argentine', 'Pinot gris'),
 (12, 'LES MORIZOTTE', 2009, 'marizotte.png', 'Brisant le moule des classiques, cette production surprendra et fera sans aucun doute frémir les papilles avec ses notes de café et de tabac qui s&#039;harmonisent parfaitement avec les notes plus traditionnelles. il plaira certainement à la foule de fin de soirée avec la légère poussée d&#039;adrénaline qu&#039;il apporte.', 'Bordeaux', 'Frances', 'Chardonnay'),
-(26, 'BIDULE', 2021, 'generic.png', 'Un vin frais et nouveau, parfait pour l\'apéro', 'Loire', 'France', 'Saumur champigny');
+(26, 'BIDULE', 2021, 'generic.png', 'Un vin frais et nouveau, parfait pour l\'apéro', 'Loire', 'France', 'Saumur champigny'),
+(27, 'BLABAL', 2003, '6135d7b4d947e_cellar (2).jpg', 'Blabla', 'Aquitaine', 'Frances', 'Bordeaux');
 
 --
 -- Contraintes pour les tables déchargées
@@ -118,8 +117,8 @@ INSERT INTO `wines` (`id`, `name`, `year`, `bottle`, `description`, `region`, `c
 -- Contraintes pour la table `mywines`
 --
 ALTER TABLE `mywines`
-  ADD CONSTRAINT `fk_users_has_wines_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_users_has_wines_wines1` FOREIGN KEY (`wines_id`) REFERENCES `wines` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_users_has_wines_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_users_has_wines_wines1` FOREIGN KEY (`wines_id`) REFERENCES `wines` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

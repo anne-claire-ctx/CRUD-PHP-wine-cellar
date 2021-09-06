@@ -58,9 +58,6 @@ if ($url === '' || $url === 'home') {
 } elseif ($url === 'pwdChangeForm') {
     require 'form_management/pwdChangeForm.php';
 
-} elseif ($url === 'sortForm') {
-    require 'form_management/sortForm.php';
-
 } elseif ($url === 'searchForm') {
     require 'form_management/searchForm.php';
 

@@ -4,9 +4,14 @@
 require_once __DIR__ . '/header.php';
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 
+if (!isset($_GET['id'])) {
+    header("Location: http://localhost/Nouveau-projet/dashboard?msg=Aucun vin n'a été sélectionné");
+}
 // on appelle la fonction pour afficher les informations d'un vin
 $wineId = select_wine_by_id($_GET['id']);
-
+if (empty($wineId)) {
+    header("Location: http://localhost/Nouveau-projet/dashboard?msg=Ce vin n'existe pas");
+}
 ?>
 
 <!-- HTML -->
@@ -51,7 +56,7 @@ $wineId = select_wine_by_id($_GET['id']);
                         <a href="dashboard" class="btn">Retour à la liste des vins</a>
                     <?php else : ?>
                         <a href="addAWine?id=<?=$wineId['id'] ?>" class="btn"> Ajouter ce vin à ma cave</a>
-                        <a href="mywines" class="btn">Retour vers ma cave à vin</a>
+                        <a href="dashboard" class="btn">Retour à la liste des vins</a>
                     <?php endif;
                 } else { ?>
                     <a href="dashboard" class="btn">Retour à la liste des vins</a>

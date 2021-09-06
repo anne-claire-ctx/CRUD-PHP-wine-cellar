@@ -43,6 +43,9 @@ $user = select_user($_SESSION['pseudo']);
     <div class="container">
         <div class="grid">
             <?php
+            if (empty($wines)) : ?>
+            <p>Votre cave à vin est vide pour le moment. Cliquez <a href="dashboard">ici</a> pour la remplir.</p>
+            <?php endif;
             // boucle afin d'afficher tous nos vins en cartes
             foreach($wines as $wine) : ?>
                 <div class="card">
@@ -57,7 +60,9 @@ $user = select_user($_SESSION['pseudo']);
                         <a href="product?id=<?= $wine['id'] ?>" class="link">
                             <h5><?= $wine['name'] ?></h5>
                         </a>
-                        <p class="card-text"><?= $wine['description'] ?></p>
+                        <p class="card-text"><?= $wine['region'] ?>, <?= $wine['country'] ?></p>
+                        <p class="card-text"><?= $wine['year'] ?></p>
+                        <p class="card-text"><?= $wine['grape'] ?></p>
                         <a href="product?id=<?= $wine['id'] ?>" class="btn">Plus d'informations</a>
                     </div>
                 </div>

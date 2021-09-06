@@ -5,7 +5,6 @@ $nav = "dashboard";
 
 // On appelle notre header ainsi que nos fonctions pour aller chercher les infos dans la base
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
-require_once dirname(__DIR__) . '/form_management/sortForm.php';
 require_once dirname(__DIR__) . '/form_management/searchForm.php';
 require_once __DIR__ . '/header.php';
 
