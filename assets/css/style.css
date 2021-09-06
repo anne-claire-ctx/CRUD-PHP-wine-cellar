@@ -13,45 +13,12 @@ body {
   color: white;
 }
 
-/* .mouse {
-  border: 1px solid #E4CC85;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 40px;
-  width: 40px;
-  z-index: 999;
-}
+/* ============================================================ */
+/* =========================== HOME =========================== */
+/* ============================================================ */
 
-.mouse1 {
-  border: 1px solid #E4CC85;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 65px;
-  width: 65px;
-  transition: 0.1s;
-  z-index: 999;
-}
 
-.mouse2 {
-  border: 1px solid #E4CC85;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 90px;
-  width: 90px;
-  transition: 0.2s;
-  z-index: 999;
-} */
-
-/* MENU============== */
+/* ===== MENU ===== */
 .burger-icon {
   position: fixed;
   width: 2rem;
@@ -95,7 +62,7 @@ body {
   justify-content: space-around;
 }
 
-.menu .menu-left {
+.menu .menu-content {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -122,6 +89,7 @@ body {
 .menu nav {
   height: 70%;
 }
+
 .menu nav ul {
   color: white;
   height: 60%;
@@ -135,7 +103,8 @@ body {
 .menu nav ul a {
   color: white;
 }
-.menu nav ul a:hover {
+
+.menu nav ul li a:hover {
   border-bottom: 1px solid white;
 }
 
@@ -156,7 +125,7 @@ body {
     max-width: 75rem;
   }
 
-  .menu-left {
+  .menu-content {
     width: 40%;
     text-align: center;
     display: flex;
@@ -174,45 +143,51 @@ body {
 
 }
 
-/* HEADER */
 
-video {
+/* ===== HEADER ===== */
+
+#myvideo {
   display: none;
   margin: 0 auto;
 }
 
-header {
-  position: relative;
-  border-bottom: 8px solid var(--black);
-  height: 100vh;
-  background-image: url(../img/red.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+header h2{
+  text-align: center;
+  font-size: 2rem;
 }
 
 .header-title img {
-  position: absolute;
+  position: fixed;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   top: 2%;
-  left: 4%;
-  z-index: 222;
-  width: 38%;
+  left: 6%;
+  z-index: 2000;
+  cursor: pointer;
+  padding-bottom: 2px;
 }
 
-@media (min-width: 375px) {
-  .header-title img {
-    width: 35%;
+@media (min-width: 541px) {
+  #myvideo {
+    display: block;
+    width: 95%;
+  }
+  #mysmallvideo {
+    display: none;
   }
 }
 
-/* INTRODUCTION */
+
+/* ===== INTRODUCTION ===== */
 
 .introduction {
-  height: 100vh;
+  min-height: 555px;
   background-image: url(../img/vertical-grapes.png);
-  background-position: center;
+  background-position: right;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .introduction-right img,
@@ -232,11 +207,11 @@ header {
 }
 
 .introduction-left {
-  margin-top: 3rem;
+  margin-top: 6rem;
 }
 
 .introduction-right {
-  margin-top: 10.3rem;
+  margin-top: 6.3rem;
   text-align: end;
   margin-left: 3rem;
 }
@@ -248,7 +223,23 @@ header {
 @media (min-width:375px) {
   .introduction-right {
     margin-left: 5rem;
-    margin-top: 13.3rem;
+    margin-top: 11.3rem;
+  }
+}
+
+@media (min-width:540px) {
+  .introduction-left {
+    padding-top: 20px;
+  }
+}
+
+@media (min-width:1000px) {
+  .introduction {
+    min-height: 700px;
+  }
+  .introduction-left {
+    padding-top: 87px;
+    padding-right: 35px
   }
 }
 /* .introduction {
@@ -302,7 +293,7 @@ header {
   height: 923px;
 } */
 
-/* SWIPER */
+/* ===== SWIPER ===== */
 
 .swiper-img-left img {
   display: none;
@@ -312,8 +303,7 @@ header {
   background-image: url(../img/weeds.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 2.5rem;
+  background-size: contain;
   padding-top: 5rem;
 }
 
@@ -375,83 +365,22 @@ header {
 
 .bottle-description {
   display: none;
-  /* color: white;
-  font-size: 1.4em;
-  margin-top: 1.5em;
-  margin-right: 1.3em; */
 } 
 
-/* .swiper {
-  display: flex;
-  align-items: center;
-}
 
-.swiper-img-left img {
-  width: 923px;
-  z-index: 1;
-}
-
-.swiper-content {
-  display: flex;
-  margin-left: 5em;
-  justify-content: space-between;
-  margin-right: 5em;
-}
-
-.swiper-pagination-bullet {
-  background-color: var(--white) !important;
-}
-
-.swiper .bottle img {
-  margin: 8px;
-}
-
-.bottle-info {
-  margin-top: 5em;
-  margin-left: 3em;
-}
-.bottle-name {
-  font-size: 1.8em;
-  margin: 2em;
-}
-
-.bottle-location {
-  color: rgb(129, 52, 52);
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.bottle-year {
-  color: white;
-  font-size: 1.4em;
-  margin-top: 1.5em;
-}
-
-.bottle-grapes {
-  color: rgb(129, 52, 52);
-  font-size: 1.5em;
-  margin-top: 1.5em;
-  font-weight: bold;
-}
-
-.bottle-description {
-  color: white;
-  font-size: 1.4em;
-  margin-top: 1.5em;
-  margin-right: 1.3em;
-} */
-
-/* FOOTER */
+/* ===== FOOTER ===== */
 
 footer {
   background-color: rgb(0, 0, 0);
   padding-top: 5rem;
   font-size: 1.2em;
+  background-image: url(../img/logo-blanc.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
 }
 
 .footer-container {
-  /* width: 95%;
-  margin: auto; */
   color: grey;
   display: flex;
   flex-direction: column;
@@ -476,3 +405,55 @@ footer {
 .footer-left p, .footer-right p {
   margin: 7px;
 }
+
+.footer-logo-container img {
+  height: 48px;
+}
+
+@media (min-width:873px) {
+  .footer-container {
+    width: 95%;
+    margin: auto;
+  }
+  .footer-logo-container {
+    display: none;
+  }
+}
+
+/* @media (min-width: 1000px) {
+  .footer-container {
+    width: 98%;
+    flex-direction: row;
+  }
+  .footer-left {
+    min-width: 255px;
+  }
+  .footer-right {
+    min-width:
+  }
+} */
+
+
+
+
+/* =========================== */
+/* ======== DASHBOARD ======== */
+/* =========================== */
+
+/* container */
+/* .container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+} */
+
+/* grid */
+/* .grid {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(6, 1fr);
+}
+.grid > * {
+  grid-column: span 6;
+} */

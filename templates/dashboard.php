@@ -12,7 +12,9 @@ require_once __DIR__ . '/header.php';
 
 <!-- HTML -->
 <section id="dashboard">
-    <h2>Nos vins</h2>
+    <div class="tophead">
+        <h2>Nos vins</h2>
+    </div>
 
     <?php
     // Si nous avons un message d'erreur suivant une tentative de modification ou suppression infructueuse d'un vin, on l'affiche ici :
@@ -25,31 +27,33 @@ require_once __DIR__ . '/header.php';
     <?php endif; ?>
 
     <div class="container">
-        <div class="grid">
-            <form method="post"> 
-                <p><input type="text" name="search" placeholder="Rechercher"></p>
-                <input type="submit" value="Rechercher"> 
-            </form>
-            <form method="get">
-                <select name="sort" id="sort">
-                    <option value="" disabled <?php if (!isset($_GET['sort'])) : ?> selected <?php endif; ?> <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'reset')) : ?> selected <?php endif; ?>>Trier par...</option>
-                    <option value="region" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'region')) : ?> selected <?php endif; ?>>Régions</option>
-                    <option value="country" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'country')) : ?> selected <?php endif; ?>>Pays</option>
-                    <option value="year" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'year')) : ?> selected <?php endif; ?>>Années</option>
-                    <option value="grape" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'grape')) : ?> selected <?php endif; ?>>Cépages</option>
-                    <option value="name" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'name')) : ?> selected <?php endif; ?>>Noms</option>
-                    <option value="reset">Réinitialiser</option>
-                </select>
-                <button type="submit">Trier</button>
-            </form>
-            <?php
-            if (isset($_POST['search']) && empty($wines)) : ?>
-                <p>Aucun vin trouvé</p><a href="dashboard" class="btn">Retour à la liste complète des vins</a>
-                <?php endif;
-            if (isset($_POST['search']) && !empty($wines)) : ?>
-            <a href="dashboard" class="btn">Retour à la liste complète des vins</a>
+        <div class="searchbar">
+        <form method="post"> 
+            <p><input type="text" name="search" placeholder="Rechercher"></p>
+            <input type="submit" value="Rechercher"> 
+        </form>
+        <form method="get">
+            <select name="sort" id="sort">
+                <option value="" disabled <?php if (!isset($_GET['sort'])) : ?> selected <?php endif; ?> <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'reset')) : ?> selected <?php endif; ?>>Trier par...</option>
+                <option value="region" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'region')) : ?> selected <?php endif; ?>>Régions</option>
+                <option value="country" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'country')) : ?> selected <?php endif; ?>>Pays</option>
+                <option value="year" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'year')) : ?> selected <?php endif; ?>>Années</option>
+                <option value="grape" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'grape')) : ?> selected <?php endif; ?>>Cépages</option>
+                <option value="name" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'name')) : ?> selected <?php endif; ?>>Noms</option>
+                <option value="reset">Réinitialiser</option>
+            </select>
+            <button type="submit">Trier</button>
+        </form>
+        <?php
+        if (isset($_POST['search']) && empty($wines)) : ?>
+            <p>Aucun vin trouvé</p><a href="dashboard" class="btn">Retour à la liste complète des vins</a>
             <?php endif;
-            // boucle afin d'afficher tous nos vins en cartes
+        if (isset($_POST['search']) && !empty($wines)) : ?>
+            <a href="dashboard" class="btn">Retour à la liste complète des vins</a>
+        <?php endif; ?>
+        </div>
+        <div class="grid">
+            <?php // boucle afin d'afficher tous nos vins en cartes
             foreach($wines as $wine) : ?>
                 <div class="card">
                     <div class="card__head">
@@ -70,7 +74,6 @@ require_once __DIR__ . '/header.php';
                     </div>
                 </div>
             <?php endforeach; ?>
-
         </div>
 </section>
 

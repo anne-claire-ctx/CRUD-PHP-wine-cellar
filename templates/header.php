@@ -16,9 +16,6 @@
 </head>
 
 <body>
-    <!-- <div class="mouse"></div>
-    <div class="mouse1"></div>
-    <div class="mouse2"></div> -->
     <div class="burger-icon">
         <span></span>
         <span></span>
@@ -26,7 +23,7 @@
     </div>
     <div class="menu display-none ">
         <div class="menu-container">
-            <div class="menu-left">
+            <div class="menu-content">
                 <div class="logo"><img src="assets/img/logo-blanc.png" alt="Logo MyCave"></div>
                 <nav>
                     <ul>

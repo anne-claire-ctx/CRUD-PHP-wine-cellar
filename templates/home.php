@@ -5,8 +5,15 @@ require_once __DIR__ . '/header.php';
 <main>
     <header class="header">
         <div class="header-title">
-            <img src="assets/img/logo-blanc.png" alt="logo My cave">
+            <a href="home"><img src="assets/img/logo-blanc.png" alt="logo My cave"></a>
         </div>
+        <div id="mysmallvideo">
+            <video muted autoplay=true loop width="100%" poster="assets/img/red.png">
+                <source src="assets/video/wine-small.mp4">
+            </video>
+            <h2>Vos vins d'exception</h2>
+        </div>
+        
         <video id="myvideo" muted autoplay=true loop width="90%" poster="assets/img/poster.jpg">
             <source src="assets/video/wine.mp4" type="video/mp4">
             <source src="assets/video/wine.ogv" type="video/ogv">
