@@ -17,11 +17,12 @@ if (!isset($_SESSION['pseudo'])) {
 
 <!-- HTML -->
 <section id="addwine">
+    <div class="tophead addw">
+        <img src="assets/img/wine-menu.png" alt="logo ajouter un vin"><h2>Ajouter un vin</h2>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Ajouter un vin</h2>
-
                 <?php
                 // Si nous avons un message d'erreur suivant une tentative d'ajout infructueuse d'un vin, on l'affiche ici :
                 if (isset($_GET['msg'])) :

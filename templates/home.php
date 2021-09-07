@@ -11,7 +11,7 @@ require_once __DIR__ . '/header.php';
             <video muted autoplay=true loop width="100%" poster="assets/img/red.png">
                 <source src="assets/video/wine-small.mp4">
             </video>
-            <h2>Vos vins d'exception</h2>
+            <h2>“Si le vin manque,<br/>il manque tout ”</h2>
         </div>
         
         <video id="myvideo" muted autoplay=true loop width="90%" poster="assets/img/poster.jpg">
@@ -25,10 +25,11 @@ require_once __DIR__ . '/header.php';
         <div class="introduction-content">
             <div class="introduction-left">
                 <img src="assets/img/worldwide.png" alt="logo planete">
-                <p>MyCAVE sélectionne les meilleurs vins à travers le monde pour vous les faire découvrir</p>
+                <p>Depuis 1970, MyCAVE sélectionne les <span>meilleurs vins</span> à travers le monde pour vous les faire découvrir.<br/>
+            Suivant leur devise avec conviction, nos deux fondateurs, <span>oenologues par passion</span>, vous présentent leurs pépites.  </p>
             </div>
             <div class="introduction-right">
-                <p>Consultez et construisez votre cave avec l'aide de nos experts</p>
+                <p>Comment faire les bons choix ? Consultez et construisez votre cave avec l'aide de nos experts et laissez votre goût s'exprimer pour le <span>plaisir simple</span> d'un bon verre de vin !</p>
                 <img src="assets/img/wine-barrel.png" alt="logo cave a vin">
             </div>
         </div>

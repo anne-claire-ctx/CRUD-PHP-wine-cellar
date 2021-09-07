@@ -18,10 +18,12 @@ if (!isset($_SESSION['pseudo'])) {
 
 <!-- HTML -->
 <section id="users">
+<div class="tophead usersh">
+        <img src="assets/img/wine-bottle.png" alt="logo utilisateurs"><h2>Les utilisateurs</h2>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="m-5">Les utilisateurs</h2>
 
                 <?php
                 // si message erreur a propos de l'utilisateur ou une validation

@@ -53,6 +53,7 @@ body {
   justify-content: space-around;
   z-index: 1000;
   transition: 0.6s;
+  padding-top: 45px;
 }
 
 .menu-container {
@@ -73,6 +74,10 @@ body {
   display: flex;
   align-items: flex-end;
   margin-bottom: 30%;
+}
+
+.menu .logo img {
+  margin-bottom: 36px;
 }
 
 .menu .nav-item {
@@ -183,7 +188,7 @@ header h2{
 /* ===== INTRODUCTION ===== */
 
 .introduction {
-  min-height: 555px;
+  min-height: 1155px;
   background-image: url(../img/vertical-grapes.png);
   background-position: right;
   background-repeat: no-repeat;
@@ -200,36 +205,35 @@ header h2{
 
 .introduction-right,
 .introduction-left {
-  width: 80%;
+  width: 93%;
   font-size: 1.5em;
-  display: flex;
-  align-items: center;
+  line-height: 1.1em;
 }
 
 .introduction-left {
   margin-top: 6rem;
+  margin-left: 5px;
 }
-
+.introduction-left span,
+.introduction-right span {
+  font-size: 2rem;
+}
 .introduction-right {
-  margin-top: 6.3rem;
+  margin-top: 36.3rem;
   text-align: end;
-  margin-left: 3rem;
+  margin-left: 1rem;
 }
 
 .introduction-img {
   display: none;
 }
 
-@media (min-width:375px) {
-  .introduction-right {
-    margin-left: 5rem;
-    margin-top: 11.3rem;
-  }
-}
-
 @media (min-width:540px) {
   .introduction-left {
-    padding-top: 20px;
+    margin-top: 4rem;
+  }
+  .introduction-right {
+    margin-top: 40rem;
   }
 }
 
@@ -372,12 +376,8 @@ header h2{
 
 footer {
   background-color: rgb(0, 0, 0);
-  padding-top: 5rem;
   font-size: 1.2em;
-  background-image: url(../img/logo-blanc.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 25px;
+  margin: 15px;
 }
 
 .footer-container {
@@ -391,6 +391,13 @@ footer {
 .footer-right {
   margin: 15px;
   text-align: center;
+}
+
+.footer-logo-container {
+  text-align: center;
+}
+.footer-logo-container p {
+  margin: 5px;
 }
 
 .footer-left a {
@@ -414,10 +421,15 @@ footer {
   .footer-container {
     width: 95%;
     margin: auto;
+    flex-direction: row;
   }
-  .footer-logo-container {
-    display: none;
+  .footer-left, .footer-right, .footer-logo-container {
+    width: 35%;
   }
+}
+
+#footer-push {
+  height: 30px;
 }
 
 /* @media (min-width: 1000px) {
@@ -457,3 +469,212 @@ footer {
 .grid > * {
   grid-column: span 6;
 } */
+
+#dashboard {
+  background: #2b2b2b;
+}
+
+.tophead {
+  height: 284px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash {
+  background: url(../img/cave.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mine {
+  background: url(../img/cellar.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.addw {
+  background: url(../img/addwine.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.usersh {
+  background: url(../img/verres.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tophead img {
+  height: 60px;
+  margin-right: 10px;
+}
+.tophead h2 {
+  font-size: 37px;
+  text-align: center;
+  line-height: 284px;
+  vertical-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.searchbar {
+  width: 95%;
+  background: black;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  margin-top: 10px;
+  padding: 15px;
+  align-items: center;
+  box-shadow: 5px 5px 10px -3px rgba(101, 101, 101, 0.99);
+}
+
+.search-option {
+  display: flex;
+}
+.search-sort {
+  display: flex;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+}
+
+.grid {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+}
+.grid > * {
+  grid-column: span 6;
+}
+
+/* cards */
+.card {
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px -3px rgba(101, 101, 101, 0.99);
+  background-color: black;
+  transition: ease-out 0.2s;
+  width: 310px;
+}
+.card:hover{
+  /* border-radius: 55px; */
+  background-color: rgb(39, 39, 39);
+}
+.card__head {
+  display: grid;
+  justify-items: center;
+}
+.card__head img {
+  height: 500px;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card__body {
+  padding: 30px 40px;
+}
+
+.card__body h5 {
+  font-size: 1.8rem;
+}
+
+.card__body .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  
+  border-radius: 6px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 10px -3px rgba(101, 101, 101, 0.99);
+}
+.card__body .btn-red {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.card__body .btn-white {
+  background-color: #E4CC85;
+  color: var(--black);
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.2rem;
+}
+
+.link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 20px;
+}
+
+.red {
+  color: #650e10;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.white {
+  color: #E4CC85;
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .grid > * {
+    grid-column: span 3;
+  }
+  .searchbar {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .grid > * {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 435px) {
+  .tophead h2 {
+    font-size: 60px;
+  }
+}
+
+/* ========================== */
+/* ======== MY WINES ======== */
+/* ========================== */
+
+#infocard {
+  background: black;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+#infocard h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+#info-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-size: 1.2rem;
+}

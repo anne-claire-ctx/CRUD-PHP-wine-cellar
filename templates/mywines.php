@@ -20,14 +20,22 @@ $user = select_user($_SESSION['pseudo']);
 
 <!-- HTML -->
 <section id="dashboard">
-    <h2>Ma Cave à vin</h2>
+<div class="tophead mine">
+        <img src="assets/img/my-wines.png" alt="logo ma cave"><h2>Ma Cave à vin</h2>
+    </div>
 
     <div id="infocard">
         <h3>Mes informations personnelles</h3>
-        <p>Pseudo : <?php echo $_SESSION['pseudo']; ?></p>
-        <p>Email : <?php echo $_SESSION['email']; ?></p>
-        <p>Date d'inscription : <?php echo $_SESSION['register_date']; ?></p>
-        <a href="pwdchange">Changer mon mot de passe</a>
+        <div id="info-content">
+            <div id="info-left">
+                <p>Pseudo : <?php echo $_SESSION['pseudo']; ?></p>
+                <p>Email : <?php echo $_SESSION['email']; ?></p>
+            </div>
+            <div id="info-right">
+                <p>Date d'inscription : <?php echo $_SESSION['register_date']; ?></p>
+                <a href="pwdchange">Changer mon mot de passe</a>
+            </div>
+        </div>
     </div>
 
     <?php
@@ -66,9 +74,9 @@ $user = select_user($_SESSION['pseudo']);
                         <a href="product?id=<?= $wine['id'] ?>" class="btn">Plus d'informations</a>
                     </div>
                 </div>
-            <?php endforeach; ?>
-
+            <?php endforeach; ?>           
         </div>
+        <div id="footer-push"></div>
 </section>
 
 <?php

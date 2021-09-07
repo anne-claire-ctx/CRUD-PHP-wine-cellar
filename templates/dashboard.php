@@ -12,8 +12,8 @@ require_once __DIR__ . '/header.php';
 
 <!-- HTML -->
 <section id="dashboard">
-    <div class="tophead">
-        <h2>Nos vins</h2>
+    <div class="tophead dash">
+        <img src="assets/img/winery.png" alt="logo nos vins"><h2>Nos vins</h2>
     </div>
 
     <?php
@@ -25,14 +25,12 @@ require_once __DIR__ . '/header.php';
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     <?php endif; ?>
-
-    <div class="container">
-        <div class="searchbar">
-        <form method="post"> 
+    <div class="searchbar">
+        <form method="post" class="search-option"> 
             <p><input type="text" name="search" placeholder="Rechercher"></p>
             <input type="submit" value="Rechercher"> 
         </form>
-        <form method="get">
+        <form method="get" class="sort-option">
             <select name="sort" id="sort">
                 <option value="" disabled <?php if (!isset($_GET['sort'])) : ?> selected <?php endif; ?> <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'reset')) : ?> selected <?php endif; ?>>Trier par...</option>
                 <option value="region" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'region')) : ?> selected <?php endif; ?>>Régions</option>
@@ -44,14 +42,15 @@ require_once __DIR__ . '/header.php';
             </select>
             <button type="submit">Trier</button>
         </form>
-        <?php
+            <?php
         if (isset($_POST['search']) && empty($wines)) : ?>
             <p>Aucun vin trouvé</p><a href="dashboard" class="btn">Retour à la liste complète des vins</a>
             <?php endif;
         if (isset($_POST['search']) && !empty($wines)) : ?>
             <a href="dashboard" class="btn">Retour à la liste complète des vins</a>
         <?php endif; ?>
-        </div>
+    </div>
+    <div class="container">
         <div class="grid">
             <?php // boucle afin d'afficher tous nos vins en cartes
             foreach($wines as $wine) : ?>
@@ -67,14 +66,15 @@ require_once __DIR__ . '/header.php';
                         <a href="product?id=<?= $wine['id'] ?>" class="link">
                             <h5><?= $wine['name'] ?></h5>
                         </a>
-                        <p class="card-text"><?= $wine['region'] ?>, <?= $wine['country'] ?></p>
+                        <p class="card-text <?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['region'] ?>, <?= $wine['country'] ?></p>
                         <p class="card-text"><?= $wine['year'] ?></p>
-                        <p class="card-text"><?= $wine['grape'] ?></p>
-                        <a href="product?id=<?= $wine['id'] ?>" class="btn">Plus d'informations</a>
+                        <p class="card-text<?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['grape'] ?></p>
+                        <a href="product?id=<?= $wine['id'] ?>" class="btn <?php if ($wine['color'] == "Rouge") : ?> btn-red <?php else : ?> btn-white <?php endif; ?>">Plus d'informations</a>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
+        <div id="footer-push"></div>
 </section>
 
 <?php
