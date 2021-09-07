@@ -20,7 +20,7 @@ $user = select_user($_SESSION['pseudo']);
 
 <!-- HTML -->
 <section id="dashboard">
-<div class="tophead mine">
+    <div class="tophead mine">
         <img src="assets/img/my-wines.png" alt="logo ma cave"><h2>Ma Cave à vin</h2>
     </div>
 

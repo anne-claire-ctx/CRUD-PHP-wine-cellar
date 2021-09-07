@@ -11,7 +11,9 @@ if (!isset($_SESSION['pseudo'])) {
 
 
 <section id="lostpwd">
-
+    <div class="tophead pwdc">
+        <img src="assets/img/wine-bottle.png" alt="logo ouvre bouteille"><h2>Changer mon mot de passe</h2>
+    </div>
     <?php
     // Si nous avons un message d'erreur suivant une tentative de changement de mot de passe infructueuse, on l'affiche ici :
     if (isset($_GET['msg'])) :

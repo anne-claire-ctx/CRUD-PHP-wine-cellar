@@ -509,6 +509,20 @@ footer {
   background-size: cover;
 }
 
+.pwdc {
+  background: url(../img/pwd.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.detail {
+  background: url(../img/details.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .tophead img {
   height: 60px;
   margin-right: 10px;

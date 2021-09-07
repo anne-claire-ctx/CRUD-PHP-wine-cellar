@@ -16,6 +16,9 @@ if (empty($wineId)) {
 
 <!-- HTML -->
 <section id="product">
+    <div class="tophead detail">
+        <img src="assets/img/wine.png" alt="verre de vin"><h2>Détails</h2>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-center mt-1 mb-3">

@@ -91,6 +91,7 @@ require_once __DIR__ . '/header.php';
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
         </div>
+        <a href="dashboard">Découvrir notre séléction</a>
     </section>
 </main>
 
