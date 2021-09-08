@@ -15,6 +15,9 @@ $description = html(mb_ucfirst($_POST['description']));
 $region = html(mb_ucfirst($_POST['region']));
 $country = html(mb_ucfirst($_POST['country']));
 $grape = html(mb_ucfirst($_POST['grape']));
+$color = html(mb_ucfirst($_POST['color']));
+$grade = html($_POST['grade']);
+$buy = html(strtolower($_POST['buy']));
 $picture = html($_POST['picture']);
 
 // on récupère les infos du vin en question
@@ -93,6 +96,9 @@ if (isset($msg_error)) {
         'region' => $region,
         'country' => $country,
         'grape' => $grape,
+        'color' => $color,
+        'grade' => $grade,
+        'buy' => $buy
     );
     $result = update_wine_by_id($data);
     header("Location: http://localhost/Nouveau-projet/product?id=$id&msg=Le vin a bien été modifié");

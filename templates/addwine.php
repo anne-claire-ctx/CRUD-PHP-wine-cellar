@@ -52,6 +52,16 @@ if (!isset($_SESSION['pseudo'])) {
                     <div class="mb-3">
                         <label for="country">Pays : </label><input type="text" class="form-control" id="country" name="country" placeholder="Indiquez le pays du vin" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="color">Couleur : </label><input type="text" class="form-control" id="color" name="color" placeholder="Indiquez la couleur du vin - Rouge - Rosé - Blanc" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="grade">Note /5 : </label><input type="number" class="form-control" id="grade" name="grade" placeholder="Indiquez le note du vin" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="buy">Lien pour acheter : </label><input type="text" class="form-control" id="buy" name="buy" value="https://www.google.com/search?q=" required>
+                        <p>Remplir le nom du vin et remplacer les espaces par des "+". Exemple : https://www.google.com/search?q=chateau+de+saint+cosme</p>
+                    </div>
                     <div class="mb-3"><label for="picture">Photo de la bouteille :</label>
                         <input type="hidden" name="MAX_FILE_SIZE" value="4194304"> <!-- 4Mo => 1024*1024*4 -->
                         <input type="file" class="form-control" id="picture" name="picture" placeholder="Ajouter l'image de la bouteille">

@@ -59,6 +59,16 @@ $wine = select_wine_by_id($id);
                     <div class="mb-3">
                         <label for="country">Modifier le pays :</label><input type="text" class="form-control" id="country" name="country" value="<?php echo $wine['country']; ?>" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="color">Modifier la couleur :</label><input type="text" class="form-control" id="color" name="color" value="<?php echo $wine['color']; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="grade">Modifier la note /5 :</label><input type="number" class="form-control" id="grade" name="grade" value="<?php echo $wine['grade']; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="buy">Modifier le lien pour acheter :</label><input type="text" class="form-control" id="buy" name="buy" value="<?php echo $wine['buy']; ?>" required>
+                        <p>Remplir le nom du vin et remplacer les espaces par des "+". Exemple : https://www.google.com/search?q=chateau+de+saint+cosme</p>
+                    </div>
                 </div>
                 <div>
                     <div class="mb-3"><label for="picture">Modifier la photo de la bouteille :</label>

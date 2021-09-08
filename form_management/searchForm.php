@@ -22,6 +22,12 @@ if(isset($_POST['search']) && !empty($_POST['search'])) {
             } elseif ($_GET['sort'] == 'grape') {
                 $sort = 'grape';
                 $wines = order_by_grape($sort);
+            } elseif ($_GET['sort'] == 'color') {
+                $sort = 'color';
+                $wines = order_by_color($sort);
+            } elseif ($_GET['sort'] == 'grade') {
+                $sort = 'grade';
+                $wines = order_by_grade($sort);
             } elseif ($_GET['sort'] == 'reset') {
                 $wines = select_all_wines();
             }

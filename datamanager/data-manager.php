@@ -133,7 +133,7 @@ function update_wine_by_id(array $data)
     connexion($dbco);
 
     try {
-        $query = $dbco->prepare("UPDATE wines SET name= :name, year= :year, bottle= :bottle, description= :description, region= :region, country= :country, grape= :grape WHERE id= :id");
+        $query = $dbco->prepare("UPDATE wines SET name= :name, year= :year, bottle= :bottle, description= :description, region= :region, country= :country, grape= :grape, color= :color, grade= :grade, buy= :buy WHERE id= :id");
         $query->bindValue(':name', $data['name'], PDO::PARAM_STR);
         $query->bindValue(':year', $data['year'], PDO::PARAM_INT);
         $query->bindValue(':bottle', $data['bottle'], PDO::PARAM_STR);
@@ -141,6 +141,9 @@ function update_wine_by_id(array $data)
         $query->bindValue(':region', $data['region'], PDO::PARAM_STR);
         $query->bindValue(':country', $data['country'], PDO::PARAM_STR);
         $query->bindValue(':grape', $data['grape'], PDO::PARAM_STR);
+        $query->bindValue(':color', $data['color'], PDO::PARAM_STR);
+        $query->bindValue(':grade', $data['grade'], PDO::PARAM_INT);
+        $query->bindValue(':buy', $data['buy'], PDO::PARAM_STR);
         $query->bindValue(':id', $data['id'], PDO::PARAM_INT);
         
         return $query->execute();
@@ -157,8 +160,8 @@ function addwine(array $datas)
 
     try {
     $query = $dbco->prepare(" 
-		INSERT INTO wines(name, year, bottle, description, region, country, grape)
-		VALUES(:name, :year, :bottle, :description, :region, :country, :grape);
+		INSERT INTO wines(name, year, bottle, description, region, country, grape, color, grade, buy)
+		VALUES(:name, :year, :bottle, :description, :region, :country, :grape, :color, :grade, :buy);
 	");
     $query->bindValue(':name', $datas['name'], PDO::PARAM_STR);
     $query->bindValue(':year', $datas['year'], PDO::PARAM_INT);
@@ -167,6 +170,9 @@ function addwine(array $datas)
     $query->bindValue(':region', $datas['region'], PDO::PARAM_STR);
     $query->bindValue(':country', $datas['country'], PDO::PARAM_STR);
     $query->bindValue(':grape', $datas['grape'], PDO::PARAM_STR);
+    $query->bindValue(':color', $datas['color'], PDO::PARAM_STR);
+    $query->bindValue(':grade', $datas['grade'], PDO::PARAM_INT);
+    $query->bindValue(':buy', $datas['buy'], PDO::PARAM_STR);
 
     return $query->execute();
 } catch(PDOException $e) {
@@ -315,6 +321,44 @@ function order_by_name($sort)
     try {
         if ($sort=='name') {
             $query = $dbco->prepare('SELECT * FROM wines ORDER BY name ASC');
+        }
+        $query->execute();
+          $result = $query->fetchAll(PDO::FETCH_ASSOC);
+          return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour trier les vins par couleur
+
+function order_by_color($sort)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        if ($sort=='color') {
+            $query = $dbco->prepare('SELECT * FROM wines ORDER BY color ASC');
+        }
+        $query->execute();
+          $result = $query->fetchAll(PDO::FETCH_ASSOC);
+          return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+// fonction pour trier les vins par couleur
+
+function order_by_grade($sort)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        if ($sort=='grade') {
+            $query = $dbco->prepare('SELECT * FROM wines ORDER BY grade DESC');
         }
         $query->execute();
           $result = $query->fetchAll(PDO::FETCH_ASSOC);

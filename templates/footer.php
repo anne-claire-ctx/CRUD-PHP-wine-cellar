@@ -17,6 +17,7 @@
 </footer>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
+<script type="text/javascript" src="assets/js/vanilla-tilt.js"></script>
 </body>
 
 </html>

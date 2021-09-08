@@ -27,6 +27,9 @@ if (isset($fields_required)) :
         $region = html(mb_ucfirst($_POST['region']));
         $country = html(mb_ucfirst($_POST['country']));
         $grape = html(mb_ucfirst($_POST['grape']));
+        $color = html(mb_ucfirst($_POST['color']));
+        $grade = html($_POST['grade']);
+        $buy = html(strtolower($_POST['buy']));
         
         $picture = $_FILES['picture'];
         $ext = array('png', 'jpg', 'jpeg');
@@ -84,6 +87,9 @@ if (isset($msg_error)) {
         'region' => $region,
         'country' => $country,
         'grape' => $grape,
+        'color' => $color,
+        'grade' => $grade,
+        'buy' => $buy
     );
     $result = addwine($datas);
     header("Location: http://localhost/Nouveau-projet/dashboard?msg=Le vin a bien été ajouté à la base de données");

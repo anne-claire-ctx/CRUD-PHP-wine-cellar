@@ -22,76 +22,79 @@ require_once __DIR__ . '/header.php';
         </video>
     </header>
     <section class="introduction">
-        <div class="introduction-content">
+        <div class="icones">
             <div class="introduction-left">
-                <img src="assets/img/worldwide.png" alt="logo planete">
-                <p>Depuis 1970, MyCAVE sélectionne les <span>meilleurs vins</span> à travers le monde pour vous les faire découvrir.<br/>
-            Suivant leur devise avec conviction, nos deux fondateurs, <span>oenologues par passion</span>, vous présentent leurs pépites.  </p>
+                <img src="assets/img/wine-barrel.png" alt="logo tonneaux">
+                <p>Consulter notre séléction des meilleurs vins à travers le monde. Suivant leur devise avec conviction, nos deux fondateurs, oenologues par passion, vous présentent leurs pépites !</p>
+            </div>
+            <div class="introduction-center">
+                <img src="assets/img/my-wines.png" alt="logo mon verre">
+                <p>Constituer votre cave personnalisée avec l'aide de nos conseils experts et laissez votre goût s'exprimer pour le plaisir simple d'un bon verre de vin !</p>
             </div>
             <div class="introduction-right">
-                <p>Comment faire les bons choix ? Consultez et construisez votre cave avec l'aide de nos experts et laissez votre goût s'exprimer pour le <span>plaisir simple</span> d'un bon verre de vin !</p>
-                <img src="assets/img/wine-barrel.png" alt="logo cave a vin">
+                <img src="assets/img/worldwide.png" alt="logo monde">
+                <p>Trouver où acheter nos merveilles dans toutes les boutiques à proximité de chez vous et pour le meilleur prix !</p>
             </div>
-        </div>
-        <div class="introduction-img">
-            <img src="assets/img/vertical-grapes.jpg" alt="Raisin">
         </div>
     </section>
-    <section class="swiper">
-        <div class="swiper-img-left"><img src="assets/img/weeds.png" alt="Feuilles de vigne"></div>
-        <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <div class="swiper-content">
-                        <div class="bottle">
-                            <img src="assets/img/lan-rioja.png" alt="lan-rioja bouteille">
+    <section class="slider">
+        <div class="swiper">
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <div class="bottle">
+                                <img src="assets/img/lan-rioja.png" alt="lan-rioja bouteille">
+                            </div>
+                            <div class="bottle-info">
+                                <p class="bottle-name">LAN RIOJA CRIANZA</p>
+                                <p class="bottle-location">Rioja, Espagne</p>
+                                <p class="bottle-year">2006</p>
+                                <p class="bottle-grapes">Tempranillo</p>
+                                <p class="bottle-description">Léger et rebondissant, avec un soupçon de truffe noire, ce vin ne manquera pas de titiller les papilles.</p>
+                            </div>
                         </div>
-                        <div class="bottle-info">
-                            <p class="bottle-name">LAN RIOJA CRIANZA</p>
-                            <p class="bottle-location">Rioja, Espagne</p>
-                            <p class="bottle-year">2006</p>
-                            <p class="bottle-grapes">Tempranillo</p>
-                            <p class="bottle-description">Léger et rebondissant, avec un soupçon de truffe noire, ce vin ne manquera pas de titiller les papilles.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <div class="bottle">
+                                <img src="assets/img/lurton.png" alt="lurton bouteille">
+                            </div>
+                            <div class="bottle-info">
+                                <p class="bottle-name">BODEGA LURTON</p>
+                                <p class="bottle-location-white">Mendoza, Argentina</p>
+                                <p class="bottle-year">2011</p>
+                                <p class="bottle-grapes-white">Pinot Gris</p>
+                                <p class="bottle-description">De solides notes de cassis mêlées à une légère touche d'agrumes font de ce
+                                    un vin facile à boire pour des palais variés. Un nez charmeur et typé, digne d'un terroir exceptionnel.
+                                    terroir exceptionnel. Un vin blanc moderne et très savoureux.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <div class="bottle">
+                                <img src="assets/img/bouscat.png" alt="bouscat bouteille">
+                            </div>
+                            <div class="bottle-info">
+                                <p class="bottle-name">DOMAINE DU BOUSCAT</p>
+                                <p class="bottle-location">Bordeaux, France</p>
+                                <p class="bottle-year">2009</p>
+                                <p class="bottle-grapes">Merlot</p>
+                                <p class="bottle-description">La légère couleur dorée de ce vin dissimule la saveur vive qu'il renferme. Véritable vin d'été, il ne demande qu'à être dégusté lors d'un pique-nique dans un vignoble baigné de soleil.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="swiper-content">
-                        <div class="bottle">
-                            <img src="assets/img/lurton.png" alt="lurton bouteille">
-                        </div>
-                        <div class="bottle-info">
-                            <p class="bottle-name">BODEGA LURTON</p>
-                            <p class="bottle-location-white">Mendoza, Argentina</p>
-                            <p class="bottle-year">2011</p>
-                            <p class="bottle-grapes-white">Pinot Gris</p>
-                            <p class="bottle-description">De solides notes de cassis mêlées à une légère touche d'agrumes font de ce
-                                un vin facile à boire pour des palais variés. Un nez charmeur et typé, digne d'un terroir exceptionnel.
-                                terroir exceptionnel. Un vin blanc moderne et très savoureux.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="swiper-content">
-                        <div class="bottle">
-                            <img src="assets/img/bouscat.png" alt="bouscat bouteille">
-                        </div>
-                        <div class="bottle-info">
-                            <p class="bottle-name">DOMAINE DU BOUSCAT</p>
-                            <p class="bottle-location">Bordeaux, France</p>
-                            <p class="bottle-year">2009</p>
-                            <p class="bottle-grapes">Merlot</p>
-                            <p class="bottle-description">La légère couleur dorée de ce vin dissimule la saveur vive qu'il renferme. Véritable vin d'été, il ne demande qu'à être dégusté lors d'un pique-nique dans un vignoble baigné de soleil.</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
         </div>
-        <a href="dashboard">Découvrir notre séléction</a>
+        <div class="button">
+            <a href="dashboard">Découvrir notre séléction</a>
+        </div>
     </section>
 </main>
 

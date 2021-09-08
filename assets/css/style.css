@@ -53,7 +53,8 @@ body {
   justify-content: space-around;
   z-index: 1000;
   transition: 0.6s;
-  padding-top: 45px;
+  padding-top: 60px;
+  overflow-y: scroll;
 }
 
 .menu-container {
@@ -70,14 +71,14 @@ body {
 }
 
 .menu .logo {
-  height: 30%;
+  /* height: 30%; */
   display: flex;
   align-items: flex-end;
   margin-bottom: 30%;
 }
 
 .menu .logo img {
-  margin-bottom: 36px;
+  margin-bottom: 45px;
 }
 
 .menu .nav-item {
@@ -169,7 +170,7 @@ header h2{
   justify-content: space-between;
   top: 2%;
   left: 6%;
-  z-index: 2000;
+  z-index: 2;
   cursor: pointer;
   padding-bottom: 2px;
 }
@@ -188,114 +189,52 @@ header h2{
 /* ===== INTRODUCTION ===== */
 
 .introduction {
-  min-height: 1155px;
+  margin-top: 60px;
   background-image: url(../img/vertical-grapes.png);
   background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
+  height: 48rem;
+}
+
+.icones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .introduction-right img,
+.introduction-center img,
 .introduction-left img {
-  height: 3.5rem;
-  z-index: 2;
+  height: 4.5rem;
   margin: 10px;
 }
 
 
-.introduction-right,
+.introduction-right, 
+.introduction-center,
 .introduction-left {
-  width: 93%;
   font-size: 1.5em;
-  line-height: 1.1em;
-}
-
-.introduction-left {
-  margin-top: 6rem;
-  margin-left: 5px;
-}
-.introduction-left span,
-.introduction-right span {
-  font-size: 2rem;
-}
-.introduction-right {
-  margin-top: 36.3rem;
-  text-align: end;
-  margin-left: 1rem;
-}
-
-.introduction-img {
-  display: none;
-}
-
-@media (min-width:540px) {
-  .introduction-left {
-    margin-top: 4rem;
-  }
-  .introduction-right {
-    margin-top: 40rem;
-  }
-}
-
-@media (min-width:1000px) {
-  .introduction {
-    min-height: 700px;
-  }
-  .introduction-left {
-    padding-top: 87px;
-    padding-right: 35px
-  }
-}
-/* .introduction {
-  display: flex;
-  justify-content: space-between;
-  border-top: 8px solid rgba(4, 9, 12, 1);
-}
-
-.introduction-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  margin-left: 2em;
-  font-size: 1.7em;
+  width: 19rem;
   text-align: center;
+  margin: 10px;
+  padding-bottom: 25px;
 }
 
-.introduction-left {
-  width: 55%;
-  margin-left: -8em;
-  z-index: 2;
+@media screen and (min-width: 720px) {
+  .icones {
+    flex-direction: row;
+    align-items: normal;
+    justify-content: space-around;
+  }
+  .introduction-left, .introduction-center, .introduction-right {
+    width: 14rem;
+    padding-top: 218px;
+  }
 }
-.introduction-right {
-  width: 55%;
-  margin-right: -15.5em;
-  z-index: 2;
-}
-.introduction-right,
-.introduction-left {
-  display: flex;
-  align-items: center;
-  font-size: 1.4em;
-}
-
-.introduction-right img,
-.introduction-left img {
-  height: 70px;
-  z-index: 2;
-}
-
-.introduction-left img {
-  margin-right: 15px;
-}
-
-.introduction-right img {
-  margin-left: 15px;
-}
-
-.introduction-img img {
-  height: 923px;
-} */
 
 /* ===== SWIPER ===== */
 
@@ -303,12 +242,12 @@ header h2{
   display: none;
 }
 
-.swiper {
+.slider {
   background-image: url(../img/weeds.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 
 .swiper-pagination-bullet {
@@ -371,6 +310,28 @@ header h2{
   display: none;
 } 
 
+.button {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 45px;
+}
+.button a {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  color: white;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  margin-top: 12px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all .25s;
+}
+
+.button a:hover {
+  letter-spacing: 5px;
+}
 
 /* ===== FOOTER ===== */
 
@@ -452,26 +413,9 @@ footer {
 /* ======== DASHBOARD ======== */
 /* =========================== */
 
-/* container */
-/* .container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 30px;
-} */
-
-/* grid */
-/* .grid {
-  display: grid;
-  gap: 50px;
-  grid-template-columns: repeat(6, 1fr);
-}
-.grid > * {
-  grid-column: span 6;
-} */
-
 #dashboard {
-  background: #2b2b2b;
+  /* background: #2b2b2b; */
+  background: rgb(44, 49, 53);
 }
 
 .tophead {
@@ -528,7 +472,7 @@ footer {
   margin-right: 10px;
 }
 .tophead h2 {
-  font-size: 37px;
+  font-size: 33px;
   text-align: center;
   line-height: 284px;
   vertical-align: center;
@@ -579,7 +523,8 @@ footer {
 /* cards */
 .card {
   border-radius: 15px;
-  box-shadow: 5px 5px 10px -3px rgba(101, 101, 101, 0.99);
+  /* box-shadow: 5px 5px 10px -3px rgba(101, 101, 101, 0.99); */
+  box-shadow: black 1px 1px 15px;
   background-color: black;
   transition: ease-out 0.2s;
   width: 310px;
@@ -663,6 +608,12 @@ footer {
 }
 
 @media screen and (min-width: 435px) {
+  .tophead h2 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 504px) {
   .tophead h2 {
     font-size: 60px;
   }
