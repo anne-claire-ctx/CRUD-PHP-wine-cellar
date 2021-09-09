@@ -13,6 +13,21 @@ body {
   color: white;
 }
 
+main {
+  scrollbar-color: rgb(0, 0, 0) rgb(0, 0, 0);
+  scrollbar-width: thin;
+}
+
+main::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(0, 0, 0);
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #000000;
+}
+
 /* ============================================================ */
 /* =========================== HOME =========================== */
 /* ============================================================ */
@@ -55,6 +70,18 @@ body {
   transition: 0.6s;
   padding-top: 60px;
   overflow-y: scroll;
+  scrollbar-color: rgb(0, 0, 0) rgb(0, 0, 0);
+  scrollbar-width: thin;
+}
+
+.menu::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(0, 0, 0);
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #000000;
 }
 
 .menu-container {
@@ -106,12 +133,16 @@ body {
   font-weight: 400;
 }
 
-.menu nav ul a {
+.menu nav ul li a {
   color: white;
+  padding: 5px;
+  transition: all .25s;
 }
 
 .menu nav ul li a:hover {
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid white;
+  letter-spacing: 5px;
+  border-top: 2px solid white;
 }
 
 .display-none {
@@ -122,7 +153,7 @@ body {
 .active {
   /* display: inline-block; */
   padding-bottom: 4px;
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid white;
 }
 
 @media (min-width: 56rem) {
@@ -327,6 +358,7 @@ header h2{
   font-size: 15px;
   text-decoration: none;
   transition: all .25s;
+  border-radius: 6px;
 }
 
 .button a:hover {
@@ -364,10 +396,13 @@ footer {
 .footer-left a {
   text-decoration: none;
   color: gray;
+  transition: all .25s;
 }
 
 .footer-left a:hover {
-  border-bottom: 1px solid gray;
+  border-bottom: 2px solid gray;
+  border-top: 2px solid gray;
+  letter-spacing: 5px;
 }
 
 .footer-left p, .footer-right p {
@@ -392,22 +427,6 @@ footer {
 #footer-push {
   height: 30px;
 }
-
-/* @media (min-width: 1000px) {
-  .footer-container {
-    width: 98%;
-    flex-direction: row;
-  }
-  .footer-left {
-    min-width: 255px;
-  }
-  .footer-right {
-    min-width:
-  }
-} */
-
-
-
 
 /* =========================== */
 /* ======== DASHBOARD ======== */
@@ -467,6 +486,20 @@ footer {
   background-size: cover;
 }
 
+.cont {
+  background: url(../img/contact.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.emai {
+  background: url(../img/emai.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .tophead img {
   height: 60px;
   margin-right: 10px;
@@ -503,6 +536,24 @@ footer {
   display: flex;
 }
 
+#dashboard .btn {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  color: white;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all .25s;
+  border-radius: 6px;
+  }
+  
+#dashboard .btn:hover {
+    letter-spacing: 5px;
+}
+
+
 .container {
   max-width: 1200px;
   margin-left: auto;
@@ -527,7 +578,8 @@ footer {
   box-shadow: black 1px 1px 15px;
   background-color: black;
   transition: ease-out 0.2s;
-  width: 310px;
+  width: 319px;
+  text-align: center;
 }
 .card:hover{
   /* border-radius: 55px; */
@@ -544,7 +596,7 @@ footer {
   border-top-right-radius: 10px;
 }
 .card__body {
-  padding: 30px 40px;
+  padding: 20px 10px;
 }
 
 .card__body h5 {
@@ -554,24 +606,33 @@ footer {
 .card__body .btn {
   display: inline-block;
   padding: 8px 16px;
-  
   border-radius: 6px;
   margin-top: 20px;
-  box-shadow: 5px 5px 10px -3px rgba(101, 101, 101, 0.99);
+  letter-spacing: 1.5px;
+  transition: all .25s;
+  font-weight: bold;
 }
+
+.card__body .btn:hover {
+  letter-spacing: 5px;
+}
+
 .card__body .btn-red {
-  background-color: var(--red);
   color: var(--white);
+  border-top: 2px solid var(--red);
+  border-bottom: 2px solid var(--red);
+
 }
 
 .card__body .btn-white {
-  background-color: #E4CC85;
-  color: var(--black);
-  font-weight: bold;
+  color: var(--white);
+  border-top: 2px solid #E4CC85;
+  border-bottom: 2px solid #E4CC85;
 }
 
 .card-text {
   font-size: 1.2rem;
+  margin-top: 1.3px;
 }
 
 .link {
@@ -583,13 +644,13 @@ footer {
 
 .red {
   color: #650e10;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .white {
   color: #E4CC85;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -642,4 +703,22 @@ footer {
   padding-left: 20px;
   padding-bottom: 20px;
   font-size: 1.2rem;
+}
+
+/* ========================= */
+/* ======== CONTACT ======== */
+/* ========================= */
+
+#icon-rs {
+  display: flex;
+}
+
+#icon-rs img {
+  height: 45px;
+  margin: 10px;
+  transition: all 0.4s;
+}
+
+#icon-rs img:hover {
+  height: 50px;
 }

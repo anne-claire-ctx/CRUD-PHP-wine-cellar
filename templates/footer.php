@@ -2,7 +2,7 @@
     <div class="footer-container">
         <div class="footer-left">
             <p>Besoin d'aide ?</p>
-            <p><a href="mailto">Contactez-nous</a></p>
+            <p><a href="contact">Contactez-nous</a></p>
             <p><a href="#">Mentions légales</a></p>
         </div>
         <div class="footer-logo-container">

@@ -70,6 +70,15 @@ if ($url === '' || $url === 'home') {
 } elseif ($url === 'deleteUser') {
     require 'form_management/deleteUser.php';
 
+} elseif ($url === 'contact') {
+    require 'templates/contact.php';
+
+} elseif ($url === 'contactForm') {
+    require 'form_management/contactForm.php';
+
+} elseif ($url === 'contactemail') {
+    require 'templates/contactemail.php';
+
 } else {
     require 'templates/my404.php';
 }

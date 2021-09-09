@@ -1,8 +1,9 @@
 <?php
 require_once dirname(__DIR__) . '/database/database.php';
 
-
-// USERS
+///////////
+// USERS //
+///////////
 
 // fonction pour afficher tous les utilisateurs
 function select_all_users()
@@ -76,7 +77,9 @@ function update_pwd(string $pseudo, string $pwd){
 // ************************************************************************* //
 
 
-// WINES
+///////////
+// WINES //
+///////////
 
 // fonction pour afficher tous les vins
 function select_all_wines()
@@ -385,4 +388,47 @@ function search_wine($search)
         echo "Erreur : " . $e->getMessage();
     }
 
+}
+
+
+// ************************************************************************* //
+// ************************************************************************* //
+// ************************************************************************* //
+
+/////////////
+// CONTACT //
+/////////////
+
+function send_contact ($contactDatas){
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare(" 
+            INSERT INTO contact(name, email, subject, message, date, time)
+            VALUES(:name, :email, :subject, :message, CURDATE(), CURTIME());
+        ");
+        $query->bindValue(':name', $contactDatas['name'], PDO::PARAM_STR);
+        $query->bindValue(':email', $contactDatas['email'], PDO::PARAM_STR);
+        $query->bindValue(':subject', $contactDatas['subject'], PDO::PARAM_STR);
+        $query->bindValue(':message', $contactDatas['message'], PDO::PARAM_STR);
+    
+        return $query->execute();
+    } catch(PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
+function select_all_emails() {
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("SELECT * FROM contact ORDER BY date DESC, time DESC");
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
 }

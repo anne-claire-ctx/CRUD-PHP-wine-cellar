@@ -25,7 +25,7 @@ require_once __DIR__ . '/header.php';
         <div class="icones">
             <div class="introduction-left">
                 <img src="assets/img/wine-barrel.png" alt="logo tonneaux">
-                <p>Consulter notre séléction des meilleurs vins à travers le monde. Suivant leur devise avec conviction, nos deux fondateurs, oenologues par passion, vous présentent leurs pépites !</p>
+                <p>Consulter notre sélection des meilleurs vins à travers le monde. Suivant leur devise avec conviction, nos deux fondateurs, oenologues par passion, vous présentent leurs pépites !</p>
             </div>
             <div class="introduction-center">
                 <img src="assets/img/my-wines.png" alt="logo mon verre">
@@ -93,7 +93,7 @@ require_once __DIR__ . '/header.php';
             </div>
         </div>
         <div class="button">
-            <a href="dashboard">Découvrir notre séléction</a>
+            <a href="dashboard">Découvrir notre sélection</a>
         </div>
     </section>
 </main>

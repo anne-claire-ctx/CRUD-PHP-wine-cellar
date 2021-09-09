@@ -72,7 +72,7 @@ require_once __DIR__ . '/header.php';
                         <p class="card-text"><?= $wine['year'] ?></p>
                         <p class="card-text<?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['grape'] ?></p>
                         <p class="card-text">Notre avis : <?php if($wine['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wine['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wine['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></p>
-                        <a href="product?id=<?= $wine['id'] ?>" class="btn <?php if ($wine['color'] == "Rouge") : ?> btn-red <?php else : ?> btn-white <?php endif; ?>">Plus d'informations</a>
+                        <a href="product?id=<?= $wine['id'] ?>" class="btn <?php if ($wine['color'] == "Rouge") : ?> btn-red <?php else : ?> btn-white <?php endif; ?>">En savoir plus</a>
                     </div>
                 </div>
             <?php endforeach; ?>
