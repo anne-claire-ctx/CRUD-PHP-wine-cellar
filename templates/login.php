@@ -6,7 +6,9 @@ require_once __DIR__ . '/header.php';
 ?>
 
 <section id="loginpage">
-
+    <div class="tophead logi">        
+        <img src="assets/img/wine-bottle.png" alt="logo ouvre bouteille"><h2>Se connecter</h2>
+    </div>
     <?php
     // Si nous avons un message d'erreur suivant une tentative de connexion infructueuse, on l'affiche ici :
     if (isset($_GET['msg'])) :

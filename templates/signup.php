@@ -5,7 +5,9 @@ require_once __DIR__ . '/header.php';
 
 <!-- HTML -->
 <section id="register">
-
+    <div class="tophead signup">
+        <img src="assets/img/signup.png" alt="logo cheers"><h2>Créer un compte</h2>
+    </div>
     <?php
     // Si nous avons un message d'erreur suivant une tentative de création de compte infructueuse, on l'affiche ici :
     if (isset($_GET['msg'])) :
