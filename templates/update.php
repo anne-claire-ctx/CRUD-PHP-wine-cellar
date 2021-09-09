@@ -26,7 +26,7 @@ $wine = select_wine_by_id($id);
 <section id="updatewine">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div>
                 <h2>Modifier ce vin</h2>
                 <?php
                 // Si nous avons un message d'erreur suivant une tentative de modification d'un vin, on l'affiche ici :
@@ -41,56 +41,56 @@ $wine = select_wine_by_id($id);
                 <!-- formulaire -->
                 <form action="updateWineForm?id=<?= $id ?>" method="post" enctype="multipart/form-data"><!-- enctype pour gérer les $_FILES -->
                 <div>
-                    <div class="mb-3">
+                    <div>
                         <label for="name">Modifier le nom du vin :</label><input type="text" class="form-control" id="name" name="name" value="<?php echo $wine['name']; ?>" required>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="year">Modifier l'année du vin :</label><input type="number" class="form-control" id="year" name="year" value="<?php echo $wine['year']; ?>" required>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="description">Modifier la description :</label><input type="textarea" class="form-control pt-2 pb-3" id="description" name="description" value="<?php echo $wine['description']; ?>" required></input>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="region">Modifier la région :</label><input type="text" class="form-control" id="region" name="region" value="<?php echo $wine['region']; ?>" required>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="grape">Modifier le cépage :</label><input type="text" class="form-control" id="grape" name="grape" value="<?php echo $wine['grape']; ?>" required>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="country">Modifier le pays :</label><input type="text" class="form-control" id="country" name="country" value="<?php echo $wine['country']; ?>" required>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="color">Modifier la couleur :</label><input type="text" class="form-control" id="color" name="color" value="<?php echo $wine['color']; ?>" required>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="grade">Modifier la note /5 :</label><input type="number" class="form-control" id="grade" name="grade" value="<?php echo $wine['grade']; ?>" required>
                     </div>
-                    <div class="mb-3">
+                    <div>
                         <label for="buy">Modifier le lien pour acheter :</label><input type="text" class="form-control" id="buy" name="buy" value="<?php echo $wine['buy']; ?>" required>
                         <p>Remplir le nom du vin et remplacer les espaces par des "+". Exemple : https://www.google.com/search?q=chateau+de+saint+cosme</p>
                     </div>
                 </div>
                 <div>
-                    <div class="mb-3"><label for="picture">Modifier la photo de la bouteille :</label>
+                    <div><label for="picture">Modifier la photo de la bouteille :</label>
                         <input type="hidden" name="MAX_FILE_SIZE" value="4194304"> <!-- Gérer la taille max du fichier img : 4Mo => 1024*1024*4 -->
                         <input type="file" class="form-control" id="picture" name="new-picture">
                         <p>Formats acceptés : png, jpg, jpeg. </p>
                         <p>Taille max : 4 Mo </p>
                     </div>
                     <div class="text-end">
-                        <button type="submit" class="btn login me-1 mt-1">Modifier ce vin</button>
+                        <button type="submit" class="btn login">Modifier ce vin</button>
                     </div>
                 </form>
             </div>
-            <div class="col-md-6 mt-3 mb-3 ps-3 updateImg">
+            <div class="updateImg">
                 <img src="<?= './assets/img/' . $wine['bottle'] ?>" alt="photo de la bouteille">
             </div>
             <input type="hidden" name="picture" value="<?= $wine['bottle'] ?>"> 
             <input type="hidden" name="id" value="<?= $wine['id'] ?>">
             <div class="row">
-                <div class="col-md-12 text-end">
-                    <a href="product?id=<?= $id ?>" class="btn login me-2 ms-2 mt-2">Retour à la fiche du vin</a>
-                    <a href="dashboard" class="btn login me-2 ms-2 mt-2">Retour à la liste des vins</a>
+                <div>
+                    <a href="product?id=<?= $id ?>" class="btn login">Retour à la fiche du vin</a>
+                    <a href="dashboard" class="btn login">Retour à la liste des vins</a>
                 </div>
             </div>
 

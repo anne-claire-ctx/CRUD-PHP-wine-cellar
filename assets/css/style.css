@@ -397,6 +397,7 @@ footer {
   text-decoration: none;
   color: gray;
   transition: all .25s;
+  border-radius: 6px;
 }
 
 .footer-left a:hover {
@@ -536,7 +537,7 @@ footer {
   display: flex;
 }
 
-#dashboard .btn {
+#dashboard.btn {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   color: white;
@@ -549,7 +550,7 @@ footer {
   border-radius: 6px;
   }
   
-#dashboard .btn:hover {
+#dashboard.btn:hover {
     letter-spacing: 5px;
 }
 
@@ -684,10 +685,16 @@ footer {
 /* ======== MY WINES ======== */
 /* ========================== */
 
+#mywines {
+  background: rgb(44, 49, 53);
+}
+
 #infocard {
   background: black;
   border-radius: 20px;
-  margin: 20px;
+  margin: 25px;
+  box-shadow: black 1px 1px 15px;
+  padding: 10px;
 }
 
 #infocard h3 {
@@ -705,6 +712,35 @@ footer {
   font-size: 1.2rem;
 }
 
+#info-right p {
+  margin-bottom: 19px;
+}
+
+a.btns {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  color: white;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all .25s;
+  border-radius: 6px;
+  }
+  
+a.btns:hover {
+    letter-spacing: 5px;
+}
+@media screen and (min-width:510px) {
+  #info-content {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #pmail {
+    margin-top: 19px;
+  }
+}
 /* ========================= */
 /* ======== CONTACT ======== */
 /* ========================= */

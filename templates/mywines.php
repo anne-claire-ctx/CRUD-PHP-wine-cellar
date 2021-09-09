@@ -19,7 +19,7 @@ $user = select_user($_SESSION['pseudo']);
 ?>
 
 <!-- HTML -->
-<section id="dashboard">
+<section id="mywines">
     <div class="tophead mine">
         <img src="assets/img/my-wines.png" alt="logo ma cave"><h2>Ma Cave à vin</h2>
     </div>
@@ -29,11 +29,11 @@ $user = select_user($_SESSION['pseudo']);
         <div id="info-content">
             <div id="info-left">
                 <p>Pseudo : <?php echo $_SESSION['pseudo']; ?></p>
-                <p>Email : <?php echo $_SESSION['email']; ?></p>
+                <p id="pmail">Email : <?php echo $_SESSION['email']; ?></p>
             </div>
             <div id="info-right">
                 <p>Date d'inscription : <?php echo $_SESSION['register_date']; ?></p>
-                <a href="pwdchange">Changer mon mot de passe</a>
+                <a href="pwdchange" class="btns">Changer mon mot de passe</a>
             </div>
         </div>
     </div>
@@ -68,10 +68,11 @@ $user = select_user($_SESSION['pseudo']);
                         <a href="product?id=<?= $wine['id'] ?>" class="link">
                             <h5><?= $wine['name'] ?></h5>
                         </a>
-                        <p class="card-text"><?= $wine['region'] ?>, <?= $wine['country'] ?></p>
+                        <p class="card-text <?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['region'] ?>, <?= $wine['country'] ?></p>
                         <p class="card-text"><?= $wine['year'] ?></p>
-                        <p class="card-text"><?= $wine['grape'] ?></p>
-                        <a href="product?id=<?= $wine['id'] ?>" class="btn">Plus d'informations</a>
+                        <p class="card-text<?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['grape'] ?></p>
+                        <p class="card-text">Notre avis : <?php if($wine['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wine['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wine['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></p>
+                        <a href="product?id=<?= $wine['id'] ?>" class="btn<?php if ($wine['color'] == "Rouge") : ?> btn-red <?php else : ?> btn-white <?php endif; ?>">Plus d'informations</a>
                     </div>
                 </div>
             <?php endforeach; ?>           

@@ -21,18 +21,18 @@ if (empty($wineId)) {
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 text-center mt-1 mb-3">
+            <div>
                 <img src="<?= 'assets/img/' . $wineId['bottle'] ?>" alt="photo de la bouteille" class="mt-5">
             </div>
-            <div class="col-md-6">
-                <h2 class="m-4"><?= $wineId['name'] ?></h2>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item mb-3 p-4">Description : <?= $wineId['description'] ?></li>
-                    <li class="list-group-item mb-3 p-4">Année : <?= $wineId['year'] ?></li>
-                    <li class="list-group-item mb-3 p-4">Cépage : <?= $wineId['grape'] ?></li>
-                    <li class="list-group-item mb-3 p-4">Région : <?= $wineId['region'] ?></li>
-                    <li class="list-group-item mb-3 p-4">Pays : <?= $wineId['country'] ?></li>
-                    <li class="list-group-item mb-3 p-4">Notre Avis : <?php if($wineId['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wineId['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wineId['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></li>
+            <div>
+                <h2><?= $wineId['name'] ?></h2>
+                <ul>
+                    <li>Description : <?= $wineId['description'] ?></li>
+                    <li>Année : <?= $wineId['year'] ?></li>
+                    <li>Cépage : <?= $wineId['grape'] ?></li>
+                    <li>Région : <?= $wineId['region'] ?></li>
+                    <li>Pays : <?= $wineId['country'] ?></li>
+                    <li>Notre Avis : <?php if($wineId['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wineId['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wineId['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></li>
                 </ul>
                 <a href="<?= $wineId['buy'] ?>" target="_blank">Acheter ce vin</a>
                 <?php

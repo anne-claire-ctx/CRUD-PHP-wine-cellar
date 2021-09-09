@@ -18,10 +18,10 @@ require_once __DIR__ . '/header.php';
     <?php endif ?>
 
     <!-- HTML -->
-    <div class="container-fluid">
-        <div class="row pt-4">
+    <div class="container">
+        <div class="row">
             <!-- Formulaire -->
-            <form id="form" action="loginForm" method="post" class="col-md-6">
+            <form id="form" action="loginForm" method="post">
                 <h1 class="text-uppercase">Se connecter</h1>
 
                 <?php
@@ -35,14 +35,14 @@ require_once __DIR__ . '/header.php';
                 <?php
                 endif; ?>
 
-                <div class="mb-4">
+                <div>
                     <input type="text" name="pseudo" class="form-control" placeholder="Entrer votre pseudo :">
                 </div>
-                <div class="mb-4">
+                <div>
                     <input type="password" name="password" class="form-control" placeholder="Mot de passe :">
                 </div>
-                <div class="mb-4">
-                    <input type="submit" value="Se connecter" class="btn me-2 login">
+                <div>
+                    <input type="submit" value="Se connecter" class="btn login">
                     <a href="signup" class="btn btn-secondary sign">Pas encore de compte ? Pour en créer un c'est par ici</a>
                 </div>
             </form>

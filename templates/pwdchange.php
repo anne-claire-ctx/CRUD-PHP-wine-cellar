@@ -25,23 +25,23 @@ if (!isset($_SESSION['pseudo'])) {
     <?php endif ?>
 
     <!-- HTML -->
-    <div class="container-fluid">
-        <div class="row pt-4">
+    <div class="container">
+        <div class="row">
             <!-- Formulaire -->
-            <form id="form" action="pwdChangeForm" method="post" class="col-md-6">
+            <form id="form" action="pwdChangeForm" method="post">
                 <h1 class="text-uppercase">Mettre à jour son mot de passe</h1>
 
-                <div class="mb-4">
+                <div>
                     <input type="password" name="currentPassword" class="form-control" placeholder="Entrer votre mot de passe actuel :">
                 </div>
-                <div class="mb-4">
+                <div>
                     <input type="password" name="newPassword" class="form-control" placeholder="Entrer votre nouveau mot de passe :">
                 </div>
-                <div class="mb-4">
+                <div>
                     <input type="password" name="confirmPassword" class="form-control" placeholder="Confirmez votre nouveau mot de passe :" required>
                 </div>
-                <div class="mb-4">
-                    <input type="submit" value="Changer de mot de passe" class="btn me-2 login">
+                <div>
+                    <input type="submit" value="Changer de mot de passe" class="btn login">
                 </div>
             </form>
         </div>

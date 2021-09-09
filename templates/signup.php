@@ -16,10 +16,10 @@ require_once __DIR__ . '/header.php';
         </div>
     <?php endif ?>
 
-    <div class="container-fluid">
-        <div class="row pt-4">
+    <div class="container">
+        <div class="row">
             <!-- Formulaire -->
-            <form id="form" action="signupUserForm" method="post" class="col-md-6">
+            <form id="form" action="signupUserForm" method="post">
                 <h1 class="text-uppercase">Créer un compte</h1>
 
                 <?php
@@ -33,19 +33,19 @@ require_once __DIR__ . '/header.php';
                 <?php
                 endif; ?>
 
-                <div class="mb-4">
+                <div>
                     <input type="text" name="pseudo" class="form-control" placeholder="Entrer votre pseudo :" required>
                 </div>
-                <div class="mb-4">
+                <div>
                     <input type="email" name="email" class="form-control" placeholder="Entrer votre email :" required>
                 </div>
-                <div class="mb-4">
+                <div>
                     <input type="password" name="password" class="form-control" placeholder="Mot de passe :" required>
                 </div>
-                <div class="mb-4">
+                <div>
                     <input type="password" name="confirmPassword" class="form-control" placeholder="Confirmez votre mot de passe :" required>
                 </div>
-                <div class="mb-3">
+                <div>
                     <button type="submit" class="btn login">Créer un compte</button>
                     <a href="login" class="btn btn-secondary sign">Déjà un compte ? Se connecter</a>
                 </div>
