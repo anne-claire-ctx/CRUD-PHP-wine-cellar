@@ -31,13 +31,13 @@ if (isset($_SESSION['email'])) {
                 <input type="submit" value="Envoyer">
             </form>
             <?php
-                // Si nous avons un message d'erreur suivant une tentative d'ajout infructueuse d'un vin, on l'affiche ici :
-                if (isset($_GET['msg'])) :
+                // Si nous avons un message d'erreur suivant une tentative de contact, on l'affiche ici :
+            if (isset($_GET['msg'])) :
                 ?>
-                    <div class="alert alert-light alert-dismissible fade show ms-3 me-3" role="alert">
-                        <?= $_GET['msg'] ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+            <div class="error" role="dialog">
+                <p><?= $_GET['msg'] ?></p>
+                <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
+            </div>
             <?php endif ?>
             <div id="reseaux">
                 <p>Suivez nous sur les réseaux sociaux pour plus de conseils :</p>

@@ -405,8 +405,8 @@ function send_contact ($contactDatas){
 
     try {
         $query = $dbco->prepare(" 
-            INSERT INTO contact(name, email, subject, message, date, time)
-            VALUES(:name, :email, :subject, :message, CURDATE(), CURTIME());
+            INSERT INTO contact(name, email, subject, message, datetime)
+            VALUES(:name, :email, :subject, :message, CURDATETIME());
         ");
         $query->bindValue(':name', $contactDatas['name'], PDO::PARAM_STR);
         $query->bindValue(':email', $contactDatas['email'], PDO::PARAM_STR);
@@ -424,7 +424,7 @@ function select_all_emails() {
     connexion($dbco);
 
     try {
-        $query = $dbco->prepare("SELECT * FROM contact ORDER BY date DESC, time DESC");
+        $query = $dbco->prepare("SELECT * FROM contact ORDER BY datetime DESC");
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         return $result;

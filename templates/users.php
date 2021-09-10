@@ -27,12 +27,13 @@ if (!isset($_SESSION['pseudo'])) {
 
                 <?php
                 // si message erreur a propos de l'utilisateur ou une validation
-                if (!empty($_SESSION['message'])) : ?>
-                    <div class="alert alert-light alert-dismissible fade show ms-3 me-3" role="alert">
-                        <?= $_SESSION['message'] ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                <?php endif ?>
+                if (isset($_GET['msg'])) :
+                    ?>
+                        <div class="error" role="dialog">
+                            <p><?= $_GET['msg'] ?></p>
+                            <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
+                        </div>
+                    <?php endif ?>
 
                 <div class="table-responsive">
                     <table class="table">
@@ -54,8 +55,9 @@ if (!isset($_SESSION['pseudo'])) {
                             <td><?= $user['email'] ?></td>
                             <td><?= $user['role'] ?></td>
                             <td><?= $user['register_date']?></td>
+                            <?php if($user['id'] !== $_SESSION['id']) : ?>
                             <td><a class="links" href="editUser?id=<?=$user['id']?>">Modifier le role</a>
-                                <a class="links ms-4" href="deleteUser?id=<?=$user['id']?>">Supprimer l'utilisateur</a></td>
+                            <a class="links ms-4" href="deleteUser?id=<?=$user['id']?>">Supprimer l'utilisateur</a></td><?php endif;?>
                         </tr>
                         <?php
                         endforeach;

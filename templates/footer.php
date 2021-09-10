@@ -2,8 +2,8 @@
     <div class="footer-container">
         <div class="footer-left">
             <p>Besoin d'aide ?</p>
-            <p><a href="contact">Contactez-nous</a></p>
-            <p><a href="#">Mentions légales</a></p>
+            <p><a href="contact" class="btns btnsfooter">Contactez-nous</a></p>
+            <p><a href="#" class="btns btnsfooter">Mentions légales</a></p>
         </div>
         <div class="footer-logo-container">
             <img src="assets/img/logo-blanc.png" alt="logo Mycave">

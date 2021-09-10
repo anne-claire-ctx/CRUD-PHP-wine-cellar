@@ -8,7 +8,7 @@ require_once __DIR__ . '/header.php';
             <a href="home"><img src="assets/img/logo-blanc.png" alt="logo My cave"></a>
         </div>
         <div id="mysmallvideo">
-            <video muted autoplay=true loop width="100%" poster="assets/img/red.png">
+            <video muted autoplay=true loop width="100%" poster="assets/img/red.jpg">
                 <source src="assets/video/wine-small.mp4">
             </video>
             <h2>“Si le vin manque,<br/>il manque tout ”</h2>
@@ -25,7 +25,7 @@ require_once __DIR__ . '/header.php';
         <div class="icones">
             <div class="introduction-left">
                 <img src="assets/img/wine-barrel.png" alt="logo tonneaux">
-                <p>Consulter notre sélection des meilleurs vins à travers le monde. Suivant leur devise avec conviction, nos deux fondateurs, oenologues par passion, vous présentent leurs pépites !</p>
+                <p>Consulter notre sélection des meilleurs vins à travers le monde. Suivant leur devise avec conviction, nos deux fondateurs, oenologues par passion, vous présentent leurs pépites.</p>
             </div>
             <div class="introduction-center">
                 <img src="assets/img/my-wines.png" alt="logo mon verre">
@@ -92,8 +92,8 @@ require_once __DIR__ . '/header.php';
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div class="button">
-            <a href="dashboard">Découvrir notre sélection</a>
+        <div id="btnsswiper">
+            <a href="dashboard" class="btns btnshome">Découvrir notre sélection</a>
         </div>
     </section>
 </main>

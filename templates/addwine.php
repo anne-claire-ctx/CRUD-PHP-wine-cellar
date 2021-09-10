@@ -27,10 +27,10 @@ if (!isset($_SESSION['pseudo'])) {
                 // Si nous avons un message d'erreur suivant une tentative d'ajout infructueuse d'un vin, on l'affiche ici :
                 if (isset($_GET['msg'])) :
                 ?>
-                    <div class="alert alert-light alert-dismissible fade show ms-3 me-3" role="alert">
-                        <?= $_GET['msg'] ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                <div class="error" role="dialog">
+                    <p><?= $_GET['msg'] ?></p>
+                    <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
+                </div>
                 <?php endif ?>
 
                 <!-- Formulaire -->
@@ -69,7 +69,7 @@ if (!isset($_SESSION['pseudo'])) {
                         <p>Taille max : 4 Mo </p>
                     </div>
                     <div>
-                        <button type="submit" class="btn login">Ajouter un vin</button>
+                        <button type="submit" class="btns btnswhite">Ajouter un vin</button>
                     </div>
                 </form>
             </div>

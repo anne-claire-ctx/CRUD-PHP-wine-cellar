@@ -20,9 +20,6 @@ const menu = document.querySelector(".menu");
 burgerIcon.addEventListener("click", () => {
   menu.classList.toggle("display-none");
 });
-// burgerIcon.addEventListener("click", () => {
-//   menu.classList.toggle("is-opened");
-// });
 
 
 // ICONES CONTACT
@@ -50,3 +47,12 @@ function mouseOut(ele) {
     icon_3.setAttribute("src", "assets/img/instagram.png");
   }
 }
+
+
+// MODAL
+
+const exitModal = document.querySelector(".exit");
+const modal = document.querySelector(".error");
+exitModal.addEventListener("click", () => {
+  modal.classList.toggle("display-none");
+});

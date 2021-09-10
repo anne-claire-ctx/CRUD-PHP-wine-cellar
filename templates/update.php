@@ -29,14 +29,14 @@ $wine = select_wine_by_id($id);
             <div>
                 <h2>Modifier ce vin</h2>
                 <?php
-                // Si nous avons un message d'erreur suivant une tentative de modification d'un vin, on l'affiche ici :
+                // Si nous avons un message d'erreur suivant une tentative de mise à jour infructueuse, on l'affiche ici :
                 if (isset($_GET['msg'])) :
-                ?>
-                    <div class="alert alert-light alert-dismissible fade show ms-3 me-3" role="alert">
-                        <?= $_GET['msg'] ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                <?php endif ?>
+                    ?>
+                        <div class="error" role="dialog">
+                            <p><?= $_GET['msg'] ?></p>
+                            <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
+                        </div>
+                    <?php endif ?>
 
                 <!-- formulaire -->
                 <form action="updateWineForm?id=<?= $id ?>" method="post" enctype="multipart/form-data"><!-- enctype pour gérer les $_FILES -->
@@ -78,7 +78,7 @@ $wine = select_wine_by_id($id);
                         <p>Taille max : 4 Mo </p>
                     </div>
                     <div class="text-end">
-                        <button type="submit" class="btn login">Modifier ce vin</button>
+                        <button type="submit" class="btns btnswhite">Modifier ce vin</button>
                     </div>
                 </form>
             </div>
@@ -89,8 +89,8 @@ $wine = select_wine_by_id($id);
             <input type="hidden" name="id" value="<?= $wine['id'] ?>">
             <div class="row">
                 <div>
-                    <a href="product?id=<?= $id ?>" class="btn login">Retour à la fiche du vin</a>
-                    <a href="dashboard" class="btn login">Retour à la liste des vins</a>
+                    <a href="product?id=<?= $id ?>" class="btns btnswhite">Retour à la fiche du vin</a>
+                    <a href="dashboard" class="btns btnswhite">Retour à la liste des vins</a>
                 </div>
             </div>
 

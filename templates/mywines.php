@@ -33,20 +33,20 @@ $user = select_user($_SESSION['pseudo']);
             </div>
             <div id="info-right">
                 <p>Date d'inscription : <?php echo $_SESSION['register_date']; ?></p>
-                <a href="pwdchange" class="btns">Changer mon mot de passe</a>
+                <a href="pwdchange" class="btns btnswhite">Changer mon mot de passe</a>
             </div>
         </div>
     </div>
 
     <?php
     // Si nous avons un message d'erreur suivant une tentative de modification ou suppression infructueuse d'un vin, on l'affiche ici :
-    if (isset($_GET['msg'])) :
-    ?>
-        <div class="alert alert-light alert-dismissible fade show ms-3 me-3" role="alert">
-            <?= $_GET['msg'] ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <?php endif ?>
+        if (isset($_GET['msg'])) :
+            ?>
+                <div class="error" role="dialog">
+                    <p><?= $_GET['msg'] ?></p>
+                    <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
+                </div>
+            <?php endif ?>
 
     <div class="container">
         <div class="grid">
@@ -72,7 +72,7 @@ $user = select_user($_SESSION['pseudo']);
                         <p class="card-text"><?= $wine['year'] ?></p>
                         <p class="card-text<?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['grape'] ?></p>
                         <p class="card-text">Notre avis : <?php if($wine['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wine['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wine['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></p>
-                        <a href="product?id=<?= $wine['id'] ?>" class="btn<?php if ($wine['color'] == "Rouge") : ?> btn-red <?php else : ?> btn-white <?php endif; ?>">Plus d'informations</a>
+                        <a href="product?id=<?= $wine['id'] ?>" class="btns <?php if ($wine['color'] == "Rouge") : ?>btnsred<?php else : ?> btnsww<?php endif; ?>">Plus d'informations</a>
                     </div>
                 </div>
             <?php endforeach; ?>           

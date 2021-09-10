@@ -28,6 +28,123 @@ main::-webkit-scrollbar-thumb {
   border: 2px solid #000000;
 }
 
+/* ============================================================= */
+/* =========================== MODAL =========================== */
+/* ============================================================= */
+
+.exit {
+  width: 50px;
+  height: 50px;
+  transition: .3s;
+  cursor: pointer;
+  padding-top: 23px;
+}
+
+.exit:hover {
+  transform-origin: center;
+  transform: rotate(90deg);
+}
+.exitLeft {
+  background-color: white;
+  display: block;
+  width: 100%;
+  height: 2px;
+  transform: rotate(45deg);
+  transition: .3s;
+}
+.exitRight {
+  background-color: white;
+  display: block;
+  width: 100%;
+  height: 2px;
+  transform: rotate(-45deg);
+  transition: .3s;
+}
+
+.error {
+  border-radius: 5px;
+  font-size: 1.5rem;
+  width: 60%;
+  max-width: 25rem;
+  display: flex;
+  justify-content: space-around;
+  background-color: lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  align-items: center;
+}
+
+/* ============================================================ */
+/* ========================== BUTTON ========================== */
+/* ============================================================ */
+
+.btns {
+  padding: 10px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all .55s;
+}
+
+.btns:hover {
+  letter-spacing: 5px;
+}
+
+.btnscard {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.btnswhite {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+.btnsred {
+  color: var(--white);
+  border-top: 2px solid var(--red);
+  border-bottom: 2px solid var(--red);
+}
+
+.btnsww {
+  color: var(--white);
+  border-top: 2px solid #E4CC85;
+  border-bottom: 2px solid #E4CC85;
+}
+
+.btnshome {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  color: white;
+  display: inline-block;
+}
+
+.btnsfooter:hover {
+  color: gray;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  padding: 2px !important;
+  border-radius: 0;
+}
+
+/* a.btns {
+  padding: 10px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all .25s;
+  border-radius: 6px;
+}
+  
+a.btns:hover {
+    letter-spacing: 5px;
+} */
+
 /* ============================================================ */
 /* =========================== HOME =========================== */
 /* ============================================================ */
@@ -85,7 +202,7 @@ main::-webkit-scrollbar-thumb {
 }
 
 .menu-container {
-  height: 80%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -341,28 +458,10 @@ header h2{
   display: none;
 } 
 
-.button {
+#btnsswiper {
   text-align: center;
   margin-top: 1.5rem;
   margin-bottom: 45px;
-}
-.button a {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  color: white;
-  padding: 10px;
-  letter-spacing: 1.5px;
-  margin-top: 12px;
-  display: inline-block;
-  cursor: pointer;
-  font-size: 15px;
-  text-decoration: none;
-  transition: all .25s;
-  border-radius: 6px;
-}
-
-.button a:hover {
-  letter-spacing: 5px;
 }
 
 /* ===== FOOTER ===== */
@@ -393,21 +492,13 @@ footer {
   margin: 5px;
 }
 
-.footer-left a {
-  text-decoration: none;
+.footer-left p a {
   color: gray;
-  transition: all .25s;
-  border-radius: 6px;
-}
-
-.footer-left a:hover {
-  border-bottom: 2px solid gray;
-  border-top: 2px solid gray;
-  letter-spacing: 5px;
 }
 
 .footer-left p, .footer-right p {
   margin: 7px;
+  transition: all .25s;
 }
 
 .footer-logo-container img {
@@ -541,7 +632,7 @@ footer {
   margin-top: 10px;
   padding: 15px;
   align-items: center;
-  box-shadow: 5px 5px 10px -3px rgba(101, 101, 101, 0.99);
+  box-shadow: black 1px 1px 15px;
 }
 
 .search-option {
@@ -550,7 +641,7 @@ footer {
 .search-sort {
   display: flex;
 }
-
+/* 
 #dashboard.btn {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
@@ -566,7 +657,7 @@ footer {
   
 #dashboard.btn:hover {
     letter-spacing: 5px;
-}
+} */
 
 
 .container {
@@ -589,7 +680,6 @@ footer {
 /* cards */
 .card {
   border-radius: 15px;
-  /* box-shadow: 5px 5px 10px -3px rgba(101, 101, 101, 0.99); */
   box-shadow: black 1px 1px 15px;
   background-color: black;
   transition: ease-out 0.2s;
@@ -612,13 +702,14 @@ footer {
 }
 .card__body {
   padding: 20px 10px;
+  transition: all .25s;
 }
 
 .card__body h5 {
   font-size: 1.8rem;
 }
 
-.card__body .btn {
+/* .card__body .btn {
   display: inline-block;
   padding: 8px 16px;
   border-radius: 6px;
@@ -643,7 +734,7 @@ footer {
   color: var(--white);
   border-top: 2px solid #E4CC85;
   border-bottom: 2px solid #E4CC85;
-}
+} */
 
 .card-text {
   font-size: 1.2rem;
@@ -730,22 +821,7 @@ footer {
   margin-bottom: 19px;
 }
 
-a.btns {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  color: white;
-  padding: 10px;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  font-size: 15px;
-  text-decoration: none;
-  transition: all .25s;
-  border-radius: 6px;
-  }
-  
-a.btns:hover {
-    letter-spacing: 5px;
-}
+
 @media screen and (min-width:510px) {
   #info-content {
     flex-direction: row;

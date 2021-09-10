@@ -17,12 +17,12 @@ if (!isset($_SESSION['pseudo'])) {
     <?php
     // Si nous avons un message d'erreur suivant une tentative de changement de mot de passe infructueuse, on l'affiche ici :
     if (isset($_GET['msg'])) :
-    ?>
-        <div class="alert alert-light alert-dismissible fade show ms-3 me-3" role="alert">
-            <?= $_GET['msg'] ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <?php endif ?>
+        ?>
+            <div class="error" role="dialog">
+                <p><?= $_GET['msg'] ?></p>
+                <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
+            </div>
+        <?php endif ?>
 
     <!-- HTML -->
     <div class="container">
@@ -41,7 +41,7 @@ if (!isset($_SESSION['pseudo'])) {
                     <input type="password" name="confirmPassword" class="form-control" placeholder="Confirmez votre nouveau mot de passe :" required>
                 </div>
                 <div>
-                    <input type="submit" value="Changer de mot de passe" class="btn login">
+                    <input type="submit" value="Changer de mot de passe" class="btns btnswhite">
                 </div>
             </form>
         </div>

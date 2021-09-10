@@ -27,8 +27,7 @@ if (!isset($_SESSION['pseudo'])) {
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
-                            <th>DATE</th>
-                            <th>HEURE</th>
+                            <th>DATE/HEURE</th>
                             <th>NOM</th>
                             <th>EMAIL</th>
                             <th>SUBJECT</th>
@@ -40,8 +39,7 @@ if (!isset($_SESSION['pseudo'])) {
                         foreach ($mails as $mail) :
                         ?>
                         <tr>
-                            <td><?= $mail['date'] ?></td>
-                            <td><?= $mail['time'] ?></td>
+                            <td><?= $mail['datetime'] ?></td>
                             <td><?= $mail['name'] ?></td>
                             <td><?= $mail['email'] ?></td>
                             <td><?= $mail['subject'] ?></td>

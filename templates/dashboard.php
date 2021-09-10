@@ -17,14 +17,14 @@ require_once __DIR__ . '/header.php';
     </div>
 
     <?php
-    // Si nous avons un message d'erreur suivant une tentative de modification ou suppression infructueuse d'un vin, on l'affiche ici :
+    // Si nous avons un message d'erreur suivant une tentative de suppression infructueuse d'un vin, on l'affiche ici :
     if (isset($_GET['msg'])) :
-    ?>
-        <div class="alert alert-light alert-dismissible fade show ms-3 me-3" role="alert">
-            <?= $_GET['msg'] ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <?php endif; ?>
+        ?>
+            <div class="error" role="dialog">
+                <p><?= $_GET['msg'] ?></p>
+                <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
+            </div>
+        <?php endif ?>
     <div class="searchbar">
         <form method="post" class="search-option"> 
             <p><input type="text" name="search" placeholder="Rechercher"></p>
@@ -46,10 +46,10 @@ require_once __DIR__ . '/header.php';
         </form>
             <?php
         if (isset($_POST['search']) && empty($wines)) : ?>
-            <p>Aucun vin trouvé</p><a href="dashboard" class="btn">Retour à la liste complète des vins</a>
+            <p>Aucun vin trouvé</p><a href="dashboard" class="btns btnswhite">Retour à la liste complète des vins</a>
             <?php endif;
         if (isset($_POST['search']) && !empty($wines)) : ?>
-            <a href="dashboard" class="btn">Retour à la liste complète des vins</a>
+            <a href="dashboard" class="btns btnswhite">Retour à la liste complète des vins</a>
         <?php endif; ?>
     </div>
     <div class="container">
@@ -72,7 +72,7 @@ require_once __DIR__ . '/header.php';
                         <p class="card-text"><?= $wine['year'] ?></p>
                         <p class="card-text<?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['grape'] ?></p>
                         <p class="card-text">Notre avis : <?php if($wine['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wine['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wine['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></p>
-                        <a href="product?id=<?= $wine['id'] ?>" class="btn <?php if ($wine['color'] == "Rouge") : ?> btn-red <?php else : ?> btn-white <?php endif; ?>">En savoir plus</a>
+                        <a href="product?id=<?= $wine['id'] ?>" class="btns btnscard <?php if ($wine['color'] == "Rouge") : ?>btnsred<?php else : ?>btnsww<?php endif; ?>">En savoir plus</a>
                     </div>
                 </div>
             <?php endforeach; ?>
