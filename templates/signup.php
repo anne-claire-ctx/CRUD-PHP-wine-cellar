@@ -26,31 +26,20 @@ require_once __DIR__ . '/header.php';
             </div>
             <?php
             endif; ?> 
-
-    <div class="container">
-        <div class="row">
-            <!-- Formulaire -->
-            <form id="form" action="signupUserForm" method="post">
-                <h1 class="text-uppercase">Créer un compte</h1>
-                <div>
-                    <input type="text" name="pseudo" class="form-control" placeholder="Entrer votre pseudo :" required>
-                </div>
-                <div>
-                    <input type="email" name="email" class="form-control" placeholder="Entrer votre email :" required>
-                </div>
-                <div>
-                    <input type="password" name="password" class="form-control" placeholder="Mot de passe :" required>
-                </div>
-                <div>
-                    <input type="password" name="confirmPassword" class="form-control" placeholder="Confirmez votre mot de passe :" required>
-                </div>
-                <div>
-                    <button type="submit" class="btns btnswhite">Créer un compte</button>
-                    <a href="login" class="btns btnswhite">Déjà un compte ? Se connecter</a>
-                </div>
+    <div class="signup-page">
+        <img src="assets/img/logo-blanc.png" alt="logo mycave">
+        <div class="form">
+            <form action="signupUserForm" method="post" id="registerform">
+                <input type="text" name="pseudo" placeholder="Entrer votre pseudo :" required>
+                <input type="email" name="email" placeholder="Entrer votre email :" required>
+                <input type="password" name="password" placeholder="Mot de passe :" required>
+                <input type="password" name="confirmPassword" placeholder="Confirmez votre mot de passe :" required>
+                <button type="submit">Créer un compte</button>
+                <p class="message">Déjà un compte ? <a href="login">Se connecter</a></p>
             </form>
         </div>
     </div>
+    <div id="footer-push"></div>
 </section>
 <?php
 // on appelle notre footer

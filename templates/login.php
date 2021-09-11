@@ -29,29 +29,19 @@ require_once __DIR__ . '/header.php';
     endif; ?>
 
     <!-- HTML -->
-    <div class="container">
-        <div class="row">
-            <!-- Formulaire -->
-            <form id="form" action="loginForm" method="post">
-                <div id="login-left">
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_kdni2vdh.json" background="#000000" speed="1" style="height: 310px;" loop autoplay></lottie-player>
-                </div>
-                <div>
-                <div>
-                    <input type="text" name="pseudo" class="form-control" placeholder="Entrer votre pseudo :">
-                </div>
-                <div>
-                    <input type="password" name="password" class="form-control" placeholder="Mot de passe :">
-                </div>
-                <div>
-                    <input type="submit" value="Se connecter" class="btns btnswhite">
-                    <a href="signup" class="btns btnswhite">Pas encore de compte ? Pour en créer un c'est par ici</a>
-                </div>
-                </div>
+
+    <div class="login-page">
+        <img src="assets/img/logo-blanc.png" alt="logo mycave">
+        <div class="form">
+            <form action="loginForm" method="post" id="loginform">
+                <input type="text" name="pseudo" placeholder="Entrer votre pseudo :" required>
+                <input type="password" name="password" placeholder="Mot de passe :" required>
+                <button type="submit">Se connecter</button>
+                <p class="message">Pas encore de compte ? <a href="signup">Créer un compte</a></p>
             </form>
         </div>
     </div>
+    <div id="footer-push"></div>
 </section>
 <?php
 // on appelle le footer

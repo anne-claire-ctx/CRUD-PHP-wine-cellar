@@ -25,10 +25,11 @@ require_once __DIR__ . '/header.php';
                 <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
             </div>
         <?php endif ?>
+
     <div class="searchbar">
         <form method="post" class="search-option"> 
-            <p><input type="text" name="search" placeholder="Rechercher"></p>
-            <input type="submit" value="Rechercher"> 
+            <input type="search" name="search" placeholder="Rechercher" required>
+            <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <form method="get" class="sort-option">
             <select name="sort" id="sort">
@@ -45,10 +46,10 @@ require_once __DIR__ . '/header.php';
             <button type="submit">Trier</button>
         </form>
             <?php
-        if (isset($_POST['search']) && empty($wines)) : ?>
+        if (isset($_POST['search']) && empty($wines) && ($_POST['search'] !== "")): ?>
             <p>Aucun vin trouvé</p><a href="dashboard" class="btns btnswhite">Retour à la liste complète des vins</a>
-            <?php endif;
-        if (isset($_POST['search']) && !empty($wines)) : ?>
+        <?php endif;
+        if (isset($_POST['search']) && !empty($wines) && ($_POST['search'] !== "")): ?>
             <a href="dashboard" class="btns btnswhite">Retour à la liste complète des vins</a>
         <?php endif; ?>
     </div>
