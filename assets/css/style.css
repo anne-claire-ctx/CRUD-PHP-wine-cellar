@@ -130,9 +130,9 @@ main::-webkit-scrollbar-thumb {
 }
 
 .btnsfooter:hover {
-  color: gray;
-  border-top: 2px solid grey;
-  border-bottom: 2px solid grey;
+  color: white;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
   padding: 2px !important;
   border-radius: 0;
 }
@@ -509,7 +509,7 @@ footer {
 }
 
 .footer-left p a {
-  color: gray;
+  color: white;
 }
 
 .footer-left p, .footer-right p {

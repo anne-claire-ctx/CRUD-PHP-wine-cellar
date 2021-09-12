@@ -79,6 +79,9 @@ if ($url === '' || $url === 'home') {
 } elseif ($url === 'contactemail') {
     require 'templates/contactemail.php';
 
+} elseif ($url === 'deleteContact') {
+    require 'form_management/deleteContact.php';
+
 } else {
     require 'templates/my404.php';
 }

@@ -22,6 +22,15 @@ if (!isset($_SESSION['pseudo'])) {
         <img src="assets/img/contact.png" alt="logo contact"><h2>Mails reçus</h2>
     </div>
     <div class="emailtable">
+    <?php
+    // si message erreur a propos de l'utilisateur ou une validation
+    if (isset($_GET['msg'])) :
+        ?>
+            <div class="error" role="dialog">
+                <p><?= $_GET['msg'] ?></p>
+                <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
+            </div>
+    <?php endif ?>
         <table class="table-container">
             <thead>
                 <th><h1>DATE/HEURE</h1></th>
@@ -29,6 +38,7 @@ if (!isset($_SESSION['pseudo'])) {
                 <th><h1>EMAIL</h1></th>
                 <th><h1>SUBJECT</h1></th>
                 <th><h1>MESSAGE</h1></th>
+                <th><h1>ACTION</h1></th>
             </thead>
             <tbody>
             <?php
@@ -41,6 +51,7 @@ if (!isset($_SESSION['pseudo'])) {
                 <td><?= $mail['email'] ?></td>
                 <td><?= $mail['subject'] ?></td>
                 <td><?= $mail['message']?></td>
+                <td><a href="deleteContact?id=<?=$mail['idcontact']?>"><img src="assets/img/delete-user.png" title="supprimer le message" alt="icone supprimer message"></a></td>
             </tr>
             <?php
             endforeach;

@@ -432,3 +432,16 @@ function select_all_emails() {
         echo "Erreur : " . $e->getMessage();
     }
 }
+
+function delete_contact_by_id ($idcontact) {
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("DELETE FROM contact WHERE idcontact =:idcontact");
+        $query->bindValue(':idcontact', $idcontact, PDO::PARAM_INT);
+        return $query->execute();
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
