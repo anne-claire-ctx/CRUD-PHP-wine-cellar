@@ -37,6 +37,22 @@ function select_user(string $pseudo)
     }
 }
 
+function select_user_by_email($email)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("SELECT email FROM users WHERE email=:email");
+        $query->bindValue(':email', $email, PDO::PARAM_STR);
+        $query->execute();
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
 // fonction pour créer un nouvel utilisateur
 function createUser(string $pseudo, string $email, string $password)
 {

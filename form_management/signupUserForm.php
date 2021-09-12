@@ -11,21 +11,27 @@ if (isset($_POST['pseudo'], $_POST['password'], $_POST['confirmPassword'])) {
         $email = html($_POST['email']);
         $passwordConfirm = html($_POST['confirmPassword']);
         $user = select_user($pseudo);
+        $emailu = select_user_by_email($email);
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             if (!$user) {
-                if ($password === $passwordConfirm) {
-                    if(strlen($password) >= 8) {
-                        // on cripte et nettoie le mot de passe de possible espace
-                        $pwh = password_hash(($_POST['password']), PASSWORD_DEFAULT);
-                        createUser($pseudo, $email, $pwh);
-                        header("location: http://localhost/Nouveau-projet/login?msg=Le compte a bien été créé");
+                if (!$emailu) {
+                    if ($password === $passwordConfirm) {
+                        if(strlen($password) >= 8) {
+                            // on cripte et nettoie le mot de passe de possible espace
+                            $pwh = password_hash(($_POST['password']), PASSWORD_DEFAULT);
+                            createUser($pseudo, $email, $pwh);
+                            header("location: http://localhost/Nouveau-projet/login?msg=Le compte a bien été créé");
+                        } else {
+                            // on vérifie que le mot de passe est dans un format correct
+                            header("location: http://localhost/Nouveau-projet/signup?msg=Le mot de passe doit être au moins de 8 caractères");
+                        }
                     } else {
-                        // on vérifie que le mot de passe est dans un format correct
-                        header("location: http://localhost/Nouveau-projet/signup?msg=Le mot de passe doit être au moins de 8 caractères");
+                        // on vérifie que les mots de passe sont indentiques
+                        header("location: http://localhost/Nouveau-projet/signup?msg=Les mots de passe doivent être identiques");
                     }
                 } else {
-                    // on vérifie que les mots de passe sont indentiques
-                    header("location: http://localhost/Nouveau-projet/signup?msg=Les mots de passe doivent être identiques");
+                    // on vérifie que l'email n'existe pas déjà
+                    header("location: http://localhost/Nouveau-projet/signup?msg=Cet email est déjà utilisé, veuillez en choisir un autre");
                 }
             } else {
                 // on vérifie que le pseudo n'existe pas déjà
