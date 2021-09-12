@@ -29,7 +29,7 @@ require_once __DIR__ . '/header.php';
     <div class="searchbar">
         <form method="post" class="search-option"> 
             <input type="search" name="search" placeholder="Rechercher" required>
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button type="submit"><img src="assets/img/search.png" alt="icone recherche"></i></button>
         </form>
         <form method="get" class="sort-option">
             <select name="sort" id="sort">
@@ -43,7 +43,7 @@ require_once __DIR__ . '/header.php';
                 <option value="grade" <?php if ((isset($_GET['sort'])) && ($_GET['sort'] == 'grade')) : ?> selected <?php endif; ?>>Notes</option>
                 <option value="reset">Réinitialiser</option>
             </select>
-            <button type="submit">Trier</button>
+            <button type="submit"><img src="assets/img/sorting.png" alt="icone tri"></button>
         </form>
             <?php
         if (isset($_POST['search']) && empty($wines) && ($_POST['search'] !== "")): ?>
@@ -72,8 +72,8 @@ require_once __DIR__ . '/header.php';
                         <p class="card-text <?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['region'] ?>, <?= $wine['country'] ?></p>
                         <p class="card-text"><?= $wine['year'] ?></p>
                         <p class="card-text<?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['grape'] ?></p>
-                        <p class="card-text">Notre avis : <?php if($wine['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wine['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wine['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></p>
-                        <a href="product?id=<?= $wine['id'] ?>" class="btns btnscard <?php if ($wine['color'] == "Rouge") : ?>btnsred<?php else : ?>btnsww<?php endif; ?>">En savoir plus</a>
+                        <p class="card-text" id="lastp">Notre avis : <?php if($wine['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wine['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wine['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></p>
+                        <a href="product?id=<?= $wine['id'] ?>" class="button <?php if ($wine['color'] == "Rouge") : ?>btnsred<?php else : ?>btnsww<?php endif; ?>">En savoir plus</a>
                     </div>
                 </div>
             <?php endforeach; ?>

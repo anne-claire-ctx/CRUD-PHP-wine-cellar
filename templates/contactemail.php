@@ -18,42 +18,37 @@ if (!isset($_SESSION['pseudo'])) {
 
 <!-- HTML -->
 <section id="contact-email">
-<div class="tophead emai">
+    <div class="tophead emai">
         <img src="assets/img/contact.png" alt="logo contact"><h2>Mails reçus</h2>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <th>DATE/HEURE</th>
-                            <th>NOM</th>
-                            <th>EMAIL</th>
-                            <th>SUBJECT</th>
-                            <th>MESSAGE</th>
-                        </thead>
-                        <tbody>
-                        <?php
-                        // On boucle sur la variable result
-                        foreach ($mails as $mail) :
-                        ?>
-                        <tr>
-                            <td><?= $mail['datetime'] ?></td>
-                            <td><?= $mail['name'] ?></td>
-                            <td><?= $mail['email'] ?></td>
-                            <td><?= $mail['subject'] ?></td>
-                            <td><?= $mail['message']?></td>
-                        </tr>
-                        <?php
-                        endforeach;
-                        ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+    <div class="emailtable">
+        <table class="table-container">
+            <thead>
+                <th><h1>DATE/HEURE</h1></th>
+                <th><h1>NOM</h1></th>
+                <th><h1>EMAIL</h1></th>
+                <th><h1>SUBJECT</h1></th>
+                <th><h1>MESSAGE</h1></th>
+            </thead>
+            <tbody>
+            <?php
+            // On boucle sur la variable result
+            foreach ($mails as $mail) :
+            ?>
+            <tr>
+                <td><?= $mail['datetime'] ?></td>
+                <td><?= $mail['name'] ?></td>
+                <td><?= $mail['email'] ?></td>
+                <td><?= $mail['subject'] ?></td>
+                <td><?= $mail['message']?></td>
+            </tr>
+            <?php
+            endforeach;
+            ?>
+            </tbody>
+        </table>
     </div>
+    <div id="footer-push"></div>
 </section>
 <?php
 require_once __DIR__ . '/footer.php';

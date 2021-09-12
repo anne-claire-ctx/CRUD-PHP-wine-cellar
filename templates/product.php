@@ -28,22 +28,26 @@ if (empty($wineId)) {
             <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
         </div>
     <?php endif ?>
-    <div class="container">
-        <div class="row">
-            <div>
-                <img src="<?= 'assets/img/' . $wineId['bottle'] ?>" alt="photo de la bouteille" class="mt-5">
+    <div class="productpage">
+        <div class="fiche">
+            <div class="flexproduct">
+                <div class="productImg">
+                    <img src="<?= 'assets/img/' . $wineId['bottle'] ?>" alt="photo de la bouteille" class="mt-5">
+                </div>
+                <div class="card-product">
+                    <h2><?= $wineId['name'] ?></h2>
+                    <ul>
+                        <li>Description : <?= $wineId['description'] ?></li>
+                        <li>Millésime : <?= $wineId['year'] ?></li>
+                        <li>Cépage : <?= $wineId['grape'] ?></li>
+                        <li>Région : <?= $wineId['region'] ?></li>
+                        <li>Pays : <?= $wineId['country'] ?></li>
+                        <li>Notre Avis : <?php if($wineId['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wineId['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wineId['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></li>
+                    </ul>
+                    <a href="<?= $wineId['buy'] ?>" target="_blank" onclick="confirmLeave();" class="button btnsproduct">Acheter ce vin</a>
+                </div>
             </div>
-            <div>
-                <h2><?= $wineId['name'] ?></h2>
-                <ul>
-                    <li>Description : <?= $wineId['description'] ?></li>
-                    <li>Année : <?= $wineId['year'] ?></li>
-                    <li>Cépage : <?= $wineId['grape'] ?></li>
-                    <li>Région : <?= $wineId['region'] ?></li>
-                    <li>Pays : <?= $wineId['country'] ?></li>
-                    <li>Notre Avis : <?php if($wineId['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wineId['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wineId['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></li>
-                </ul>
-                <a href="<?= $wineId['buy'] ?>" target="_blank" class="btns btnswhite">Acheter ce vin</a>
+            <div class="product-options">
                 <?php
                 // on nettoie la précédente URL pour afficher les options en conséquence
                     $previous_url = $_SERVER['HTTP_REFERER'];
@@ -55,31 +59,30 @@ if (empty($wineId)) {
                 if (!empty($_SESSION) && ($_SESSION['role'] == 1)) {
                     // on vérifie si l'utilisateur vient de sa page mywines ou de la liste des vins
                     if ($previous_url == 'http://localhost/Nouveau-projet/mywines') : ?>
-                        <a href="deleteMyWine?id=<?= $wineId['id'] ?>" class="btns btnswhite">Supprimer ce vin de ma cave personnelle</a>
-                        <a href="mywines" class="btns btnswhite">Retour vers ma cave à vin</a>
+                        <a href="deleteMyWine?id=<?= $wineId['id'] ?>" class="button btnsproduct">Supprimer ce vin de ma cave personnelle</a>
+                        <a href="mywines" class="button btnsproduct">Retour vers ma cave à vin</a>
                     <?php else : ?>
-                        <a href="addAWine?id=<?=$wineId['id'] ?>" class="btns btnswhite"> Ajouter ce vin à ma cave</a>
-                        <a href="update?id=<?= $wineId['id'] ?>" class="btns btnswhite">Modifier ce vin</a>
-                        <a href="deleteWine?id=<?= $wineId['id'] ?>" class="btns btnswhite">Supprimer ce vin</a>
-                        <a href="dashboard" class="btns btnswhite">Retour à la liste des vins</a>
+                        <a href="addAWine?id=<?=$wineId['id'] ?>" class="button btnsproduct"> Ajouter ce vin à ma cave</a>
+                        <a href="update?id=<?= $wineId['id'] ?>" class="button btnsproduct">Modifier ce vin</a>
+                        <a href="deleteWine?id=<?= $wineId['id'] ?>" class="button btnsproduct">Supprimer ce vin</a>
+                        <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
                     <?php endif;
                 } elseif (!empty($_SESSION) && ($_SESSION['role'] == 0)) {
                     if ($previous_url == 'http://localhost/Nouveau-projet/mywines') : ?>
-                        <a href="deleteMyWine?id=<?= $wineId['id'] ?>" class="btns btnswhite">Supprimer ce vin de ma cave personnelle</a>
-                        <a href="dashboard" class="btns btnswhite">Retour à la liste des vins</a>
+                        <a href="deleteMyWine?id=<?= $wineId['id'] ?>" class="button btnsproduct">Supprimer ce vin de ma cave personnelle</a>
+                        <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
                     <?php else : ?>
-                        <a href="addAWine?id=<?=$wineId['id'] ?>" class="btns btnswhite"> Ajouter ce vin à ma cave</a>
-                        <a href="dashboard" class="btns btnswhite">Retour à la liste des vins</a>
+                        <a href="addAWine?id=<?=$wineId['id'] ?>" class="button btnsproduct"> Ajouter ce vin à ma cave</a>
+                        <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
                     <?php endif;
                 } else { ?>
-                    <a href="dashboard" class="btns btnswhite">Retour à la liste des vins</a>
+                    <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
                 <?php
                 } ?>
-
             </div>
         </div>
-
     </div>
+    <div id="footer-push"></div>
 </section>
 <?php
 // on appelle le footer

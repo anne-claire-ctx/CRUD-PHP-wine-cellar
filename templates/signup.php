@@ -34,7 +34,7 @@ require_once __DIR__ . '/header.php';
                 <input type="email" name="email" placeholder="Entrer votre email :" required>
                 <input type="password" name="password" placeholder="Mot de passe :" required>
                 <input type="password" name="confirmPassword" placeholder="Confirmez votre mot de passe :" required>
-                <button type="submit">Créer un compte</button>
+                <button type="submit" class="btns">Créer un compte</button>
                 <p class="message">Déjà un compte ? <a href="login">Se connecter</a></p>
             </form>
         </div>

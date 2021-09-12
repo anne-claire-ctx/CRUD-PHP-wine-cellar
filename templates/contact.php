@@ -30,7 +30,7 @@ if (isset($_SESSION['email'])) {
                 <input type="text" id="subject" name="subject" placeholder="L'objet de votre message" required>
                 <input id="emailAddress" type="email" name="email" placeholder="Votre email" required value="<?= $sessionEmail ?>">
                 <textarea id="message" name="message" placeholder="Votre message" style="height:200px"></textarea>
-                <button type="submit">Envoyer</button>
+                <button type="submit" class="btns">Envoyer</button>
             </form>
         </div>
         <div id="reseaux">

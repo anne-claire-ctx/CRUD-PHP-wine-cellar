@@ -36,7 +36,7 @@ require_once __DIR__ . '/header.php';
             <form action="loginForm" method="post" id="loginform">
                 <input type="text" name="pseudo" placeholder="Entrer votre pseudo :" required>
                 <input type="password" name="password" placeholder="Mot de passe :" required>
-                <button type="submit">Se connecter</button>
+                <button type="submit" class="btns">Se connecter</button>
                 <p class="message">Pas encore de compte ? <a href="signup">Créer un compte</a></p>
             </form>
         </div>

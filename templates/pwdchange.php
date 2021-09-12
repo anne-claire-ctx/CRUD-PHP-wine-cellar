@@ -12,7 +12,7 @@ if (!isset($_SESSION['pseudo'])) {
 
 <section id="lostpwd">
     <div class="tophead pwdc">
-        <img src="assets/img/wine-bottle.png" alt="logo ouvre bouteille"><h2>Changer mon mot de passe</h2>
+        <img src="assets/img/wine-bottle.png" alt="logo ouvre bouteille"><h2>Changer mon mdp</h2>
     </div>
     <?php
     // Si nous avons un message d'erreur suivant une tentative de changement de mot de passe infructueuse, on l'affiche ici :
@@ -25,27 +25,21 @@ if (!isset($_SESSION['pseudo'])) {
         <?php endif ?>
 
     <!-- HTML -->
-    <div class="container">
-        <div class="row">
+    <div class="changepwd-page">
+        <div class="form">
             <!-- Formulaire -->
             <form id="form" action="pwdChangeForm" method="post">
-                <h1 class="text-uppercase">Mettre à jour son mot de passe</h1>
+                    <input type="password" name="currentPassword" placeholder="Mot de passe actuel :">
+                    
+                    <input type="password" name="newPassword" placeholder="Nouveau mot de passe :">
 
-                <div>
-                    <input type="password" name="currentPassword" class="form-control" placeholder="Entrer votre mot de passe actuel :">
-                </div>
-                <div>
-                    <input type="password" name="newPassword" class="form-control" placeholder="Entrer votre nouveau mot de passe :">
-                </div>
-                <div>
-                    <input type="password" name="confirmPassword" class="form-control" placeholder="Confirmez votre nouveau mot de passe :" required>
-                </div>
-                <div>
-                    <input type="submit" value="Changer de mot de passe" class="btns btnswhite">
-                </div>
+                    <input type="password" name="confirmPassword" placeholder="Confirmez nouveau mot de passe :" required>
+
+                    <button type="submit" class="btns btnswhite">Mettre à jour mon mot de passe</button>
             </form>
         </div>
     </div>
+    <div id="footer-push"></div>
 </section>
 <?php
 // on appelle le footer

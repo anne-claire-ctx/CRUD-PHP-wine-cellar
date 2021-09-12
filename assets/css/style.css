@@ -62,17 +62,19 @@ main::-webkit-scrollbar-thumb {
 }
 
 .error {
-  border-radius: 5px;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
   width: 60%;
   max-width: 25rem;
   display: flex;
   justify-content: space-around;
-  background-color: lightgrey;
+  background-color: rgba(58,63,68,0.5);
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
   align-items: center;
+  border: 1px solid white;
+  box-shadow: black 1px 1px 15px;
 }
 
 /* ============================================================ */
@@ -92,6 +94,10 @@ main::-webkit-scrollbar-thumb {
   letter-spacing: 5px;
 }
 
+.changepwd-page .btns:hover {
+  letter-spacing: 4px;
+}
+
 .btnscard {
   display: inline-block;
   margin-top: 20px;
@@ -105,15 +111,15 @@ main::-webkit-scrollbar-thumb {
 }
 
 .btnsred {
-  color: var(--white);
-  border-top: 2px solid var(--red);
-  border-bottom: 2px solid var(--red);
+  background: #650e10;
 }
 
 .btnsww {
-  color: var(--white);
-  border-top: 2px solid #E4CC85;
-  border-bottom: 2px solid #E4CC85;
+  background: #E4CC85;
+}
+
+.btnsproduct {
+  background: #dda940;
 }
 
 .btnshome {
@@ -127,6 +133,14 @@ main::-webkit-scrollbar-thumb {
   color: gray;
   border-top: 2px solid grey;
   border-bottom: 2px solid grey;
+  padding: 2px !important;
+  border-radius: 0;
+}
+
+.btnswines:hover {
+  color: white;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
   padding: 2px !important;
   border-radius: 0;
 }
@@ -369,7 +383,9 @@ header h2{
   width: 19rem;
   text-align: center;
   margin: 10px;
-  padding-bottom: 25px;
+  border: 1px solid white;
+  padding: 10px;
+  box-shadow: 1px 5px 16px -2px rgba(255,255,255,0.62);
 }
 
 @media screen and (min-width: 720px) {
@@ -377,10 +393,10 @@ header h2{
     flex-direction: row;
     align-items: normal;
     justify-content: space-around;
+    padding-top: 218px;
   }
   .introduction-left, .introduction-center, .introduction-right {
-    width: 14rem;
-    padding-top: 218px;
+    width: 18rem;
   }
 }
 
@@ -395,7 +411,7 @@ header h2{
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  padding-top: 3rem;
+  padding-top: 10rem;
 }
 
 .swiper-pagination-bullet {
@@ -524,11 +540,6 @@ footer {
 /* ======== DASHBOARD ======== */
 /* =========================== */
 
-#dashboard {
-  /* background: #2b2b2b; */
-  background: rgba(58,63,68,0.5);
-}
-
 .tophead {
   height: 284px;
   display: flex;
@@ -572,7 +583,7 @@ footer {
 }
 
 .detail {
-  background: url(../img/details.jpg);
+  background: url(../img/detail.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -606,12 +617,19 @@ footer {
   background-size: cover;
 }
 
+.editw {
+  background: url(../img/edit.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .tophead img {
   height: 60px;
   margin-right: 10px;
 }
 .tophead h2 {
-  font-size: 33px;
+  font-size: 29px;
   text-align: center;
   line-height: 284px;
   vertical-align: center;
@@ -620,81 +638,73 @@ footer {
 }
 
 .searchbar {
-  width: 95%;
-  background: black;
+  width: 90%;
+  background: rgba(58,63,68,0.5);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin-left: auto;
   margin-right: auto;
-  height: 170px;
+  height: 270px;
   margin-top: 10px;
   padding: 15px;
   align-items: center;
   box-shadow: black 1px 1px 15px;
   transition: all 1s;
+  border: 1px solid white;
 }
 
-
-/* .searchbar form {
-  transition: all 1s; */
-  /* width: 50px; */
-  /* height: 50px;
-  background: white;
-  border-radius: 25px;
-  padding: 5px;
-  margin-bottom: 4px;
-}
-
-.searchbar form button {
-  background: none;
-  border: none;
-} */
-
-/* .searchbar input{
-  width: 100%;;
-  height: 42.5px;
-  line-height: 30px;
+.searchbar input, .searchbar select {
   outline: 0;
+  background: #f2f2f2;
+  width: 100%;
   border: 0;
-  display: none;
-  font-size: 1em;
-  border-radius: 20px;
-  padding: 0 20px;
-} */
+  margin: 0;
+  padding: 15px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+}
 
-/* .fa {
-  padding-left: 3px; */
-  /* width: 42.5px;
-  height: 42.5px; */
-  /* border-radius: 50%;
-  color: #07051a;
-  text-align: center;
-  font-size: 1.2em;
-  transition: all 1s;
+.searchbar select {
+  width: 186px;
+}
+
+.searchbar button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #462414;
+  width: 30%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
   cursor: pointer;
+  height: 52px;
+  margin-left: 5px;
 }
 
-.searchbar form:hover,
-.searchbar form:valid{
-  width: 200px;
-  cursor: pointer;
+.searchbar button img {
+  width: 19px;
 }
 
-.searchbar form:hover input,
-.searchbar form:valid input{
-  display: block;
+.searchbar button:hover {
+  background: #25130b;
 }
-
-.searchbar form:hover .fa,
-.searchbar form:valid .fa{
-  background: #07051a;
-  color: white;
-  padding: 10px;
-} */
 
 .search-option {
   display: flex;
+  transition: all .55s;
+}
+
+.sort-option {
+  display: flex;
+  flex-direction: row;
+  transition: all .55s;
+}
+
+.sort-option button {
+  width: 62px;
 }
 
 .search-sort {
@@ -710,7 +720,7 @@ footer {
 
 .grid {
   display: grid;
-  gap: 30px;
+  gap: 50px;
   grid-template-columns: repeat(6, 1fr);
   justify-items: center;
 }
@@ -720,29 +730,28 @@ footer {
 
 /* cards */
 .card {
-  border-radius: 15px;
   box-shadow: black 1px 1px 15px;
-  background-color: black;
+  background-color: rgba(58,63,68,0.5);
   transition: ease-out 0.2s;
   width: 319px;
   text-align: center;
+  border: 1px solid white;
 }
-.card:hover{
-  /* border-radius: 55px; */
-  background-color: rgb(39, 39, 39);
-}
+
 .card__head {
   display: grid;
   justify-items: center;
 }
+
 .card__head img {
   height: 500px;
   padding: 20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
 .card__body {
-  padding: 20px 10px;
+  padding: 20px 6px;
   transition: all .25s;
 }
 
@@ -755,6 +764,24 @@ footer {
   margin-top: 1.3px;
 }
 
+
+#lastp {
+  margin-bottom: 30px;
+}
+
+.button {
+  text-transform: uppercase;
+  outline: 0;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .55s;
+  font-weight: bold;
+}
+
 .link {
   text-decoration: none;
   text-transform: uppercase;
@@ -763,32 +790,39 @@ footer {
 }
 
 .red {
-  color: #650e10;
+  color: black;
   font-size: 1.5rem;
   font-weight: bold;
+  margin: 10px;
 }
 
 .white {
   color: #E4CC85;
   font-size: 1.5rem;
+  margin: 10px;
 }
 
-@media screen and (min-width: 1000px) {
-  .grid > * {
-    grid-column: span 2;
-  }
+.btnsred:hover {
+  background: #4e0d0e;
+  letter-spacing: 5px;
 }
+
+.btnsww:hover {
+  background: #cfb258;
+  letter-spacing: 5px;
+}
+
+.btnsproduct:hover {
+  background: #da9b1c;
+  letter-spacing: 5px;
+}
+
+
 
 @media screen and (min-width: 874px) {
   .searchbar {
     flex-direction: row;
     height: 100px;
-  }
-  .fa {
-    padding-left: 6px;
-  }
-  .searchbar form button {
-    width: 39px;
   }
 }
 
@@ -810,6 +844,12 @@ footer {
   }
 }
 
+@media screen and (min-width: 1000px) {
+  .grid > * {
+    grid-column: span 2;
+  }
+}
+
 /* ========================== */
 /* ======== MY WINES ======== */
 /* ========================== */
@@ -818,12 +858,24 @@ footer {
   background: rgb(44, 49, 53);
 }
 
+#mywines #emptywine {
+  margin-left: auto;
+  margin-right: auto;
+  width: 319px;
+  text-align: center;
+  line-height: 30px;
+}
+
+#emptywine a {
+  color: white;
+}
+
 #infocard {
   background: black;
-  border-radius: 20px;
   margin: 25px;
   box-shadow: black 1px 1px 15px;
   padding: 10px;
+  border: 1px solid white;
 }
 
 #infocard h3 {
@@ -874,29 +926,44 @@ footer {
   height: 50px;
 }
 
-/* ======================= */
-/* ======== LOGIN ======== */
-/* ======================= */
-#loginpage, #register, #contactpage {
+/* ====================== */
+/* ======== FORM ======== */
+/* ====================== */
+
+#dashboard, #loginpage, #register, #contactpage, #addwine, #updatewine, #users, #contact-email, #product {
   background: rgba(58,63,68,0.5);
 }
 
-.login-page, .signup-page {
+.login-page, .signup-page, .changepwd-page {
   width: 319px;
-  padding: 6% 0 0;
+  padding: 5% 0 0;
   margin: auto;
   text-align: center;
 }
+.addwinepage {
+  width: 90%;
+  padding: 5% 0 0;
+  margin: auto;
+}
+
+.editwinepage {
+  padding: 5% 0 0;
+  margin: auto;
+}
+
 .contact-page {
-  padding: 6% 0 0;
+  width: 90%;
+  padding: 5% 0 0;
   text-align: center;
+  margin: auto;
 }
 
 .login-page img, .signup-page img, .contact-page img {
   margin: 10px;
   height: 70px;
 }
-.login-page .form, .signup-page .form, .contact-page .form {
+
+.login-page .form, .signup-page .form, .changepwd-page .form  {
   max-width: 319px;
   margin: 0 auto 100px;
   padding: 40px;
@@ -906,7 +973,21 @@ footer {
   box-shadow: black 1px 1px 15px;
 }
 
-.login-page .form input, .signup-page .form input, .contact-page .form input, .contact-page .form textarea {
+.addwinepage .form, .contact-page .form, .editwinepage .form {
+  margin: 0 auto 100px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid white;
+  background: rgba(58,63,68,0.5);
+  box-shadow: black 1px 1px 15px;
+}
+
+.editwinepage .form {
+  width: 85%;
+  text-align: left;
+}
+
+.login-page .form input, .signup-page .form input, .contact-page .form input, .contact-page .form textarea, .addwinepage .form input, .addwinepage .form textarea, .editwinepage .form input, .editwinepage .form textarea, .changepwd-page .form input, .changepwd-page .form textarea {
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -915,6 +996,7 @@ footer {
   padding: 15px;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
+  color: #000;
 }
 
 .login-page .form button {
@@ -953,6 +1035,42 @@ footer {
   cursor: pointer;
 }
 
+.addwinepage .form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #5F2F0C;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.editwinepage .form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #516d05;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.changepwd-page .form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #E5AD03;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 .login-page .form button:hover, .login-page .form button:active, .login-page .form button:focus {
   background: #43A047;
 }
@@ -965,11 +1083,36 @@ footer {
   background: #5a5848;
 }
 
+.addwinepage .form button:hover, .addwinepage .form button:active, .addwinepage .form button:focus {
+  background: #291202;
+}
+
+.editwinepage .form button:hover, .editwinepage .form button:active, .editwinepage .form button:focus {
+  background: #3d5205;
+}
+
+.changepwd-page .form button:hover, .changepwd-page .form button:active, .changepwd-page .form button:focus {
+  background: #af8505;
+}
+
+
 .login-page .form .message, .signup-page .form .message {
   margin: 15px -10px 0;
   color: #b3b3b3;
   font-size: 15px;
   transition: all .1s;
+}
+
+.addwinepage .form .message, .editwinepage .form .message {
+  margin: 5px;
+  color: #b3b3b3;
+  font-size: 15px;
+  transition: all .1s;
+  text-align: left;
+}
+
+.message span {
+  font-size: 25px;
 }
 
 .login-page .form .message a {
@@ -992,4 +1135,216 @@ footer {
   border-top: 2px solid #C69E3E;
   border-bottom: 2px solid #C69E3E;
   letter-spacing: 1.1px;
+}
+
+
+/* ======================== */
+/* ======== UPDATE ======== */
+/* ======================== */
+
+.editwine {
+  display: flex;
+  flex-direction: column;
+}
+
+.updatewineright {
+  display: flex;
+  flex-direction: column;
+}
+
+.updatewineright .updateImg {
+  text-align: center;
+}
+
+.updatewineright .updateImg img {
+  height: 450px;
+}
+
+.updatewineright .options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.updatewineright .options a {
+  margin: 10px;
+}
+
+@media screen and (min-width: 800px) {
+  .editwine {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .editwinepage .form {
+    width: 45%;
+    margin: 0;
+  }
+}
+
+/* ======================= */
+/* ======== TABLE ======== */
+/* ======================= */
+
+.table-container th h1 {
+font-weight: bold;
+font-size: 0.5em;
+color: #185875;
+}
+
+.table-container td {
+  font-size: 0.7em;
+}
+
+.table-container {
+  width: 85%;
+  margin: 30px auto;
+  box-shadow: black 1px 1px 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.table-container td, .table-container th {
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
+
+/* Background-color of the odd rows */
+.table-container tr:nth-child(odd) {
+  background-color: #323C50;
+  text-align: center;
+}
+
+/* Background-color of the even rows */
+.table-container tr:nth-child(even) {
+  background-color: #2C3446;
+  text-align: center;
+}
+
+.table-container th {
+  background-color: #1F2739;
+}
+
+.table-container td:first-child { 
+  padding: 5px;
+}
+
+.table-container a img {
+  height: 25px;
+}
+
+.table-container a img:hover {
+  transform: scale(1.2);
+}
+
+.emailtable .table-container td:last-child {
+  text-align: left;
+}
+
+.tablecomment {
+  margin-left: 30px;
+}
+.usertable .message {
+  color: #b3b3b3;
+  font-size: 15px;
+}
+
+@media (max-width: 540px) {
+.table-container td:nth-child(3),
+.table-container th:nth-child(3) { display: none; }
+}
+
+@media (min-width: 540px) {
+  .table-container {
+    font-size: 1em;
+  }
+  .table-container th h1 {
+    font-size: 1em;
+  }
+}
+
+
+/* ========================= */
+/* ======== PRODUCT ======== */
+/* ========================= */
+
+.productpage .fiche .card-product {
+  width: 85%;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+  margin: auto;
+  margin-top: 5px;
+  background: rgba(58,63,68,0.5);
+  border: 1px solid white;
+  box-shadow: black 1px 1px 15px;
+  text-align: center;
+}
+
+.productpage .fiche .product-options {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 319px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.productpage .fiche .product-options a {
+  margin: 2px;
+}
+
+.productpage .fiche .card-product h2 {
+  font-size: 1.5rem;
+  padding: 2px;
+}
+
+.productpage .fiche .card-product ul {
+  text-align: left;
+}
+
+.productpage .fiche .card-product ul li {
+  padding: 10px;
+}
+
+.productpage .fiche .card-product ul li:last-child {
+  margin-bottom: 25px;
+}
+
+.productpage .fiche .productImg {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.productpage .fiche .productImg img {
+  height: 450px;
+}
+
+.flexproduct {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 760px) {
+  .flexproduct {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .fiche {
+    margin-top: 25px;
+  }
+  .productpage .fiche .productImg img {
+    width: 100%;
+    height: auto;
+  }
+  .productpage .fiche .card-product {
+    margin: 0;
+    width: 45%;
+  }
+  .productpage .fiche .product-options {
+    flex-direction: row;
+    width: 95%;
+  }
 }

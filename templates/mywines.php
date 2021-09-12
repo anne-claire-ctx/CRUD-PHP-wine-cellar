@@ -49,11 +49,12 @@ $user = select_user($_SESSION['pseudo']);
             <?php endif ?>
 
     <div class="container">
+    <?php
+    if (empty($wines)) : ?>
+    <div id="emptywine"><p>Votre cave à vin est vide pour le moment. Cliquez <a href="dashboard" class="btns btnswines">ici</a> pour la remplir.</p></div>
+    <?php endif; ?>
         <div class="grid">
             <?php
-            if (empty($wines)) : ?>
-            <p>Votre cave à vin est vide pour le moment. Cliquez <a href="dashboard">ici</a> pour la remplir.</p>
-            <?php endif;
             // boucle afin d'afficher tous nos vins en cartes
             foreach($wines as $wine) : ?>
                 <div class="card">
@@ -71,8 +72,8 @@ $user = select_user($_SESSION['pseudo']);
                         <p class="card-text <?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['region'] ?>, <?= $wine['country'] ?></p>
                         <p class="card-text"><?= $wine['year'] ?></p>
                         <p class="card-text<?php if ($wine['color'] == "Rouge") : ?> red <?php else : ?> white <?php endif; ?>"><?= $wine['grape'] ?></p>
-                        <p class="card-text">Notre avis : <?php if($wine['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wine['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wine['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></p>
-                        <a href="product?id=<?= $wine['id'] ?>" class="btns <?php if ($wine['color'] == "Rouge") : ?>btnsred<?php else : ?> btnsww<?php endif; ?>">Plus d'informations</a>
+                        <p class="card-text" id="lastp">Notre avis : <?php if($wine['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wine['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wine['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></p>
+                        <a href="product?id=<?= $wine['id'] ?>" class="button <?php if ($wine['color'] == "Rouge") : ?>btnsred<?php else : ?>btnsww<?php endif; ?>">En savoir plus</a>
                     </div>
                 </div>
             <?php endforeach; ?>           
