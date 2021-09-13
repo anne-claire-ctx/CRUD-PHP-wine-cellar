@@ -58,7 +58,7 @@ if (!isset($_SESSION['pseudo'])) {
                     <input type="hidden" name="MAX_FILE_SIZE" value="4194304"> <!-- 4Mo => 1024*1024*4 -->
                     <input type="file" id="picture" name="picture" placeholder="Ajouter l'image de la bouteille">
                     
-                    <button type="submit" class="btns btnswhite">Ajouter un vin</button>
+                    <button type="submit" class="btns">Ajouter un vin</button>
             </form>
         </div>
     </div>

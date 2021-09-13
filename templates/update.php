@@ -77,7 +77,7 @@ $wine = select_wine_by_id($id);
                     <input type="hidden" name="MAX_FILE_SIZE" value="4194304"> <!-- Gérer la taille max du fichier img : 4Mo => 1024*1024*4 -->
                     <input type="file" id="picture" name="new-picture">
                      
-                    <button type="submit" class="btns btnswhite">Modifier ce vin</button>
+                    <button type="submit" class="btns">Modifier ce vin</button>
                 </form>
             </div>
             <div class="updatewineright">

@@ -35,7 +35,7 @@ if (!isset($_SESSION['pseudo'])) {
 
                     <input type="password" name="confirmPassword" placeholder="Confirmez nouveau mot de passe :" required>
 
-                    <button type="submit" class="btns btnswhite">Mettre à jour mon mot de passe</button>
+                    <button type="submit" class="btns">Mettre à jour mon mot de passe</button>
             </form>
         </div>
     </div>
