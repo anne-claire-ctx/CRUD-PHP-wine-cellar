@@ -6,7 +6,7 @@ $fields_required = array($_POST['pseudo'], $_POST['email'], $_POST['password'], 
 
 if (isset($_POST['pseudo'], $_POST['password'], $_POST['confirmPassword'])) {
     if (!in_array('', $fields_required)) {
-        $pseudo = html($_POST['pseudo']);
+        $pseudo = html(strtolower($_POST['pseudo']));
         $password = html($_POST['password']);
         $email = html($_POST['email']);
         $passwordConfirm = html($_POST['confirmPassword']);

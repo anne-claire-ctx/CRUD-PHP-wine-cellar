@@ -15,6 +15,13 @@ $fields_required = array($_POST['name'], $_POST['email'], $_POST['subject'], $_P
 // on initialise la variable set_request (vérifier les données avant de les insérer dans la base)
 $set_request = FALSE;
 
+// on récupère l'id de l'utilisateur si celui-ci est connecté
+if (isset($_SESSION['id'])) {
+    $id_users = $_SESSION['id'];
+} else {
+    $id_users = NULL;
+}
+
 // on vérifie que des données ont été envoyées
 if (isset($fields_required)) :
     // on vérifie que les champs nécessaires sont remplis
@@ -22,7 +29,7 @@ if (isset($fields_required)) :
         header("Location: http://localhost/Nouveau-projet/contact?msg=Merci de remplir tous les champs");
     else :
         // on nettoie les données
-        $name = html(strtoupper($_POST['name']));
+        $name = html(mb_ucfirst($_POST['name']));
         $email = html($_POST['email']);
         $subject = html($_POST['subject']);
         $message = html($_POST['message']);
@@ -40,7 +47,8 @@ if (isset($msg_error)) {
         'name' => $name,
         'email' => $email,
         'subject' => $subject,
-        'message' => $message
+        'message' => $message,
+        'id_users' => $id_users
     );
     $result = send_contact($contactDatas);
     header("Location: http://localhost/Nouveau-projet/contact?msg=Votre message a bien été envoyé");

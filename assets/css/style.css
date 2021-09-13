@@ -68,13 +68,15 @@ main::-webkit-scrollbar-thumb {
   max-width: 25rem;
   display: flex;
   justify-content: space-around;
-  background-color: rgba(58,63,68,0.5);
+  background-color: rgba(58,63,68);
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
   align-items: center;
   border: 1px solid white;
   box-shadow: black 1px 1px 15px;
+  padding: 10px;
+  line-height: 1.5rem;
 }
 
 /* ============================================================ */
@@ -94,8 +96,8 @@ main::-webkit-scrollbar-thumb {
   letter-spacing: 5px;
 }
 
-.changepwd-page .btns:hover {
-  letter-spacing: 4px;
+#info-right .btns:hover {
+  letter-spacing: 3px;
 }
 
 .btnscard {
@@ -105,9 +107,8 @@ main::-webkit-scrollbar-thumb {
 }
 
 .btnswhite {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
   color: white;
+  transition: all .55s;
 }
 
 .btnsred {
@@ -123,10 +124,21 @@ main::-webkit-scrollbar-thumb {
 }
 
 .btnshome {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
   color: white;
   display: inline-block;
+}
+
+.btnswhite:hover {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 2px !important;
+}
+
+.btnshome:hover {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 2px !important;
+  margin: 8px;
 }
 
 .btnsfooter:hover {
@@ -144,20 +156,6 @@ main::-webkit-scrollbar-thumb {
   padding: 2px !important;
   border-radius: 0;
 }
-
-/* a.btns {
-  padding: 10px;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  font-size: 15px;
-  text-decoration: none;
-  transition: all .25s;
-  border-radius: 6px;
-}
-  
-a.btns:hover {
-    letter-spacing: 5px;
-} */
 
 /* ============================================================ */
 /* =========================== HOME =========================== */
@@ -319,6 +317,10 @@ a.btns:hover {
   margin: 0 auto;
 }
 
+#mysmallvideo h2 span, #myvideo h2 span {
+  font-size: 21px;
+}
+
 header h2{
   text-align: center;
   font-size: 2rem;
@@ -341,6 +343,7 @@ header h2{
   #myvideo {
     display: block;
     width: 95%;
+    text-align: center;
   }
   #mysmallvideo {
     display: none;
@@ -352,10 +355,10 @@ header h2{
 
 .introduction {
   margin-top: 60px;
-  background-image: url(../img/vertical-grapes.png);
-  background-position: right;
+  background-image: url(../img/try2.jpg);
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   height: 48rem;
 }
 
@@ -478,6 +481,16 @@ header h2{
   text-align: center;
   margin-top: 1.5rem;
   margin-bottom: 45px;
+}
+@media screen and (min-width: 440px) {
+  .slider {
+    margin-top: 5rem;
+  }
+}
+@media screen and (min-width: 760px) {
+  .slider {
+    background-image: url(../img/weeds1.png);
+  }
 }
 
 /* ===== FOOTER ===== */
@@ -639,7 +652,7 @@ footer {
 
 .searchbar {
   width: 90%;
-  background: rgba(58,63,68,0.5);
+  background: rgb(23 27 31);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -731,7 +744,7 @@ footer {
 /* cards */
 .card {
   box-shadow: black 1px 1px 15px;
-  background-color: rgba(58,63,68,0.5);
+  background-color: rgb(23 27 31);
   transition: ease-out 0.2s;
   width: 319px;
   text-align: center;
@@ -751,7 +764,7 @@ footer {
 }
 
 .card__body {
-  padding: 20px 6px;
+  padding: 15px 6px 26px 6px;
   transition: all .25s;
 }
 
@@ -790,7 +803,7 @@ footer {
 }
 
 .red {
-  color: black;
+  color: var(--red);
   font-size: 1.5rem;
   font-weight: bold;
   margin: 10px;
@@ -876,6 +889,10 @@ footer {
   box-shadow: black 1px 1px 15px;
   padding: 10px;
   border: 1px solid white;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
 }
 
 #infocard h3 {
@@ -931,7 +948,7 @@ footer {
 /* ====================== */
 
 #dashboard, #loginpage, #register, #contactpage, #addwine, #updatewine, #users, #contact-email, #product {
-  background: rgba(58,63,68,0.5);
+  background: rgb(39, 43, 46);
 }
 
 .login-page, .signup-page, .changepwd-page {
@@ -969,7 +986,7 @@ footer {
   padding: 40px;
   text-align: center;
   border: 1px solid white;
-  background: rgba(58,63,68,0.5);
+  background: rgba(58,63,68);
   box-shadow: black 1px 1px 15px;
 }
 
@@ -978,8 +995,12 @@ footer {
   padding: 40px;
   text-align: center;
   border: 1px solid white;
-  background: rgba(58,63,68,0.5);
+  background: rgba(58,63,68);
   box-shadow: black 1px 1px 15px;
+}
+
+.contact-page .form {
+  max-width: 600px;
 }
 
 .editwinepage .form {
@@ -1118,23 +1139,29 @@ footer {
 .login-page .form .message a {
   color: #4CAF50;
   transition: all .1s;
+  padding: 5px 0;
+  transition: all .55s;
 }
 
 .signup-page .form .message a {
   color: #C69E3E;
   transition: all .1s;
+  padding: 5px 0;
+  transition: all .55s;
 }
 
 .login-page .form .message a:hover {
   border-top: 2px solid #4CAF50;
   border-bottom: 2px solid #4CAF50;
   letter-spacing: 1.1px;
+  padding: 2px 0;
 }
 
 .signup-page .form .message a:hover {
   border-top: 2px solid #C69E3E;
   border-bottom: 2px solid #C69E3E;
   letter-spacing: 1.1px;
+  padding: 2px 0;
 }
 
 
@@ -1274,7 +1301,7 @@ color: #185875;
   padding-bottom: 25px;
   margin: auto;
   margin-top: 5px;
-  background: rgba(58,63,68,0.5);
+  background: rgba(58,63,68);
   border: 1px solid white;
   box-shadow: black 1px 1px 15px;
   text-align: center;
@@ -1336,8 +1363,7 @@ color: #185875;
     margin-top: 25px;
   }
   .productpage .fiche .productImg img {
-    width: 100%;
-    height: auto;
+    height: 620px;
   }
   .productpage .fiche .card-product {
     margin: 0;

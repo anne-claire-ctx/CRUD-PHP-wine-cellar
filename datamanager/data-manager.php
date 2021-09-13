@@ -421,13 +421,14 @@ function send_contact ($contactDatas){
 
     try {
         $query = $dbco->prepare(" 
-            INSERT INTO contact(name, email, subject, message, datetime)
-            VALUES(:name, :email, :subject, :message, CURDATETIME());
+            INSERT INTO contact(name, email, subject, message, id_users, datetime)
+            VALUES(:name, :email, :subject, :message, :id_users, NOW());
         ");
         $query->bindValue(':name', $contactDatas['name'], PDO::PARAM_STR);
         $query->bindValue(':email', $contactDatas['email'], PDO::PARAM_STR);
         $query->bindValue(':subject', $contactDatas['subject'], PDO::PARAM_STR);
         $query->bindValue(':message', $contactDatas['message'], PDO::PARAM_STR);
+        $query->bindValue(':id_users', $contactDatas['id_users'], PDO::PARAM_INT);
     
         return $query->execute();
     } catch(PDOException $e) {

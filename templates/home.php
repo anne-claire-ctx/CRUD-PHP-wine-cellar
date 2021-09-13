@@ -10,16 +10,21 @@ require_once __DIR__ . '/header.php';
         <div id="mysmallvideo">
             <video muted autoplay=true loop width="100%" poster="assets/img/red.jpg">
                 <source src="assets/video/wine-small.mp4">
+                <source src="assets/video/wine-small.ogv">
+                <source src="assets/video/wine-small.webm">
             </video>
-            <h2>“Si le vin manque,<br/>il manque tout ”</h2>
+            <h2>“Si le vin manque,<br/>il manque tout ”<br/><span>Proverbe Latin</span></h2>
         </div>
         
-        <video id="myvideo" muted autoplay=true loop width="90%" poster="assets/img/poster.jpg">
-            <source src="assets/video/wine.mp4" type="video/mp4">
-            <source src="assets/video/wine.ogv" type="video/ogv">
-            <source src="assets/video/wine.webm" type="video/webm">
-            Veuillez mettre à jour votre navigateur.
-        </video>
+        <div id="myvideo">
+            <video muted autoplay=true loop width="90%" poster="assets/img/poster.jpg">
+                <source src="assets/video/wine.mp4" type="video/mp4">
+                <source src="assets/video/wine.ogv" type="video/ogv">
+                <source src="assets/video/wine.webm" type="video/webm">
+                Veuillez mettre à jour votre navigateur.
+            </video>
+            <h2>“Si le vin manque, il manque tout ”<br/><span>Proverbe Latin</span></h2>
+        </div>
     </header>
     <section class="introduction">
         <div class="icones">
