@@ -7,6 +7,12 @@ require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 if (!isset($_GET['id'])) {
     header("Location: http://localhost/Nouveau-projet/dashboard?msg=Aucun vin n'a été sélectionné");
 }
+
+if (isset($_SESSION['id'])) {
+    $userid = $_SESSION['id'];
+    $mywine = select_wine_by_user_by_wine($userid, $_GET['id']);
+}
+
 // on appelle la fonction pour afficher les informations d'un vin
 $wineId = select_wine_by_id($_GET['id']);
 if (empty($wineId)) {
@@ -57,24 +63,43 @@ if (empty($wineId)) {
                     }
                 // on affiche les options de modification dans le cas ou l'utilisateur est connecté
                 if (!empty($_SESSION) && ($_SESSION['role'] == 1)) {
-                    // on vérifie si l'utilisateur vient de sa page mywines ou de la liste des vins
-                    if ($previous_url == 'http://localhost/Nouveau-projet/mywines') : ?>
-                        <a href="deleteMyWine?id=<?= $wineId['id'] ?>" class="button btnsproduct">Supprimer ce vin de ma cave personnelle</a>
-                        <a href="mywines" class="button btnsproduct">Retour vers ma cave à vin</a>
-                    <?php else : ?>
+                    if ($mywine[0]['id'] == $wineId['id']) : ?>
+                        <a href="deleteMyWine?id=<?= $wineId['id'] ?>" onclick="confirmDelete()" class="button btnsproduct">Supprimer ce vin de ma cave personnelle</a>
+                        <a href="update?id=<?= $wineId['id'] ?>" class="button btnsproduct">Modifier ce vin</a>
+                        <a href="deleteWine?id=<?= $wineId['id'] ?>" onclick="confirmDelete()" class="button btnsproduct">Supprimer ce vin</a>
+                        <!-- on vérifie si l'utilisateur vient de sa page mywines ou de la liste des vins -->
+                        <?php if ($previous_url == 'https://mycaves.rocks/mywines') : ?>
+                            <a href="mywines" class="button btnsproduct">Retour vers ma cave à vin</a>
+                        <?php else : ?>
+                            <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
+                        <?php endif;
+                    else : ?>
                         <a href="addAWine?id=<?=$wineId['id'] ?>" class="button btnsproduct"> Ajouter ce vin à ma cave</a>
                         <a href="update?id=<?= $wineId['id'] ?>" class="button btnsproduct">Modifier ce vin</a>
-                        <a href="deleteWine?id=<?= $wineId['id'] ?>" class="button btnsproduct">Supprimer ce vin</a>
-                        <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
-                    <?php endif;
+                        <a href="deleteWine?id=<?= $wineId['id'] ?>" onclick="confirmDelete()" class="button btnsproduct">Supprimer ce vin</a>
+                        <?php if ($previous_url == 'https://mycaves.rocks/mywines') : ?>
+                            <a href="mywines" class="button btnsproduct">Retour vers ma cave à vin</a>
+                        <?php else : ?>
+                            <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
+                        <?php endif;
+                    endif;
                 } elseif (!empty($_SESSION) && ($_SESSION['role'] == 0)) {
-                    if ($previous_url == 'http://localhost/Nouveau-projet/mywines') : ?>
-                        <a href="deleteMyWine?id=<?= $wineId['id'] ?>" class="button btnsproduct">Supprimer ce vin de ma cave personnelle</a>
-                        <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
-                    <?php else : ?>
+                    if ($mywine[0]['id'] == $wineId['id']) : ?>
+                        <a href="deleteMyWine?id=<?= $wineId['id'] ?>" onclick="confirmDelete()" class="button btnsproduct">Supprimer ce vin de ma cave personnelle</a>
+                        <!-- on vérifie si l'utilisateur vient de sa page mywines ou de la liste des vins -->
+                        <?php if ($previous_url == 'https://mycaves.rocks/mywines') : ?>
+                            <a href="mywines" class="button btnsproduct">Retour vers ma cave à vin</a>
+                        <?php else : ?>
+                            <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
+                        <?php endif;
+                    else : ?>
                         <a href="addAWine?id=<?=$wineId['id'] ?>" class="button btnsproduct"> Ajouter ce vin à ma cave</a>
-                        <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
-                    <?php endif;
+                        <?php if ($previous_url == 'https://mycaves.rocks/mywines') : ?>
+                            <a href="mywines" class="button btnsproduct">Retour vers ma cave à vin</a>
+                        <?php else : ?>
+                            <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
+                        <?php endif;
+                    endif;
                 } else { ?>
                     <a href="dashboard" class="button btnsproduct">Retour à la liste des vins</a>
                 <?php

@@ -237,6 +237,26 @@ function select_wine_by_user($userid)
     }
 }
 
+// fonction pour afficher les vins par utilisateurs par id des vins 
+
+function select_wine_by_user_by_wine($userid, $wineid)
+{
+    $dbco = NULL;
+    connexion($dbco);
+
+    try {
+        $query = $dbco->prepare("
+        SELECT * FROM wines LEFT JOIN mywines ON mywines.wines_id = wines.id WHERE users_id=:users_id AND wines_id=:wines_id");
+        $query->bindValue(':users_id', $userid, PDO::PARAM_INT);
+        $query->bindValue(':wines_id', $wineid, PDO::PARAM_INT);
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    } catch(PDOException $e){
+        echo "Erreur : " . $e->getMessage();
+    }
+}
+
 // fonction pour supprimer un vin des favoris
 
 function deletewine_by_user($userid, $id)
