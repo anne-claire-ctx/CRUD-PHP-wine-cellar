@@ -15,12 +15,23 @@ const swiper = new Swiper(".swiper-container", {
 });
 
 // BURGER
-const burgerIcon = document.querySelector(".burger-icon");
-const menu = document.querySelector(".menu");
-burgerIcon.addEventListener("click", () => {
-  menu.classList.toggle("display-none");
-});
+// const burgerIcon = document.querySelector(".burger-icon");
+// const menu = document.querySelector(".menu");
+// burgerIcon.addEventListener("click", () => {
+//   menu.classList.toggle("display-none");
+// });
 
+
+/* Sélection des éléments HTML */
+const link = document.querySelector('#link');
+const burger = document.querySelector('#burger');
+const menu = document.querySelector(".menu");
+
+/* gestionnaire d'événement sur le a#link pour venir changer l'attribution de la classe .open à la ul et au span#burger */
+link.addEventListener('click', () => {
+  burger.classList.toggle('open')
+  menu.classList.toggle('display-none')
+});
 
 // ICONES CONTACT
 

@@ -8,7 +8,7 @@ require_once __DIR__ . '/header.php';
             <a href="home"><img src="assets/img/logo-blanc.png" alt="logo My cave"></a>
         </div>
         <div id="mysmallvideo">
-            <video muted autoplay=true loop width="100%" poster="assets/img/red.jpg">
+            <video muted autoplay loop width="100%" poster="assets/img/red.jpg">
                 <source src="assets/video/wine-small.mp4">
                 <source src="assets/video/wine-small.ogv">
                 <source src="assets/video/wine-small.webm">
@@ -17,7 +17,7 @@ require_once __DIR__ . '/header.php';
         </div>
         
         <div id="myvideo">
-            <video muted autoplay=true loop width="90%" poster="assets/img/poster.jpg">
+            <video muted autoplay loop width="90%" poster="assets/img/poster.jpg">
                 <source src="assets/video/wine.mp4" type="video/mp4">
                 <source src="assets/video/wine.ogv" type="video/ogv">
                 <source src="assets/video/wine.webm" type="video/webm">
