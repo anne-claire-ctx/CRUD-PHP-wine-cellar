@@ -16,11 +16,6 @@
 </head>
 
 <body>
-    <!-- <div class="burger-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div> -->
     <div id="link"><span id="burger"></span></div>
     <div class="menu display-none">
         <div class="menu-container">

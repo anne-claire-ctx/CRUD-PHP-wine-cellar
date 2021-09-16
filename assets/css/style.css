@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Felipa&display=swap');
+
 :root {
   --black: #000;
   --white: #fff;
-  --modal: rgb(58, 63, 68);
-/*  --red: #650e10; */
-  --red: rgb(129,52,52);
+  --modal: #3a3f44;
+  --red: #813434;
   --gold: #E4CC85;
-  --background: rgb(39, 43, 46);
+  --background: #272b2e;
 }
 
 body {
@@ -166,10 +164,13 @@ main::-webkit-scrollbar-thumb {
 /* ============================================================ */
 
 /* ===== MENU ===== */
+#link {
+  cursor: pointer;
+}
 
 #burger {
   width:30px;
-  height:2px;
+  height:3px;
   background:white;
   display:inline-block;
   position: fixed;
@@ -184,7 +185,7 @@ main::-webkit-scrollbar-thumb {
 #burger::after {
   content:'';
   width:30px;
-  height:2px;
+  height:3px;
   background:white;
   display:inline-block;
   position:absolute;
@@ -1277,8 +1278,11 @@ color: #185875;
   padding: 5px;
 }
 
-.table-container a img {
+.table-container img {
   height: 25px;
+}
+.table-container .checked {
+  height: 20px;
 }
 
 .table-container a img:hover {
@@ -1298,8 +1302,10 @@ color: #185875;
 }
 
 @media (max-width: 540px) {
-.table-container td:nth-child(3),
-.table-container th:nth-child(3) { display: none; }
+.table-container.users td:nth-child(3),
+.table-container.users th:nth-child(3) { display: none; }
+.table-container.contactmail td:nth-child(4),
+.table-container.contactmail th:nth-child(4) { display: none; }
 }
 
 @media (min-width: 540px) {

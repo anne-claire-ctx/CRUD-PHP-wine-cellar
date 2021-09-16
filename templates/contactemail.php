@@ -31,10 +31,10 @@ if (!isset($_SESSION['pseudo'])) {
                 <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
             </div>
     <?php endif ?>
-        <table class="table-container">
+        <table class="table-container contactmail">
             <thead>
                 <th><h1>DATE/HEURE</h1></th>
-                <th><h1>NOM</h1></th>
+                <th colspan="2"><h1>NOM</h1></th>
                 <th><h1>EMAIL</h1></th>
                 <th><h1>SUBJECT</h1></th>
                 <th><h1>MESSAGE</h1></th>
@@ -48,10 +48,11 @@ if (!isset($_SESSION['pseudo'])) {
             <tr>
                 <td><?= $mail['datetime'] ?></td>
                 <td><?= $mail['name'] ?></td>
+                <td><?php if($mail['id_users'] !== NULL) : ?><img src="assets/img/checked.png" alt="logo checked" class="checked" title="Utilisateur enregistré"><?php endif; ?></td>
                 <td><?= $mail['email'] ?></td>
                 <td><?= $mail['subject'] ?></td>
                 <td><?= $mail['message']?></td>
-                <td><a href="deleteContact?id=<?=$mail['idcontact']?>"><img src="assets/img/delete-user.png" title="supprimer le message" alt="icone supprimer message"></a></td>
+                <td><a href="deleteContact?id=<?=$mail['idcontact']?>" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet email ?');"><img src="assets/img/delete-email.png" title="supprimer le message" alt="icone supprimer message"></a></td>
             </tr>
             <?php
             endforeach;

@@ -29,12 +29,15 @@ if (isset($fields_required)) :
         header("Location: http://localhost/Nouveau-projet/contact?msg=Merci de remplir tous les champs");
     else :
         // on nettoie les données
-        $name = html(mb_ucfirst($_POST['name']));
-        $email = html($_POST['email']);
+        $name = html(ucwords($_POST['name']));
+        $email = html(strtolower($_POST['email']));
         $subject = html($_POST['subject']);
         $message = html($_POST['message']);
-
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) :
+            header("Location: http://localhost/Nouveau-projet/contact?msg=Votre email est incorrect");
+        else :
         $set_request = TRUE;
+        endif;
     endif;
 else : $msg_error = "Données invalides";
 endif;

@@ -9,6 +9,7 @@ require_once __DIR__ . '/validation.php';
 $id = intval($_GET['id']);
 
 // on nettoie les données
+if ($_POST) {
 $name = html(strtoupper($_POST['name']));
 $year = html($_POST['year']);
 $description = html(mb_ucfirst($_POST['description']));
@@ -19,16 +20,16 @@ $color = html(mb_ucfirst($_POST['color']));
 $grade = html($_POST['grade']);
 $buy = html(strtolower($_POST['buy']));
 $picture = html($_POST['picture']);
+// on fait un tableau pour les champs obligatoires
+$fields_required = array($_POST['name'], $_POST['year'], $_POST['description'], $_POST['region'], $_POST['country'], $_POST['grape'], $_POST['color'], $_POST['grade'], $_POST['buy']);
+$ext = array('png', 'jpg', 'jpeg');
+}
 
 // on récupère les infos du vin en question
 $wine = select_wine_by_id($id);
 
 // On re-spécifie qu'on est en UTF-8
 mb_internal_encoding("UTF-8");
-
-// on fait un tableau pour les champs obligatoires
-$fields_required = array($_POST['name'], $_POST['year'], $_POST['description'], $_POST['region'], $_POST['country'], $_POST['grape']);
-$ext = array('png', 'jpg', 'jpeg');
 
 // on initialise la variable set_request (vérifier les données avant de les insérer dans la base)
 $set_request = FALSE;
@@ -37,7 +38,7 @@ $set_request = FALSE;
 if (isset($fields_required)) :
     // on vérifie que les champs nécessaires sont remplis
     if (in_array('', $fields_required)) :
-        header("location: http://localhost/Nouveau-projet/update?id=$id&msg=Merci de remplir tous les champs");
+        $msg_error = "Merci de remplir tous les champs";
     else :
         if(!empty($_FILES['new-picture']['name'])) :
             $newPicture = $_FILES['new-picture'];

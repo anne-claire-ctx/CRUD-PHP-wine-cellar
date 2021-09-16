@@ -9,16 +9,16 @@ require_once __DIR__ . '/validation.php';
 mb_internal_encoding("UTF-8");
 
 // on fait un tableau pour les champs obligatoires
-$fields_required = array($_POST['name'], $_POST['year'], $_POST['description'], $_POST['region'], $_POST['country'], $_POST['grape']);
+if ($_POST) {$fields_required = array($_POST['name'], $_POST['year'], $_POST['description'], $_POST['region'], $_POST['country'], $_POST['grape'], $_POST['color'], $_POST['grade'], $_POST['buy']);}
 
-// on initialise la variable set_request (vérifier les données avant de les insérer dans la base)
+// on initialise la variable set_request (vérifier les données avant de les insérer dans la base - si set_request est true, alors on peut y aller)
 $set_request = FALSE;
 
 // on vérifie que des données ont été envoyées
 if (isset($fields_required)) :
     // on vérifie que les champs nécessaires sont remplis
     if (in_array('', $fields_required)) :
-        header("Location: http://localhost/Nouveau-projet/addwine?msg=Merci de remplir tous les champs");
+        $msg_error = "Merci de remplir tous les champs";
     else :
         // on nettoie les données
         $name = html(strtoupper($_POST['name']));
@@ -30,8 +30,10 @@ if (isset($fields_required)) :
         $color = html(mb_ucfirst($_POST['color']));
         $grade = html($_POST['grade']);
         $buy = html(strtolower($_POST['buy']));
-        
+
+        // on récupère dans la variable $picture le fichier de l'image
         $picture = $_FILES['picture'];
+        // on fait un tableau pour préciser les formats d'image acceptés
         $ext = array('png', 'jpg', 'jpeg');
 
         // on gère les erreurs pour le fichier image
@@ -40,6 +42,7 @@ if (isset($fields_required)) :
         elseif ($picture['error'] == 3 || $picture['error'] > 4) :
             $msg_error = "problème pendant le chargement du fichier";
         else :
+            // erreur 4 = aucun fichier n'a été téléchargé donc on lui donne le nom de l'image générique
             if ($picture['error'] == 4) :
                 $picture_name = 'generic.png';
                 $set_request = TRUE;
@@ -56,7 +59,9 @@ if (isset($fields_required)) :
                 else {
                     // je donne un nouveau nom à l'image pour éviter les doublons
                     $picture_name = uniqid() . '_' . $picture['name'];
+                    // je donne à $img_folder l'emplacement final du fichier
                     $img_folder = dirname(__DIR__) . '/assets/img/';
+                    // je lui dis de créer le fameux fichier s'il n'existe pas
                     @mkdir($img_folder, 0777);
                     $dir = $img_folder . $picture_name;
 
@@ -91,6 +96,7 @@ if (isset($msg_error)) {
         'grade' => $grade,
         'buy' => $buy
     );
+    // j'appelle ma fonction pour rentrer les données dans la base
     $result = addwine($datas);
     header("Location: http://localhost/Nouveau-projet/dashboard?msg=Le vin a bien été ajouté à la base de données");
 } else {

@@ -31,7 +31,7 @@ if (!isset($_SESSION['pseudo'])) {
                 <p class="exit"><span class="exitLeft"></span><span class="exitRight"></span></p>
             </div>
     <?php endif ?>
-        <table class="table-container">
+        <table class="table-container users">
             <thead>
                 <th><h1>ID</h1></th>
                 <th><h1>PSEUDO</h1></th>
@@ -53,7 +53,7 @@ if (!isset($_SESSION['pseudo'])) {
                     <td><?= $user['register_date']?></td>
                     <?php if($user['id'] !== $_SESSION['id']) : ?>
                     <td><a href="editUser?id=<?=$user['id']?>"><img src="assets/img/edituser.png" title="modifier le role de l'utilisateur" alt="icone modifier utilisateur"></a></td>
-                    <td><a href="deleteUser?id=<?=$user['id']?>"><img src="assets/img/delete-user.png" title="supprimer l'utilisateur" alt="icone supprimer utilisateur"></a></td><?php endif;?>
+                    <td><a href="deleteUser?id=<?=$user['id']?>" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet utilisateur ?');"><img src="assets/img/delete-user.png" title="supprimer l'utilisateur" alt="icone supprimer utilisateur"></a></td><?php endif;?>
                 </tr>
                 <?php
                 endforeach;
