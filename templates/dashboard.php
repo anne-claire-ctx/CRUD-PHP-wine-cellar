@@ -27,7 +27,7 @@ require_once __DIR__ . '/header.php';
         <?php endif ?>
 
         <div class="searchbar">
-            <form method="post" class="search-option"> 
+            <form method="get" class="search-option">
                 <input type="search" name="search" placeholder="Rechercher" required>
                 <button type="submit"><img src="assets/img/search.png" alt="icone recherche"></i></button>
             </form>
@@ -46,10 +46,10 @@ require_once __DIR__ . '/header.php';
                 <button type="submit"><img src="assets/img/sorting.png" alt="icone tri"></button>
             </form>
                 <?php
-            if (isset($_POST['search']) && empty($wines) && ($_POST['search'] !== "")): ?>
+            if (isset($_GET['search']) && empty($wines) && ($_GET['search'] !== "")): ?>
                 <p>Aucun vin trouvé</p><a href="dashboard" class="btns btnswhite">Retour à la liste complète des vins</a>
             <?php endif;
-            if (isset($_POST['search']) && !empty($wines) && ($_POST['search'] !== "")): ?>
+            if (isset($_GET['search']) && !empty($wines) && ($_GET['search'] !== "")): ?>
                 <a href="dashboard" class="btns btnswhite">Retour à la liste complète des vins</a>
             <?php endif; ?>
         </div>

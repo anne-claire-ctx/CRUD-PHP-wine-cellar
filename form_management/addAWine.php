@@ -10,7 +10,7 @@ $id = $_GET['id'];
 
 if ((isset($_GET['id'])) && (!empty($_SESSION))) {
     addwine_by_user($userid, $id);
-    header("location: http://localhost/Nouveau-projet/mywines?msg=Le vin a bien été ajouté");
+    header("location: http://localhost/mycave/mywines?msg=Le vin a bien été ajouté");
 } else {
-    header("location: http://localhost/Nouveau-projet/mywines?msg=Le vin n'a pas été ajouté suite à une erreur ou parce que vous n'avez pas les droits pour cette action");
+    header("location: http://localhost/mycave/mywines?msg=Le vin n'a pas été ajouté suite à une erreur ou parce que vous n'avez pas les droits pour cette action");
 }

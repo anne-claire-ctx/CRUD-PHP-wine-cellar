@@ -2,16 +2,19 @@
 // on appelle notre fichier pour récupérer les infos dans la base de données (fonctions avec requêtes SQL)
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 
-// on appelle notre fichier pour valider les données (fonction pour nettoyer les données reçues dans le formulaire - espaces et balise html)
+// on appelle notre fichier pour valider les données (fonction pour nettoyer les données reçues dans le formulaire
+// - espaces et balise html)
 require_once __DIR__ . '/validation.php';
 
 // On re-spécifie qu'on est en UTF-8
 mb_internal_encoding("UTF-8");
 
 // on fait un tableau pour les champs obligatoires
-if ($_POST) {$fields_required = array($_POST['name'], $_POST['year'], $_POST['description'], $_POST['region'], $_POST['country'], $_POST['grape'], $_POST['color'], $_POST['grade'], $_POST['buy']);}
+$fields_required = array($_POST['name'], $_POST['year'], $_POST['description'], $_POST['region'],
+    $_POST['country'], $_POST['grape'], $_POST['color'], $_POST['grade'], $_POST['buy']);
 
-// on initialise la variable set_request (vérifier les données avant de les insérer dans la base - si set_request est true, alors on peut y aller)
+// on initialise la variable set_request (vérifier les données avant de les insérer dans la base -
+// si set_request est true, alors on peut y aller)
 $set_request = FALSE;
 
 // on vérifie que des données ont été envoyées
@@ -82,7 +85,7 @@ endif;
 
 // si on a un message d'erreur, on l'affiche. Sinon, on lance la requete
 if (isset($msg_error)) {
-    header("Location: http://localhost/Nouveau-projet/addwine?msg=$msg_error");
+    header("Location: http://localhost/mycave/addwine?msg=$msg_error");
 } elseif ($set_request) {
     $datas = array(
         'name' => $name,
@@ -98,7 +101,7 @@ if (isset($msg_error)) {
     );
     // j'appelle ma fonction pour rentrer les données dans la base
     $result = addwine($datas);
-    header("Location: http://localhost/Nouveau-projet/dashboard?msg=Le vin a bien été ajouté à la base de données");
+    header("Location: http://localhost/mycave/dashboard?msg=Le vin a bien été ajouté à la base de données");
 } else {
-    header("Location: http://localhost/Nouveau-projet/dashboard?msg=Une erreur s'est produite");
+    header("Location: http://localhost/mycave/dashboard?msg=Une erreur s'est produite");
 }

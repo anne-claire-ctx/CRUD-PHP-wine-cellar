@@ -86,7 +86,7 @@ endif;
 
 // si on a un message d'erreur, on l'affiche. Sinon, on lance la requete
 if (isset($msg_error)) {
-    header("Location: http://localhost/Nouveau-projet/update?id=$id&msg=$msg_error");
+    header("Location: http://localhost/mycave/update?id=$id&msg=$msg_error");
 } elseif ($set_request) {
     $data = array(
         'id' => $id,
@@ -102,7 +102,7 @@ if (isset($msg_error)) {
         'buy' => $buy
     );
     $result = update_wine_by_id($data);
-    header("Location: http://localhost/Nouveau-projet/product?id=$id&msg=Le vin a bien été modifié");
+    header("Location: http://localhost/mycave/product?id=$id&msg=Le vin a bien été modifié");
 } else {
-    header("Location: http://localhost/Nouveau-projet/product?id=$id&msg=Une erreur s'est produite");
+    header("Location: http://localhost/mycave/product?id=$id&msg=Une erreur s'est produite");
 }

@@ -11,8 +11,8 @@
     <!-- Swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- CSS link -->
-    <link rel="stylesheet" href="http://localhost/Nouveau-projet/assets/css/reset.css">
-    <link rel="stylesheet" href="http://localhost/Nouveau-projet/assets/css/style.css">
+    <link rel="stylesheet" href="http://localhost/mycave/assets/css/reset.css">
+    <link rel="stylesheet" href="http://localhost/mycave/assets/css/style.css">
 </head>
 
 <body>

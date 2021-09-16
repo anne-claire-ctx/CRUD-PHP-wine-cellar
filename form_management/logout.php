@@ -3,4 +3,4 @@
 session_start();
 session_destroy();
 
-header("location: http://localhost/Nouveau-projet/home");
+header("location: http://localhost/mycave/home");

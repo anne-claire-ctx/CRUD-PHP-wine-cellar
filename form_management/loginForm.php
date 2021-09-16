@@ -18,16 +18,16 @@ if (isset($_POST['pseudo'], $_POST['password'])) {
             $_SESSION['id'] = $user[0]['id'];
             $_SESSION['email'] = $user[0]['email'];
             $_SESSION['register_date'] = $user[0]['register_date'];
-            header("location: http://localhost/Nouveau-projet/dashboard?msg=Bienvenue $pseudo !");
+            header("location: http://localhost/mycave/dashboard?msg=Bienvenue $pseudo !");
             } else {
-            header("location: http://localhost/Nouveau-projet/login?msg=Identifiants incorrects");
+            header("location: http://localhost/mycave/login?msg=Identifiants incorrects");
             }
         } else {
-            header("location: http://localhost/Nouveau-projet/login?msg=ce pseudo n'existe pas");
+            header("location: http://localhost/mycave/login?msg=ce pseudo n'existe pas");
         }
     } else {
-        header("location: http://localhost/Nouveau-projet/login?msg=Il manque des informations");
+        header("location: http://localhost/mycave/login?msg=Il manque des informations");
     }
 } else {
-    header("location: http://localhost/Nouveau-projet/login?msg=Données invalides");
+    header("location: http://localhost/mycave/login?msg=Données invalides");
 }

@@ -3,8 +3,8 @@
 require_once dirname(__DIR__) . '/datamanager/data-manager.php';
 require_once __DIR__ . '/validation.php';
 
-if(isset($_POST['search']) && !empty($_POST['search'])) {
-        $search = html($_POST['search']);
+if(isset($_GET['search']) && !empty($_GET['search'])) {
+        $search = html($_GET['search']);
         $wines = search_wine($search);
 } elseif (isset($_GET['sort'])) {
         if ($_GET['sort'] == 'region') {

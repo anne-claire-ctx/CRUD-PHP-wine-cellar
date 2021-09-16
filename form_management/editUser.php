@@ -29,7 +29,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     // On vérifie si le user existe
     if(!$user){
         $_SESSION['message'] = "Cet id n'existe pas";
-        header('location: http://localhost/Nouveau-projet/users');
+        header('location: http://localhost/mycave/users');
     }
     $admin = ($user['role'] == 0) ? 1 : 0 ;
 
@@ -45,8 +45,8 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     // On exécute la requête
     $query->execute();
     $_SESSION['message'] = "L'utilisateur est a bien changé de role";
-    header('location: http://localhost/Nouveau-projet/users');
+    header('location: http://localhost/mycave/users');
 }else {
     $_SESSION['message'] = "URL invalide";
-    header('location: http://localhost/Nouveau-projet/users');
+    header('location: http://localhost/mycave/users');
 }

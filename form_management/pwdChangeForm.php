@@ -19,19 +19,19 @@ if (isset($_POST['currentPassword'], $_POST['newPassword'], $_POST['confirmPassw
                 if(strlen($newPwd) >= 8) {
                     $newPwd = password_hash($newPwd, PASSWORD_DEFAULT);
                     $updatePwd = update_pwd($pseudo, $newPwd);
-                    header("location: http://localhost/Nouveau-projet/mywines?msg=Votre mot de passe a bien été mis à jour");
+                    header("location: http://localhost/mycave/mywines?msg=Votre mot de passe a bien été mis à jour");
                 } else {
-                    header("location: http://localhost/Nouveau-projet/pwdchange?msg=Le mot de passe doit être au moins de 8 caractères");
+                    header("location: http://localhost/mycave/pwdchange?msg=Le mot de passe doit être au moins de 8 caractères");
                 }
             } else {
-                header("location: http://localhost/Nouveau-projet/pwdchange?msg=Les nouveaux mots de passe ne correspondent pas");
+                header("location: http://localhost/mycave/pwdchange?msg=Les nouveaux mots de passe ne correspondent pas");
             }
         } else {
-            header("location: http://localhost/Nouveau-projet/pwdchange?msg=Votre mot de passe actuel est incorrect");
+            header("location: http://localhost/mycave/pwdchange?msg=Votre mot de passe actuel est incorrect");
         }
     } else {
-        header("location: http://localhost/Nouveau-projet/pwdchange?msg=Veuillez remplir tous les champs");
+        header("location: http://localhost/mycave/pwdchange?msg=Veuillez remplir tous les champs");
     }
 } else {
-    header("location: http://localhost/Nouveau-projet/pwdchange?msg=données invalides");
+    header("location: http://localhost/mycave/pwdchange?msg=données invalides");
 }

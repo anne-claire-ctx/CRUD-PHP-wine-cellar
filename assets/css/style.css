@@ -974,7 +974,7 @@ footer {
 /* ======== FORM ======== */
 /* ====================== */
 
-#dashboard, #loginpage, #register, #contactpage, #addwine, #updatewine, #users, #contact-email, #product, #mywines {
+#dashboard, #loginpage, #register, #contactpage, #addwine, #updatewine, #users, #contact-email, #product, #mywines, #lostpwd {
   background: var(--background);
 }
 

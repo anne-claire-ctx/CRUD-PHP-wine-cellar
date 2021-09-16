@@ -27,7 +27,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     // On vérifie si le user existe
     if(!$user){
-        header('location: http://localhost/Nouveau-projet/users?msg=Cet utilisateur n\'existe pas');
+        header('location: http://localhost/mycave/users?msg=Cet utilisateur n\'existe pas');
     }
 
     $sql = 'DELETE FROM `users` WHERE `id` = :id;';
@@ -40,7 +40,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     // On exécute la requête
     $query->execute();
-    header('location: http://localhost/Nouveau-projet/users?msg=L\'utilisateur a bien été supprimé');
+    header('location: http://localhost/mycave/users?msg=L\'utilisateur a bien été supprimé');
 }else {
-    header('location: http://localhost/Nouveau-projet/users?msg=Une erreur s\'est produite');
+    header('location: http://localhost/mycave/users?msg=Une erreur s\'est produite');
 }

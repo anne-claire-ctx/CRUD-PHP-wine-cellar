@@ -26,7 +26,7 @@ if (isset($_SESSION['id'])) {
 if (isset($fields_required)) :
     // on vérifie que les champs nécessaires sont remplis
     if (in_array('', $fields_required)) :
-        header("Location: http://localhost/Nouveau-projet/contact?msg=Merci de remplir tous les champs");
+        header("Location: http://localhost/mycave/contact?msg=Merci de remplir tous les champs");
     else :
         // on nettoie les données
         $name = html(ucwords($_POST['name']));
@@ -34,7 +34,7 @@ if (isset($fields_required)) :
         $subject = html($_POST['subject']);
         $message = html($_POST['message']);
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) :
-            header("Location: http://localhost/Nouveau-projet/contact?msg=Votre email est incorrect");
+            header("Location: http://localhost/mycave/contact?msg=Votre email est incorrect");
         else :
         $set_request = TRUE;
         endif;
@@ -44,7 +44,7 @@ endif;
 
 // si on a un message d'erreur, on l'affiche. Sinon, on lance la requete
 if (isset($msg_error)) {
-    header("Location: http://localhost/Nouveau-projet/contact?msg=$msg_error");
+    header("Location: http://localhost/mycave/contact?msg=$msg_error");
 } elseif ($set_request) {
     $contactDatas = array(
         'name' => $name,
@@ -54,7 +54,7 @@ if (isset($msg_error)) {
         'id_users' => $id_users
     );
     $result = send_contact($contactDatas);
-    header("Location: http://localhost/Nouveau-projet/contact?msg=Votre message a bien été envoyé");
+    header("Location: http://localhost/mycave/contact?msg=Votre message a bien été envoyé");
 } else {
-    header("Location: http://localhost/Nouveau-projet/contact?msg=Une erreur s'est produite. Merci de réessayer.");
+    header("Location: http://localhost/mycave/contact?msg=Une erreur s'est produite. Merci de réessayer.");
 }
