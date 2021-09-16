@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eca5b67d-f095-46f1-833c-9bbab8b7982a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/6140f40602882_pexels-tony-flood-4710897.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/6140f42fead61_pexels-tony-flood-4710897.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/cave.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/cellar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/contact.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/detail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/edit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/emai.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/pwd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/try2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/verres.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/weeds1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/form_management/deleteUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/form_management/deleteUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1yAjqTMWPwX9PDA8ehb98n6NDU8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eca5b67d-f095-46f1-833c-9bbab8b7982a" name="Default Changelist" comment="" />
+      <created>1631701477449</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631701477449</updated>
+      <workItem from="1631701482551" duration="369000" />
+      <workItem from="1631707892542" duration="1247000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

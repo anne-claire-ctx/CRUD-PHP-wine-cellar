@@ -27,8 +27,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     // On vérifie si le user existe
     if(!$user){
-        $_SESSION['erreur'] = "Cet id n'existe pas";
-        header('location: http://localhost/Nouveau-projet/users');
+        header('location: http://localhost/Nouveau-projet/users?msg=Cet utilisateur n\'existe pas');
     }
 
     $sql = 'DELETE FROM `users` WHERE `id` = :id;';
@@ -41,9 +40,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     // On exécute la requête
     $query->execute();
-    $_SESSION['message'] = "L'utilisateur a bien été supprimé";
-    header('location: http://localhost/Nouveau-projet/users');
+    header('location: http://localhost/Nouveau-projet/users?msg=L\'utilisateur a bien été supprimé');
 }else {
-    $_SESSION['erreur'] = "Une erreur s'est produite";
-    header('location: http://localhost/Nouveau-projet/users');
+    header('location: http://localhost/Nouveau-projet/users?msg=Une erreur s\'est produite');
 }

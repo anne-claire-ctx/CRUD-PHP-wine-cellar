@@ -385,7 +385,7 @@ header h2{
 
 .introduction {
   margin-top: 60px;
-  background-image: url(../img/try2.jpg);
+  background-image: url(../img/homebackground.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -520,7 +520,7 @@ header h2{
 }
 @media screen and (min-width: 760px) {
   .slider {
-    background-image: url(../img/weeds1.png);
+    background-image: url(../img/weedshorizontal.png);
   }
 }
 
@@ -592,14 +592,14 @@ footer {
 }
 
 .dash {
-  background: url(../img/cave.jpg);
+  background: url(../img/cavedashboard.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .mine {
-  background: url(../img/cellar.jpg);
+  background: url(../img/cellarmycave.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -613,35 +613,35 @@ footer {
 }
 
 .usersh {
-  background: url(../img/verres.jpg);
+  background: url(../img/verresusers.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .pwdc {
-  background: url(../img/pwd.jpg);
+  background: url(../img/pwdbackground.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .detail {
-  background: url(../img/detail.jpg);
+  background: url(../img/detailproduct.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .cont {
-  background: url(../img/contact.jpg);
+  background: url(../img/contactbackground.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .emai {
-  background: url(../img/emai.jpg);
+  background: url(../img/emailcontact.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -662,7 +662,7 @@ footer {
 }
 
 .editw {
-  background: url(../img/edit.jpg);
+  background: url(../img/editbottle.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

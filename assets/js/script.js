@@ -58,9 +58,3 @@ const modal = document.querySelector(".error");
 exitModal.addEventListener("click", () => {
   modal.classList.toggle("display-none");
 });
-
-// POPUP redirection 
-
-function confirmLeave() {
-  alert("Vous allez être redirigé sur une autre page.")
-}

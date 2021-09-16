@@ -50,7 +50,7 @@ if (empty($wineId)) {
                         <li>Pays : <?= $wineId['country'] ?></li>
                         <li>Notre Avis : <?php if($wineId['grade'] == 3) : ?><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif($wineId['grade'] == 4) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php elseif ($wineId['grade'] == 5) : ?> <img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><img src="./assets/img/star.png" alt="étoile"><?php endif;?></li>
                     </ul>
-                    <a href="<?= $wineId['buy'] ?>" target="_blank" class="button btnsproduct">Acheter ce vin</a>
+                    <a href="<?= $wineId['buy'] ?>" target="_blank" onclick="return confirm('Vous allez être redirigé vers une autre page. Voulez-vous continuer ?');" class="button btnsproduct">Acheter ce vin</a>
                 </div>
             </div>
             <div class="product-options">
